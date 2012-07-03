@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "348"
-         endingLineNumber = "348"
+         startingLineNumber = "378"
+         endingLineNumber = "378"
          landmarkName = "-handleList:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-initWithNibName:bundle:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "518"
-         endingLineNumber = "518"
+         startingLineNumber = "548"
+         endingLineNumber = "548"
          landmarkName = "-scrollViewWillBeginDragging:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "535"
-         endingLineNumber = "535"
+         startingLineNumber = "577"
+         endingLineNumber = "577"
          landmarkName = "-scrollViewWillBeginDecelerating:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "369"
-         endingLineNumber = "369"
+         startingLineNumber = "399"
+         endingLineNumber = "399"
          landmarkName = "-handleList:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "366"
-         endingLineNumber = "366"
+         startingLineNumber = "396"
+         endingLineNumber = "396"
          landmarkName = "-handleList:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "161"
-         endingLineNumber = "161"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
          landmarkName = "-arrangeTiles"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363024336.871872"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "283"
-         endingLineNumber = "283"
+         startingLineNumber = "313"
+         endingLineNumber = "313"
          landmarkName = "-arrangeTiles"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363021203.774102"
+         timestampString = "363027733.31074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "68"
-         endingLineNumber = "68"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-searchBarShouldEndEditing:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -60,7 +60,22 @@ bool IsSearching;
     [searchBar sizeToFit];  
     
     [searchBar setShowsCancelButton:YES animated:YES];  
-    searchBar.frame = CGRectMake(0, 0, 320, 90);
+    
+
+    
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    if(iPad == YES)
+    {
+        searchBar.frame = CGRectMake(0, 0, 768, 44);
+    }
+    else
+    {
+        searchBar.frame = CGRectMake(0, 0, 320, 44);       
+    }
     
     return YES;  
 }  
@@ -70,7 +85,22 @@ bool IsSearching;
     [searchBar sizeToFit];  
     
     [searchBar setShowsCancelButton:NO animated:YES];  
-    searchBar.frame = CGRectMake(0, 0, 320, 45);    
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    if(iPad == YES)
+    {
+        sbMain.frame =  CGRectMake(0, 0, 768, 44);
+    }
+    else
+    {
+        sbMain.frame =  CGRectMake(0, 0, 320, 44);        
+    }
+    
+    
+    
     return YES;  
 }  
 
@@ -84,7 +114,7 @@ bool IsSearching;
 {
 
     [searchTimer invalidate];
-        searchTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+        searchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                        target:self
                                                      selector:@selector(searchTimerDidFinish:)
                                                      userInfo:nil
@@ -530,7 +560,19 @@ bool IsSearching;
         [myPOI setOpacity:1.0];
         [myPOI setBackgroundColor:[UIColor clearColor]];
     }
-    sbMain.frame =  CGRectMake(0, 0, 320, 44);
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+
+    if(iPad == YES)
+    {
+        sbMain.frame =  CGRectMake(0, 0, 768, 44);
+    }
+    else
+    {
+        sbMain.frame =  CGRectMake(0, 0, 320, 44);        
+    }
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {  
