@@ -23,6 +23,7 @@
 #import "SQLSTUDIOArrayOftbl_Sex_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Status_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Result.h"
+#import "SQLSTUDIOArrayOftbl_Booking_Result_V2.h"
 #import "SQLSTUDIOArrayOftbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Most_Wanted_Result.h"
 #import "SQLSTUDIOtbl_Missing_Child_Result.h"
@@ -34,6 +35,7 @@
 #import "SQLSTUDIOtbl_Sex_Result.h"
 #import "SQLSTUDIOtbl_Market_Status_Result.h"
 #import "SQLSTUDIOtbl_Wanted_Status_Result.h"
+#import "SQLSTUDIOtbl_Booking_Result_V2.h"
 #import "SQLSTUDIOtbl_Market_Result.h"
 #import "SQLSTUDIOtbl_CMS_Tag_Result.h"
 #import "SQLSTUDIOssAudit_Result.h"
@@ -67,6 +69,10 @@
 	/* Returns int.  */
 	- (SoapRequest*) Delete_tbl_Wanted_Status: (id <SoapDelegate>) handler Wanted_Status_ID: (int) Wanted_Status_ID;
 	- (SoapRequest*) Delete_tbl_Wanted_Status: (id) target action: (SEL) action Wanted_Status_ID: (int) Wanted_Status_ID;
+
+	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) List_All_tbl_Booking_Weekly_V2: (id <SoapDelegate>) handler Markets: (NSString*) Markets;
+	- (SoapRequest*) List_All_tbl_Booking_Weekly_V2: (id) target action: (SEL) action Markets: (NSString*) Markets;
 
 	/* Returns NSMutableArray*.  */
 	- (SoapRequest*) List_All_tbl_Market: (id <SoapDelegate>) handler;

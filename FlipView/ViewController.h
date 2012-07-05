@@ -18,6 +18,9 @@
     NSTimer *searchTimer;
 
 }
+@property (retain, nonatomic) IBOutlet UIImageView *imgScrollArrow;
+@property (retain, nonatomic) IBOutlet UILabel *lblLastRefreshDate;
+@property (retain, nonatomic) IBOutlet UILabel *lblReleaseToRefresh;
 @property (retain, nonatomic) IBOutlet UIScrollView *svMain;
 @property (retain, nonatomic) IBOutlet UISearchBar *sbMain;
 @property (nonatomic, retain) NSMutableArray *itemList;

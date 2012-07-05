@@ -22,6 +22,7 @@
 //init
 - (id)init
 {
+    NSLog(@"App Init");
     self = [super init];
     if (self) 
     {
@@ -40,6 +41,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+        NSLog(@"App Finished Launching");
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -237,11 +239,16 @@
                          nil];
     shineLayer.locations = [NSArray arrayWithObjects:
                             [NSNumber numberWithFloat:0.0f],
-                            [NSNumber numberWithFloat:0.5f],
-                            [NSNumber numberWithFloat:0.5f],
+                            [NSNumber numberWithFloat:0.2f],
+                            [NSNumber numberWithFloat:0.3f],
                             [NSNumber numberWithFloat:0.8f],
                             [NSNumber numberWithFloat:1.0f],
                             nil];
+    
+    
+    
+    
+    
 //    shineLayer.opacity = 20.0;
     [shineLayer setOpacity:0.5f];
     [layer addSublayer:shineLayer];

@@ -23,6 +23,7 @@
 #import "SQLSTUDIOArrayOftbl_Sex_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Status_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Result.h"
+#import "SQLSTUDIOArrayOftbl_Booking_Result_V2.h"
 #import "SQLSTUDIOArrayOftbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Most_Wanted_Result.h"
 #import "SQLSTUDIOtbl_Missing_Child_Result.h"
@@ -34,6 +35,7 @@
 #import "SQLSTUDIOtbl_Sex_Result.h"
 #import "SQLSTUDIOtbl_Market_Status_Result.h"
 #import "SQLSTUDIOtbl_Wanted_Status_Result.h"
+#import "SQLSTUDIOtbl_Booking_Result_V2.h"
 #import "SQLSTUDIOtbl_Market_Result.h"
 #import "SQLSTUDIOtbl_CMS_Tag_Result.h"
 #import "SQLSTUDIOssAudit_Result.h"
@@ -169,6 +171,23 @@
 		[_params addObject: [[[SoapParameter alloc] initWithValue: [NSNumber numberWithInt: Wanted_Status_ID] forName: @"Wanted_Status_ID"] autorelease]];
 		NSString* _envelope = [Soap createEnvelope: @"Delete_tbl_Wanted_Status" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
 		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Delete_tbl_Wanted_Status" postData: _envelope deserializeTo: @"int"];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) List_All_tbl_Booking_Weekly_V2: (id <SoapDelegate>) handler Markets: (NSString*) Markets
+	{
+		return [self List_All_tbl_Booking_Weekly_V2: handler action: nil Markets: Markets];
+	}
+
+	- (SoapRequest*) List_All_tbl_Booking_Weekly_V2: (id) _target action: (SEL) _action Markets: (NSString*) Markets
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: Markets forName: @"Markets"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"List_All_tbl_Booking_Weekly_V2" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/List_All_tbl_Booking_Weekly_V2" postData: _envelope deserializeTo: [[SQLSTUDIOArrayOftbl_Booking_Result_V2 alloc] autorelease]];
 		[_request send];
 		return _request;
 	}

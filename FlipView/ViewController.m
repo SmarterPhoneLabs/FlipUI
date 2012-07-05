@@ -12,8 +12,9 @@
 #import "SQLSTUDIOServices.h"
 #import "AsyncImageView.h"
 #import "BackSideView.h"
+#define REFRESH_HEADER_HEIGHT_IPHONE 75.0f
+#define REFRESH_HEADER_HEIGHT_IPAD 150.0f
 
-CGRect  tempRect;
 
 
 @implementation ViewController
@@ -21,6 +22,9 @@ CGRect  tempRect;
 @synthesize tileWidthTemplate;
 @synthesize tileHeightTemplate;
 @synthesize tileMargin;
+@synthesize imgScrollArrow;
+@synthesize lblLastRefreshDate;
+@synthesize lblReleaseToRefresh;
 @synthesize svMain;
 @synthesize sbMain;
 @synthesize itemList;
@@ -35,7 +39,21 @@ int rowCount;
 CGFloat     lastScale;
 CGPoint     lastPoint;
 
+bool debugMode = YES;
+CGRect  tempRect;
+
+
 bool IsSearching;
+
+
+
+-(void)doLog:(NSString*)LogMessage
+{
+    if(debugMode == YES)
+    {
+        NSLog(LogMessage);
+    }
+}
 
 //search delegate
 -(void)doneEditing
@@ -106,9 +124,72 @@ bool IsSearching;
 
 -(void)searchTimerDidFinish:(NSTimer *) timer
 {
+    [self doLog:@"Search Now..."];
 
-    NSLog(@"Search Now...");
+
     searchTimer = [[NSTimer alloc]init];
+    
+    
+    
+    
+    for(AsyncImageView *myPOI in itemList)
+    {
+        [myPOI blastOff];
+    }
+    [itemList removeAllObjects];
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+    service.logging = NO;
+    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
+    if(sbMain.text.length == 0)
+    {
+        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    }
+    else 
+    {
+        [service Search_Bookings:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+    }
+    [service release];
+    
+    [lblLastRefreshDate setAlpha:1.0];
+    [lblReleaseToRefresh setAlpha:1.0];
+    [imgScrollArrow setAlpha:1.0];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            [UIView animateWithDuration:0.75
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^
+             {
+                 
+                 [lblLastRefreshDate setAlpha:0.0];
+                 [lblReleaseToRefresh setAlpha:0.0];
+                 [imgScrollArrow setAlpha:0.0];
+             }
+                             completion:nil];
+            
+        });
+    });
+    
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    if(iPad == YES)
+    {
+        CGRect contentRect = CGRectMake(0, 0, 768, 1024);
+        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+    }
+    else
+    {
+        CGRect contentRect = CGRectMake(0, 0, 320, 480);
+        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+    } 
+    
 }
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -133,33 +214,6 @@ bool IsSearching;
 }
 
 
-//-(void) handleSingleTap:(UITapGestureRecognizer *)gr 
-//{
-//    switch (tileHeightTemplate) {
-//        case 25:
-//            tileHeightTemplate = 50;
-//            tileWidthTemplate = 50;
-//            break;
-//        case 50:
-//            tileHeightTemplate = 100;
-//            tileWidthTemplate = 100;
-//            break;            
-//        case 100:
-//            tileHeightTemplate = 200;
-//            tileWidthTemplate = 200;
-//            break;            
-//        case 200:
-//            tileHeightTemplate = 25;
-//            tileWidthTemplate = 25;
-//            break;            
-//            
-//        default:
-//            break;
-//    }
-//    [self arrangeTiles];
-//
-//}
-
 
 
 
@@ -170,17 +224,6 @@ bool IsSearching;
         self.title = @"Flip Tabs";
         itemList    = [[NSMutableArray alloc] init];
         
-        
-//        UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-//        
-//        singleTap.numberOfTapsRequired = 2;
-//        singleTap.numberOfTouchesRequired = 1;
-//        [self.view addGestureRecognizer: singleTap];
-//        [singleTap release];
-        
-        
-
-        
     }
     return self;
     
@@ -190,20 +233,38 @@ bool IsSearching;
 
 -(void)arrangeTiles
 {
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    if(iPad == YES)
+    {
+                CGRect contentRect = CGRectMake(0, 0, 768,  1024);
+                    [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+    }
+    else
+    {
+                CGRect contentRect = CGRectMake(0, 0, 320,  480);                
+        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+    }
+
+    
+    rowCount = 0;
     colCount =0;
     lastX = 0;
     lastY = 0;
-    
+    [self doLog:[NSString stringWithFormat:@"item count %i", itemList.count]];
     for(AsyncImageView *myPOI in itemList)
     {
     
-        BOOL iPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-        iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
+
         
         if(iPad == YES)
         {
+            
+
+
+            
             switch (tileHeightTemplate) {
                     
                     //                
@@ -226,7 +287,7 @@ bool IsSearching;
                     break;                
                     
                 case 100:
-                    tileMargin = 5;
+                    tileMargin = 7;
                     myPOI.frame  = CGRectMake(lastX + tileMargin, lastY + tileMargin,tileWidthTemplate,tileHeightTemplate);                    
                     lastX = lastX + tileWidthTemplate + tileMargin;
                     colCount++;
@@ -288,6 +349,8 @@ bool IsSearching;
         }
         else
         {
+
+
             switch (tileHeightTemplate) {
                     
                     //                
@@ -373,6 +436,9 @@ bool IsSearching;
             }
         } 
     }
+
+        [self doLog:[NSString stringWithFormat:@"Scroller Height %f",self.svMain.contentSize.height]];
+
 }
 
 -(void)handleList:(id)result
@@ -392,9 +458,21 @@ bool IsSearching;
     [itemList removeAllObjects];
     
     NSMutableArray *myData = (NSMutableArray*)result;
-    for(SQLSTUDIOtbl_Booking_Result *myPOI in myData)
+    for(SQLSTUDIOtbl_Booking_Result_V2 *myPOI in myData)
     {
         NSString *myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
+        
+        
+//        if(myPOI.Is_Ad == YES)
+//        {
+//            myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
+//        }
+//        else
+//        {
+//            myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
+//        }
+        
+
          NSURL *url = [NSURL URLWithString:myTilePath];
         AsyncImageView *myTile;
         myTile = [[AsyncImageView alloc] initWithFrame:CGRectMake(lastX + tileMargin, lastY + tileMargin,tileWidthTemplate,tileHeightTemplate)];
@@ -412,11 +490,20 @@ bool IsSearching;
         [myTile release];
     }
         [self arrangeTiles];
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd hh:mm"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    lblLastRefreshDate.text = [NSString stringWithFormat:@"Last Updted %@", dateString];
+    [dateFormatter release];
+    
+
 }
 
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     UIScrollView *theScroll = (UIScrollView*)self.svMain;
     
@@ -511,11 +598,10 @@ bool IsSearching;
 -(void)viewDidAppear:(BOOL)animated 
 {
     [super viewDidAppear:animated];
-    
     SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
     service.logging = NO;
     NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
-    [service List_All_tbl_Booking_Weekly:self action:@selector(handleList:) Markets:markets];
+    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
     [service release];
 
 }
@@ -523,6 +609,9 @@ bool IsSearching;
 {
     [self setSbMain:nil];
     [self setSvMain:nil];
+    [self setLblReleaseToRefresh:nil];
+    [self setLblLastRefreshDate:nil];
+    [self setImgScrollArrow:nil];
     [super viewDidUnload];
 }
 
@@ -532,19 +621,56 @@ bool IsSearching;
     [sbMain release];
     [svMain release];
     [searchTimer release];
+    [lblReleaseToRefresh release];
+    [lblLastRefreshDate release];
+    [imgScrollArrow release];
     [super dealloc];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else 
-    {
-        return YES;
-    }
+    return NO;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    UIScrollView *svX = (UIScrollView*)self.svMain;
+    if(iPad == YES)
+    {
+        if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT_IPAD) 
+        {
+            [lblReleaseToRefresh setAlpha:1.0];
+            [lblLastRefreshDate setAlpha:1.0];
+            [imgScrollArrow setAlpha:1.0];
+        }
+        else
+        {
+            [lblReleaseToRefresh setAlpha:0.0];
+            [lblLastRefreshDate setAlpha:0.0];
+            [imgScrollArrow setAlpha:0.0];
+        }
+    }
+    else
+    {
+        if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT_IPHONE) 
+        {
+            [lblReleaseToRefresh setAlpha:1.0];
+            [lblLastRefreshDate setAlpha:1.0];
+            [imgScrollArrow setAlpha:1.0];
+        }
+        else
+        {
+            [lblReleaseToRefresh setAlpha:0.0];
+            [lblLastRefreshDate setAlpha:0.0];
+            [imgScrollArrow setAlpha:0.0];
+        }        
+    }
+
+}
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     for(AsyncImageView *myPOI in itemList)
@@ -552,6 +678,7 @@ bool IsSearching;
         [myPOI setOpacity:0.65];
     }
 }
+
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
@@ -568,11 +695,86 @@ bool IsSearching;
     if(iPad == YES)
     {
         sbMain.frame =  CGRectMake(0, 0, 768, 44);
+        if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT_IPAD) 
+        {
+            [self scrollRefresh];   
+        }
     }
     else
     {
         sbMain.frame =  CGRectMake(0, 0, 320, 44);        
+        if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT_IPHONE) 
+        {
+            [self scrollRefresh];   
+        }
     }
+    
+
+}
+-(void)scrollRefresh
+{
+    for(AsyncImageView *myPOI in itemList)
+    {
+        [myPOI blastOff];
+    
+    }
+    [itemList removeAllObjects];
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+    service.logging = NO;
+    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
+    if(sbMain.text.length == 0)
+    {
+        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    }
+    else 
+    {
+        [service Search_Bookings:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+    }
+    [service release];
+    
+    [lblLastRefreshDate setAlpha:1.0];
+    [lblReleaseToRefresh setAlpha:1.0];
+    [imgScrollArrow setAlpha:1.0];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            [UIView animateWithDuration:0.75
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^
+             {
+                 
+                 [lblLastRefreshDate setAlpha:0.0];
+                 [lblReleaseToRefresh setAlpha:0.0];
+                 [imgScrollArrow setAlpha:0.0];
+             }
+                             completion:nil];
+            
+        });
+    });
+    
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+//    if(iPad == YES)
+//    {
+//        CGRect contentRect = CGRectMake(0, 0, 768, 0);
+//        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+//    }
+//    else
+//    {
+//        CGRect contentRect = CGRectMake(0, 0, 320, 0);
+//        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
+//    }    
+    
+
+    
+    
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {  

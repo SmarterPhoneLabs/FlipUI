@@ -38,7 +38,7 @@
         }
 		return;
 	}
-    SQLSTUDIOtbl_Booking_Result *myResult = (SQLSTUDIOtbl_Booking_Result*)result;
+    SQLSTUDIOtbl_Booking_Result_V2 *myResult = (SQLSTUDIOtbl_Booking_Result_V2*)result;
     
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
