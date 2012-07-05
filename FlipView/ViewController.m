@@ -12,6 +12,7 @@
 #import "SQLSTUDIOServices.h"
 #import "AsyncImageView.h"
 #import "BackSideView.h"
+
 #define REFRESH_HEADER_HEIGHT_IPHONE 75.0f
 #define REFRESH_HEADER_HEIGHT_IPAD 150.0f
 
@@ -481,6 +482,7 @@ bool IsSearching;
         myTile.delegate = self;
         myTile.tileID = myPOI.Booking_ID;
         myTile.useRotation = YES;
+        myTile.isAd = myPOI.Is_Ad;
         
         [self.svMain addSubview:myTile];
         myTile.personName = @"";                
@@ -523,48 +525,85 @@ bool IsSearching;
     
     
 }
+
+-(void) handleURL:(id)result
+{
+    if([result isKindOfClass:[NSError class]]) 
+    {
+        NSError *MyError = (NSError*) result;
+        if(MyError.code == 410)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network" message:@"Your Network Connection is not Present" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil ];
+            [alert show];
+            [alert release];
+        }
+		return;
+	}
+    SQLSTUDIOtbl_Ads_Result *myResult = (SQLSTUDIOtbl_Ads_Result*)result;
+    
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [delegate launchURL:myResult.Ad_Target];
+
+}
+
+
 -(void)touchedOK:(AsyncImageView *) controller
 {   
     if(controller.flipModeOn == YES)
     {
-        UIScrollView *theScroll = (UIScrollView*)self.svMain;
-        [theScroll setScrollEnabled: NO];
-        for(AsyncImageView *myPOI in itemList)
-        {
-            if(myPOI.tileID != controller.tileID)
-            {
-                myPOI.isTouchable = NO;
-                [myPOI blastOff];
-            }
-        }
-        
-        BackSideView *bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:controller.tileID];
-        controller.backSideView = bSV;
-        [controller addSubview:controller.backSideView];
-        [controller.imageView setAlpha:0.1];
-        [bSV release];
-        //[controller.lblMain setText:controller.personName];
 
-        tempRect = controller.frame;
         
-        BOOL iPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-        iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-                    UIScrollView *svX = (UIScrollView*)self.svMain;
-        if(iPad == YES)
+        if(controller.isAd == YES)
         {
-
-            [controller maximize:svX.contentOffset.y];
+            
+            SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+            [service Get_tbl_Ads:self action:@selector(handleURL:) Ad_ID:controller.tileID];
+            [service release];       
         }
         else
         {
-            [controller maximize:svX.contentOffset.y];
+            
+            UIScrollView *theScroll = (UIScrollView*)self.svMain;
+            [theScroll setScrollEnabled: NO];
+            for(AsyncImageView *myPOI in itemList)
+            {
+                if(myPOI.tileID != controller.tileID)
+                {
+                    myPOI.isTouchable = NO;
+                    [myPOI blastOff];
+                }
+            }
+            BackSideView *bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:controller.tileID];
+            controller.backSideView = bSV;
+            [controller addSubview:controller.backSideView];
+            [controller.imageView setAlpha:0.1];
+            [bSV release];     
+            
+            tempRect = controller.frame;
+            
+            BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+            iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+            UIScrollView *svX = (UIScrollView*)self.svMain;
+            if(iPad == YES)
+            {
+                
+                [controller maximize:svX.contentOffset.y];
+            }
+            else
+            {
+                [controller maximize:svX.contentOffset.y];
+            }
+            [UIView beginAnimations:@"animation" context:nil];
+            [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:controller cache:YES]; 
+            [UIView setAnimationDuration:1.5];
+            [UIView commitAnimations]; 
         }
-        [UIView beginAnimations:@"animation" context:nil];
-        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:controller cache:YES]; 
-        [UIView setAnimationDuration:1.5];
-        [UIView commitAnimations]; 
+
+        //[controller.lblMain setText:controller.personName];
+
+
     }
     else
     {
@@ -638,7 +677,7 @@ bool IsSearching;
 #ifdef UI_USER_INTERFACE_IDIOM
     iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
-    UIScrollView *svX = (UIScrollView*)self.svMain;
+
     if(iPad == YES)
     {
         if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT_IPAD) 
@@ -760,19 +799,6 @@ bool IsSearching;
 #ifdef UI_USER_INTERFACE_IDIOM
     iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
-    
-//    if(iPad == YES)
-//    {
-//        CGRect contentRect = CGRectMake(0, 0, 768, 0);
-//        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
-//    }
-//    else
-//    {
-//        CGRect contentRect = CGRectMake(0, 0, 320, 0);
-//        [(UIScrollView*)self.svMain setContentSize: contentRect.size];
-//    }    
-    
-
     
     
 }

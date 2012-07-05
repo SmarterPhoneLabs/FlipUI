@@ -22,7 +22,7 @@
 
 
 
-
+-(void) launchURL:(NSString*)URL;
 //actions
 -(void) addGradient:(UIButton *) _button;
 -(void) addGradientImage:(UIImageView *) _button;

@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SQLSTUDIOMyService.h"
 #import "SQLSTUDIOServices.h"
-#import "AppDelegate.h"
+
 
 
 @interface BackSideView ()

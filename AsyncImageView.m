@@ -18,6 +18,8 @@
 @synthesize useRotation;
 @synthesize isTouchable;
 @synthesize backSideView;
+@synthesize isAd;
+
 
 CGRect oldRect;
 
@@ -76,6 +78,7 @@ int oldHeight;
     [personName release];
     //[lblMain release];
     [backSideView release];
+
     [super dealloc];
 }
 

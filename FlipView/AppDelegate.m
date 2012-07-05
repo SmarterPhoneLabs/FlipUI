@@ -17,7 +17,10 @@
 @synthesize imageCache;
 
 
-
+-(void)launchURL:(NSString *)URL
+{
+ [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];  
+}
 
 //init
 - (id)init

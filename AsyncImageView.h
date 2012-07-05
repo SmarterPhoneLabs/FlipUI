@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BackSideView.h"
+
 @class AsyncImageView;
 
 @protocol TileDelegate
@@ -29,10 +30,14 @@
     BOOL useRotation;
     BOOL isTouchable;
     BackSideView *backSideView;
+    BOOL isAd;
+
 }
 
 - (void)loadImageFromURL:(NSURL*)url;
 - (UIImage*) image;
+
+@property (nonatomic) BOOL isAd;
 @property (nonatomic, retain) BackSideView *backSideView;
 @property (nonatomic) BOOL isTouchable;
 @property (nonatomic) BOOL useRotation;
