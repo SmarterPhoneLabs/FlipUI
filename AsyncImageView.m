@@ -414,46 +414,12 @@ int oldHeight;
 }
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event 
 {
-//    if(isTouchable == YES)
-//    {
-//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
-//        dispatch_async(queue, ^{
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                [UIView animateWithDuration:0.1 
-//                                      delay:0
-//                                    options:UIViewAnimationOptionAllowUserInteraction
-//                                 animations:^
-//                 {
-//                                         
-//                     [imageView setFrame:CGRectMake(imageView.frame.origin.x + 5, imageView.frame.origin.y +5, self.frame.size.width - 10, self.frame.size.height - 10)];
-//                 }
-//                                 completion:nil];
-//                [activityIndicator stopAnimating];
-//            });
-//        });
-//    }
+
 }
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if(isTouchable == YES)
     {
-//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
-//        dispatch_async(queue, ^{
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                [UIView animateWithDuration:0.1 
-//                                      delay:0
-//                                    options:UIViewAnimationOptionAllowUserInteraction
-//                                 animations:^
-//                 {
-//                     
-//                     [imageView setFrame:CGRectMake(imageView.frame.origin.x - 5, imageView.frame.origin.y -5, self.frame.size.width , self.frame.size.height )];
-//                 }
-//                                 completion:nil];
-//                [activityIndicator stopAnimating];
-//            });
-//        });
-
-        
         [self setBackgroundColor:[UIColor clearColor]];
         if(flipModeOn == NO)
         {
