@@ -483,6 +483,7 @@ bool IsSearching;
         myTile.tileID = myPOI.Booking_ID;
         myTile.useRotation = YES;
         myTile.isAd = myPOI.Is_Ad;
+        myTile.hits = myPOI.Views;
         
         [self.svMain addSubview:myTile];
         myTile.personName = @"";                
@@ -626,6 +627,7 @@ bool IsSearching;
                 myPOI.isTouchable = YES;
                 [myPOI blastBack];
                 [self.svMain addSubview:myPOI];
+                [myPOI sendSubviewToBack:myPOI.imageView ];
             }
             else
             {

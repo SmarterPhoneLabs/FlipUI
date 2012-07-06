@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244470.315044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "300"
-         endingLineNumber = "300"
+         startingLineNumber = "362"
+         endingLineNumber = "362"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244237.25577"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "126"
+         endingLineNumber = "126"
          landmarkName = "-runSpinAnimationOnView:duration:rotations:repeat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244237.25577"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
          landmarkName = "-loadImageFromURL:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244470.315044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "304"
-         endingLineNumber = "304"
+         startingLineNumber = "366"
+         endingLineNumber = "366"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244470.315044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
+         startingLineNumber = "266"
+         endingLineNumber = "266"
          landmarkName = "-loadImageFromURL:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244237.25577"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "153"
+         endingLineNumber = "153"
          landmarkName = "-loadImageFromURL:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AsyncImageView.m"
-         timestampString = "362950246.044814"
+         timestampString = "363244470.315044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "320"
-         endingLineNumber = "320"
+         startingLineNumber = "382"
+         endingLineNumber = "382"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363157360.914505"
+         timestampString = "363245346.17625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "698"
-         endingLineNumber = "698"
+         startingLineNumber = "700"
+         endingLineNumber = "700"
          landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363157360.914505"
+         timestampString = "363245346.17625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "685"
-         endingLineNumber = "685"
+         startingLineNumber = "687"
+         endingLineNumber = "687"
          landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363149776.033374"
+         timestampString = "363242686.740604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "492"
-         endingLineNumber = "492"
+         startingLineNumber = "493"
+         endingLineNumber = "493"
          landmarkName = "-handleList:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/ViewController.m"
-         timestampString = "363157178.0013"
+         timestampString = "363242686.740604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "556"
-         endingLineNumber = "556"
+         startingLineNumber = "557"
+         endingLineNumber = "557"
          landmarkName = "-touchedOK:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -274,6 +274,32 @@
          startingLineNumber = "19"
          endingLineNumber = "19"
          landmarkName = "-handleIt:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AsyncImageView.m"
+         timestampString = "363244854.009544"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "620"
+         endingLineNumber = "620"
+         landmarkName = "-blastBack"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AsyncImageView.m"
+         timestampString = "363244854.009544"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "621"
+         endingLineNumber = "621"
+         landmarkName = "-blastBack"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

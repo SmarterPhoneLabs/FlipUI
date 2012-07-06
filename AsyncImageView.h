@@ -31,12 +31,21 @@
     BOOL isTouchable;
     BackSideView *backSideView;
     BOOL isAd;
-
+    int hits;
+    UIImageView *star1;
+    UIImageView *star2;
+    UIImageView *star3;
+    UIImageView *star4;
 }
 
 - (void)loadImageFromURL:(NSURL*)url;
 - (UIImage*) image;
 
+@property (atomic, retain) UIImageView *star1;
+@property (atomic, retain) UIImageView *star2;
+@property (atomic, retain) UIImageView *star3;
+@property (atomic, retain) UIImageView *star4;
+@property (atomic) int hits;
 @property (nonatomic) BOOL isAd;
 @property (nonatomic, retain) BackSideView *backSideView;
 @property (nonatomic) BOOL isTouchable;

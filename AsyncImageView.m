@@ -19,7 +19,11 @@
 @synthesize isTouchable;
 @synthesize backSideView;
 @synthesize isAd;
-
+@synthesize hits;
+@synthesize star1;
+@synthesize star2;
+@synthesize star3;
+@synthesize star4;
 
 CGRect oldRect;
 
@@ -66,6 +70,35 @@ int oldHeight;
 	
 	[activityIndicator startAnimating];
 	[self addSubview:activityIndicator];
+    
+    
+    
+    UIImage *testImg;
+    testImg = [UIImage imageNamed:@"goldstar.png"];
+    
+    star1 = [[UIImageView alloc] initWithImage:testImg];
+    star1.frame = CGRectMake(0,self.frame.size.height-24,24,24);
+    [self addSubview:star1];
+    [star1 setHidden:YES ];
+    
+    star2 = [[UIImageView alloc] initWithImage:testImg];
+    star2.frame = CGRectMake(24,self.frame.size.height-24,24,24);
+    [self addSubview:star2];
+    [star2 setHidden:YES ];    
+ 
+    
+    star3 = [[UIImageView alloc] initWithImage:testImg];
+    star3.frame = CGRectMake(48,self.frame.size.height-24,24,24);
+    [self addSubview:star3];
+    [star3 setHidden:YES ];
+
+    
+    star4 = [[UIImageView alloc] initWithImage:testImg];
+    star4.frame = CGRectMake(72,self.frame.size.height-24,24,24);
+    [self addSubview:star4];
+    [star4 setHidden:YES ];
+    
+    
 	return self;
 	
 }
@@ -181,7 +214,36 @@ int oldHeight;
                          [imageView setAlpha:1.0];
                          [imageView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
                      }
-                                     completion:nil];
+
+                    completion:^(BOOL finished) 
+                    {
+                        if(hits > 25)
+                        {
+                            [star1 setHidden:NO];
+                            [self bringSubviewToFront:star1];
+//                            [star1 bringSubviewToFront];
+                            
+                        }
+                        if(hits > 50)
+                        {
+                            [star2 setHidden:NO]; 
+                            [self bringSubviewToFront:star2];
+                        }
+                        if(hits > 75)
+                        {
+                            [star3 setHidden:NO];
+                            [self bringSubviewToFront:star3];                         
+                            
+                        }     
+                        if(hits > 100)
+                        {
+                            [star4 setHidden:NO];
+                            [self bringSubviewToFront:star4];                         
+                            
+                        }                        
+                     }
+                     ];
+
                     [activityIndicator stopAnimating];
                 });
             });
@@ -521,7 +583,9 @@ int oldHeight;
 
              }
              
-                             completion:^(BOOL completed){[self removeFromSuperview];
+                             completion:^(BOOL completed){
+                                 [self removeFromSuperview];
+                                
 }];
             
             
@@ -549,7 +613,39 @@ int oldHeight;
                  [imageView setAlpha:1.0];
                  [imageView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
              }
-                             completion:nil];       
+                             
+                             completion:^(BOOL finished) 
+             {
+                 [self sendSubviewToBack:imageView];
+                 if(hits > 25)
+                 {
+                     [star1 setHidden:NO];
+                     [self bringSubviewToFront:star1];
+                     
+
+                     
+                 }
+                 if(hits > 50)
+                 {
+                     [star2 setHidden:NO]; 
+                     [self bringSubviewToFront:star2];
+                 }
+                 if(hits > 75)
+                 {
+                     [star3 setHidden:NO];
+                     [self bringSubviewToFront:star3];                         
+                     
+                 }     
+                 if(hits > 100)
+                 {
+                     [star4 setHidden:NO];
+                     [self bringSubviewToFront:star4];                         
+                     
+                 }
+             }
+
+
+             ];       
         });
     });
 }

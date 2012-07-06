@@ -80,6 +80,7 @@
 		52880321159ECC1700C5D04A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5288031F159ECC1700C5D04A /* ViewController_iPad.xib */; };
 		52880339159ED20000C5D04A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52880338159ED20000C5D04A /* QuartzCore.framework */; };
 		5289012D15A3E2840059098B /* Arrowup.png in Resources */ = {isa = PBXBuildFile; fileRef = 5289012C15A3E2840059098B /* Arrowup.png */; };
+		52964BB415A6A3180022BD26 /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964BB315A6A3180022BD26 /* goldstar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +221,7 @@
 		52880320159ECC1700C5D04A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		52880338159ED20000C5D04A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5289012C15A3E2840059098B /* Arrowup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrowup.png; sourceTree = "<group>"; };
+		52964BB315A6A3180022BD26 /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +464,7 @@
 		5288032B159ED01300C5D04A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52964BB315A6A3180022BD26 /* goldstar.png */,
 				5289012C15A3E2840059098B /* Arrowup.png */,
 				520B2A3015A1E98A0034DCF9 /* linen.png */,
 				520B2A2E15A1E0810034DCF9 /* image-1-1024x960.jpg */,
@@ -528,6 +531,7 @@
 				520B2A3315A1F08B0034DCF9 /* BackSideView.xib in Resources */,
 				520B2A3F15A2087C0034DCF9 /* BackSideView_iPad.xib in Resources */,
 				5289012D15A3E2840059098B /* Arrowup.png in Resources */,
+				52964BB415A6A3180022BD26 /* goldstar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
