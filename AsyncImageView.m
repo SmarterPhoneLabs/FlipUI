@@ -30,6 +30,9 @@
 @synthesize sex;  
 @synthesize name;
 
+@synthesize crimeTypeImage;
+@synthesize crimeTypeImageLink;
+
 
 CGRect oldRect;
 
@@ -37,6 +40,18 @@ int oldx;
 int oldy;
 int oldWidth;
 int oldHeight;
+
+-(void)setCrimeType
+{
+    
+    AppDelegate *delegateX = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    crimeTypeImage = [delegateX getImageView:crimeTypeImageLink size:CGSizeMake( 24, 24) glass:YES isWebBased:YES];
+    crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
+    [crimeTypeImage setAlpha:0.5];
+    [imageView addSubview:crimeTypeImage];
+    
+    
+}
 
 -(void)maximize:(int)xOffSet
 {
@@ -77,7 +92,7 @@ int oldHeight;
 	[activityIndicator startAnimating];
 	[self addSubview:activityIndicator];
     
-    
+
     
     UIImage *testImg;
     testImg = [UIImage imageNamed:@"goldstar.png"];
@@ -172,6 +187,9 @@ int oldHeight;
     [backSideView release];
     [Booking_Date release]; 
     [name release];
+    //[crimeTypeImage release];
+    //[crimeTypeImageLink release];
+    
 
     [super dealloc];
 }
@@ -289,6 +307,8 @@ int oldHeight;
                         [imageView addSubview:star4];
                     }                    
 
+                    
+                    
                     [UIView animateWithDuration:2.0 
                                           delay:0
                                         options:UIViewAnimationOptionAllowUserInteraction

@@ -224,6 +224,8 @@ bool IsSearching;
     if (self) {
         self.title = @"Flip Tabs";
         itemList    = [[NSMutableArray alloc] init];
+        
+
 
     }
     return self;
@@ -464,15 +466,6 @@ bool IsSearching;
         NSString *myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
         
         
-//        if(myPOI.Is_Ad == YES)
-//        {
-//            myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
-//        }
-//        else
-//        {
-//            myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
-//        }
-        
 
          NSURL *url = [NSURL URLWithString:myTilePath];
         AsyncImageView *myTile;
@@ -488,10 +481,12 @@ bool IsSearching;
         myTile.name = myPOI.First_Name;
         myTile.sex = myPOI.Sex;
         myTile.Booking_Date = myPOI.Date_Of_Offense;
+        myTile.crimeTypeImageLink = [NSString stringWithFormat:@"http://jail-bookings.com/%@",myPOI.Crime_Type_Image];
+       // [self doLog:        myTile.crimeTypeImageLink];
         
         [self.svMain addSubview:myTile];
         myTile.personName = @"";                
-
+        [myTile setCrimeType];
         
         [itemList addObject:myTile];
         [myTile release];
@@ -522,7 +517,19 @@ bool IsSearching;
     [theScroll setBackgroundColor:[UIColor colorWithPatternImage:img]];
     
     penrose = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"penrose.png"]];
-    penrose.frame = CGRectMake(60 ,100, 200, 200);
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    if(iPad == YES)
+    {
+        penrose.frame = CGRectMake(200 ,200, 400, 400);    
+    }
+    else
+    {
+        penrose.frame = CGRectMake(60 ,100, 200, 200);
+    }
+
     penrose.contentMode = UIViewContentModeScaleAspectFill;
     [penrose setAlpha:0.0];
     [theScroll addSubview:penrose];
@@ -844,8 +851,21 @@ bool IsSearching;
     }
     
     UIScrollView *theScroll = (UIScrollView*)self.svMain;
-    penrose.frame = CGRectMake(60,100 + theScroll.contentOffset.y, 200, 200);
 
+
+    if(iPad == YES)
+    {
+        penrose.frame = CGRectMake(200 ,200, 400, 400);    
+        penrose.frame = CGRectMake(200,200 + theScroll.contentOffset.y, 400, 400);
+
+    }
+    else
+    {
+        penrose.frame = CGRectMake(60 ,100, 200, 200);
+        penrose.frame = CGRectMake(60,100 + theScroll.contentOffset.y, 200, 200);
+        
+    }
+    
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
@@ -953,7 +973,7 @@ bool IsSearching;
             sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
                 NSDate *first = [(AsyncImageView*)a  Booking_Date];
                 NSDate *second = [(AsyncImageView*)b Booking_Date];
-                return [first compare:second];
+                return [second compare:first];
             }];
             
             [itemList removeAllObjects];
@@ -1032,6 +1052,22 @@ bool IsSearching;
             }
             [self arrangeTiles];            
             break; 
+            
+        case 5:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSString *first = [(AsyncImageView*)a crimeTypeImageLink];
+                NSString *second = [(AsyncImageView*)b crimeTypeImageLink];
+                return [first compare:second];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+            }
+            [self arrangeTiles];            
+            break;            
             
         default:
             break;

@@ -42,8 +42,12 @@
     int market;
     int sex;
     NSString *name;
+    
+    UIImageView *crimeTypeImage;
+    NSString *crimeTypeImageLink;
 }
 
+- (void)setCrimeType;
 - (void)loadImageFromURL:(NSURL*)url;
 - (UIImage*) image;
 
@@ -55,6 +59,8 @@
 @property (atomic, retain) UIImageView *star2;
 @property (atomic, retain) UIImageView *star3;
 @property (atomic, retain) UIImageView *star4;
+@property (nonatomic, retain) UIImageView *crimeTypeImage;
+@property (nonatomic, retain) NSString *crimeTypeImageLink;
 @property (nonatomic, retain) NSNumber *hits;
 @property (nonatomic) BOOL isAd;
 @property (nonatomic, retain) BackSideView *backSideView;
