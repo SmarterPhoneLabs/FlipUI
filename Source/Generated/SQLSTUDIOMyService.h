@@ -75,6 +75,10 @@
 	- (SoapRequest*) List_All_tbl_Booking_Weekly_V2: (id) target action: (SEL) action Markets: (NSString*) Markets;
 
 	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) Search_Bookings_V2: (id <SoapDelegate>) handler Phrase: (NSString*) Phrase Markets: (NSString*) Markets;
+	- (SoapRequest*) Search_Bookings_V2: (id) target action: (SEL) action Phrase: (NSString*) Phrase Markets: (NSString*) Markets;
+
+	/* Returns NSMutableArray*.  */
 	- (SoapRequest*) List_All_tbl_Market: (id <SoapDelegate>) handler;
 	- (SoapRequest*) List_All_tbl_Market: (id) target action: (SEL) action;
 

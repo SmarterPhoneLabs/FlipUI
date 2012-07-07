@@ -193,6 +193,24 @@
 	}
 
 	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) Search_Bookings_V2: (id <SoapDelegate>) handler Phrase: (NSString*) Phrase Markets: (NSString*) Markets
+	{
+		return [self Search_Bookings_V2: handler action: nil Phrase: Phrase Markets: Markets];
+	}
+
+	- (SoapRequest*) Search_Bookings_V2: (id) _target action: (SEL) _action Phrase: (NSString*) Phrase Markets: (NSString*) Markets
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: Phrase forName: @"Phrase"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: Markets forName: @"Markets"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"Search_Bookings_V2" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Search_Bookings_V2" postData: _envelope deserializeTo: [[SQLSTUDIOArrayOftbl_Booking_Result_V2 alloc] autorelease]];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns NSMutableArray*.  */
 	- (SoapRequest*) List_All_tbl_Market: (id <SoapDelegate>) handler
 	{
 		return [self List_All_tbl_Market: handler action: nil];
