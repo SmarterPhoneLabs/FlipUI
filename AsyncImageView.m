@@ -25,6 +25,12 @@
 @synthesize star3;
 @synthesize star4;
 
+@synthesize Booking_Date;
+@synthesize market;
+@synthesize sex;  
+@synthesize name;
+
+
 CGRect oldRect;
 
 int oldx;
@@ -77,26 +83,79 @@ int oldHeight;
     testImg = [UIImage imageNamed:@"goldstar.png"];
     
     star1 = [[UIImageView alloc] initWithImage:testImg];
-    star1.frame = CGRectMake(0,self.frame.size.height-24,24,24);
-    [self addSubview:star1];
-    [star1 setHidden:YES ];
+
+    if(self.frame.size.width == 25)
+    {
+        star1.frame = CGRectMake(0,self.frame.size.height-6,6,6);        
+    }
+    if(self.frame.size.width == 50)
+    {
+        star1.frame = CGRectMake(0,self.frame.size.height-12,12,12);        
+    }
+    if(self.frame.size.width == 100)
+    {
+        star1.frame = CGRectMake(0,self.frame.size.height-24,24,24);        
+    } 
+    if(self.frame.size.width == 200)
+    {
+        star1.frame = CGRectMake(0,self.frame.size.height-48,48,48);        
+    }    
     
     star2 = [[UIImageView alloc] initWithImage:testImg];
-    star2.frame = CGRectMake(24,self.frame.size.height-24,24,24);
-    [self addSubview:star2];
-    [star2 setHidden:YES ];    
+    if(self.frame.size.width == 25)
+    {
+        star2.frame = CGRectMake(6,self.frame.size.height-6,6,6);        
+    }
+    if(self.frame.size.width == 50)
+    {
+        star2.frame = CGRectMake(12,self.frame.size.height-12,12,12);        
+    }
+    if(self.frame.size.width == 100)
+    {
+        star2.frame = CGRectMake(24,self.frame.size.height-24,24,24);        
+    } 
+    if(self.frame.size.width == 200)
+    {
+        star2.frame = CGRectMake(48,self.frame.size.height-48,48,48);        
+    }  
  
     
     star3 = [[UIImageView alloc] initWithImage:testImg];
-    star3.frame = CGRectMake(48,self.frame.size.height-24,24,24);
-    [self addSubview:star3];
-    [star3 setHidden:YES ];
-
+    if(self.frame.size.width == 25)
+    {
+        star3.frame = CGRectMake(12,self.frame.size.height-6,6,6);        
+    }
+    if(self.frame.size.width == 50)
+    {
+        star3.frame = CGRectMake(24,self.frame.size.height-12,12,12);        
+    }
+    if(self.frame.size.width == 100)
+    {
+        star3.frame = CGRectMake(48,self.frame.size.height-24,24,24);        
+    } 
+    if(self.frame.size.width == 200)
+    {
+        star3.frame = CGRectMake(96,self.frame.size.height-48,48,48);        
+    }  
     
     star4 = [[UIImageView alloc] initWithImage:testImg];
-    star4.frame = CGRectMake(72,self.frame.size.height-24,24,24);
-    [self addSubview:star4];
-    [star4 setHidden:YES ];
+    if(self.frame.size.width == 25)
+    {
+        star4.frame = CGRectMake(18,self.frame.size.height-6,6,6);        
+    }
+    if(self.frame.size.width == 50)
+    {
+        star4.frame = CGRectMake(36,self.frame.size.height-12,12,12);        
+    }
+    if(self.frame.size.width == 100)
+    {
+        star4.frame = CGRectMake(72,self.frame.size.height-24,24,24);        
+    } 
+    if(self.frame.size.width == 200)
+    {
+        star4.frame = CGRectMake(144,self.frame.size.height-48,48,48);        
+    }  
+
     
     
 	return self;
@@ -111,6 +170,8 @@ int oldHeight;
     [personName release];
     //[lblMain release];
     [backSideView release];
+    [Booking_Date release]; 
+    [name release];
 
     [super dealloc];
 }
@@ -119,7 +180,18 @@ int oldHeight;
 {
     CABasicAnimation* rotationAnimation;
     rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration ];
+    
+    int x = arc4random() % 2;
+    if(x == 1)
+    {
+        
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration * -1];    
+    }
+    else {
+        
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration ];
+    }
+
     rotationAnimation.duration = duration;
     rotationAnimation.cumulative = YES;
     rotationAnimation.repeatCount = repeat;
@@ -200,8 +272,23 @@ int oldHeight;
                         default:
                             break;
                     }
-                    
-                    
+                    if([hits intValue] >= 25)
+                    {
+                        [imageView addSubview:star1];
+                    }
+                    if([hits intValue]>= 50)
+                    {
+                        [imageView addSubview:star2];
+                    } 
+                    if([hits intValue]>= 75)
+                    {
+                        [imageView addSubview:star3];
+                    }
+                    if([hits intValue]>= 100)
+                    {
+                        [imageView addSubview:star4];
+                    }                    
+
                     [UIView animateWithDuration:2.0 
                                           delay:0
                                         options:UIViewAnimationOptionAllowUserInteraction
@@ -217,30 +304,7 @@ int oldHeight;
 
                     completion:^(BOOL finished) 
                     {
-                        if(hits > 25)
-                        {
-                            [star1 setHidden:NO];
-                            [self bringSubviewToFront:star1];
-//                            [star1 bringSubviewToFront];
-                            
-                        }
-                        if(hits > 50)
-                        {
-                            [star2 setHidden:NO]; 
-                            [self bringSubviewToFront:star2];
-                        }
-                        if(hits > 75)
-                        {
-                            [star3 setHidden:NO];
-                            [self bringSubviewToFront:star3];                         
-                            
-                        }     
-                        if(hits > 100)
-                        {
-                            [star4 setHidden:NO];
-                            [self bringSubviewToFront:star4];                         
-                            
-                        }                        
+                       
                      }
                      ];
 
@@ -500,6 +564,8 @@ int oldHeight;
 
 -(void)blastOff
 {
+
+
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
     dispatch_async(queue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -584,6 +650,7 @@ int oldHeight;
              }
              
                              completion:^(BOOL completed){
+
                                  [self removeFromSuperview];
                                 
 }];
@@ -617,31 +684,7 @@ int oldHeight;
                              completion:^(BOOL finished) 
              {
                  [self sendSubviewToBack:imageView];
-                 if(hits > 25)
-                 {
-                     [star1 setHidden:NO];
-                     [self bringSubviewToFront:star1];
-                     
-
-                     
-                 }
-                 if(hits > 50)
-                 {
-                     [star2 setHidden:NO]; 
-                     [self bringSubviewToFront:star2];
-                 }
-                 if(hits > 75)
-                 {
-                     [star3 setHidden:NO];
-                     [self bringSubviewToFront:star3];                         
-                     
-                 }     
-                 if(hits > 100)
-                 {
-                     [star4 setHidden:NO];
-                     [self bringSubviewToFront:star4];                         
-                     
-                 }
+                 
              }
 
 

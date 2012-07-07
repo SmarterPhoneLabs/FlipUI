@@ -15,6 +15,7 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @synthesize imageCache;
+@synthesize facebook;
 
 
 -(void)launchURL:(NSString *)URL
@@ -39,6 +40,7 @@
     [imageCache release];
     [_window release];
     [_viewController release];
+    [facebook release];
     [super dealloc];
 }
 
@@ -54,6 +56,10 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    facebook = [[Facebook alloc] initWithAppId:@"146076692192037" andDelegate:self];
+    
     return YES;
 }
 
@@ -285,6 +291,27 @@
     [layer addSublayer:shineLayer];
 }
 
-
+-(bool)loginFacebook
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] 
+        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    if (![facebook isSessionValid]) {
+        NSArray *permissions = [[NSArray alloc] initWithObjects:
+                                @"publish_stream",
+                                nil];
+        [facebook authorize:permissions];
+        [permissions release];
+        return YES;
+    }
+    else 
+    {
+        return NO;
+    }
+}
 
 @end

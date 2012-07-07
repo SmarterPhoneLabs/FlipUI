@@ -18,11 +18,16 @@
 @end
 
 @implementation BackSideView
+@synthesize btnTwitter;
+
+NSString *cachedImage;
+int selectedBooking;
+@synthesize btnFacebook;
 @synthesize imgConvict;
 @synthesize activityMain;
 @synthesize txtCharges;
 @synthesize lblName;
-
+@synthesize parentController;
 
 -(void) handleIt:(id)result
 {
@@ -46,6 +51,8 @@
     txtCharges.text = myResult.Charge;
    
     NSString *imagePaht = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myResult.ssImage_Booking_Image_1];
+    cachedImage = [imagePaht copy];
+
     BOOL iPad = NO;
 #ifdef UI_USER_INTERFACE_IDIOM
     iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -80,6 +87,7 @@
             
         });
     });
+    
 }
 
 
@@ -88,7 +96,7 @@
     self = [super initWithFrame:frame];
     if (self) 
     {
-
+        selectedBooking = TagID;
         BOOL iPad = NO;
 #ifdef UI_USER_INTERFACE_IDIOM
         iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -147,6 +155,67 @@
     [txtCharges release];
     [activityMain release];
 //    [imgConvict release];
+    [btnFacebook release];
+    [btnTwitter release];
     [super dealloc];
+}
+
+- (IBAction)btnTwitter_Touch:(id)sender 
+{
+    // Set up the built-in twitter composition view controller.
+    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    
+    NSString *shortenURL = [NSString stringWithFormat:@"http://www.jail-bookings.com/Bookings.aspx?BookingID=%i",selectedBooking];
+    NSString *shortenedURL = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.bit.ly/v3/shorten?login=%@&apikey=%@&longUrl=%@&format=txt", @"smarterphonelabs", @"R_8b53e012ef62da83965a8a4d65e299e5", shortenURL]] encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    NSString *tweetContent;
+    tweetContent = [NSString stringWithFormat:@"%@ was booked. Read more at %@ @JailBookings", self.lblName.text, shortenedURL];
+    
+    // Set the initial tweet text. See the framework for additional properties that can be set.
+    [tweetViewController setInitialText:tweetContent];
+    
+    // Create the completion handler block.
+    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+        NSString *output;
+        
+        switch (result) {
+            case TWTweetComposeViewControllerResultCancelled:
+                // The cancel button was tapped.
+                output = @"Tweet cancelled.";
+                break;
+            case TWTweetComposeViewControllerResultDone:
+                // The tweet was sent.
+                output = @"Tweet done.";
+                break;
+            default:
+                break;
+        }
+        
+        //        [self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+        
+        // Dismiss the tweet composition view controller.
+        [parentController dismissModalViewControllerAnimated:YES];
+    }];
+    
+    // Present the tweet composition view controller modally.
+    [parentController presentModalViewController:tweetViewController animated:YES];   
+}
+
+- (IBAction)btnFacebook_Touch:(id)sender 
+{
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [delegate loginFacebook];
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"146076692192037", @"app_id",
+                                   [NSString stringWithFormat:@"http://www.jail-bookings.com/Bookings.aspx?BookingID=%i",selectedBooking], @"link",
+                                   [NSString stringWithFormat:@"%@ booked",self.lblName.text], @"name",
+                                   [NSString stringWithFormat:@"Booking information for %@", self.lblName.text], @"caption",
+                                   [NSString stringWithFormat:@"%@ was booked for %@",lblName.text, txtCharges.text], @"description",
+                                   @"Bookings",  @"message",
+                                   cachedImage, @"picture",
+                                   nil];
+    
+    [delegate.facebook dialog:@"feed" andParams:params andDelegate:delegate];
 }
 @end

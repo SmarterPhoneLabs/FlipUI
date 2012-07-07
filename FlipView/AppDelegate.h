@@ -7,20 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
+        Facebook *facebook;
     NSMutableDictionary *imageCache; 
 }
 
+@property (nonatomic, retain) Facebook *facebook;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController;
 
 
+
+-(bool)loginFacebook;
 
 -(void) launchURL:(NSString*)URL;
 //actions

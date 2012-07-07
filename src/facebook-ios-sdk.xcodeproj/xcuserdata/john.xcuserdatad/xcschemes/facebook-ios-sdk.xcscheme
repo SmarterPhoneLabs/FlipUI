@@ -13,10 +13,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52880302159ECC1700C5D04A"
-               BuildableName = "FlipView.app"
-               BlueprintName = "JailBookings"
-               ReferencedContainer = "container:JailBookings.xcodeproj">
+               BlueprintIdentifier = "D2AAC07D0554694100DB518D"
+               BuildableName = "libfacebook_ios_sdk.a"
+               BlueprintName = "facebook-ios-sdk"
+               ReferencedContainer = "container:facebook-ios-sdk.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,15 +28,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
-            BlueprintName = "JailBookings"
-            ReferencedContainer = "container:JailBookings.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -47,15 +38,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
-            BlueprintName = "JailBookings"
-            ReferencedContainer = "container:JailBookings.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -65,15 +47,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
-            BlueprintName = "JailBookings"
-            ReferencedContainer = "container:JailBookings.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

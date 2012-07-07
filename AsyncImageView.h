@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BackSideView.h"
+#import "SQLSTUDIOServices.h"
 
 @class AsyncImageView;
 
@@ -31,21 +32,30 @@
     BOOL isTouchable;
     BackSideView *backSideView;
     BOOL isAd;
-    int hits;
+    NSNumber *hits; 
     UIImageView *star1;
     UIImageView *star2;
     UIImageView *star3;
     UIImageView *star4;
+
+    NSDate *Booking_Date;
+    int market;
+    int sex;
+    NSString *name;
 }
 
 - (void)loadImageFromURL:(NSURL*)url;
 - (UIImage*) image;
 
+@property (nonatomic, retain) NSDate *Booking_Date;
+@property (nonatomic) int market;
+@property (nonatomic) int sex;
+@property (nonatomic, retain) NSString *name; 
 @property (atomic, retain) UIImageView *star1;
 @property (atomic, retain) UIImageView *star2;
 @property (atomic, retain) UIImageView *star3;
 @property (atomic, retain) UIImageView *star4;
-@property (atomic) int hits;
+@property (nonatomic, retain) NSNumber *hits;
 @property (nonatomic) BOOL isAd;
 @property (nonatomic, retain) BackSideView *backSideView;
 @property (nonatomic) BOOL isTouchable;

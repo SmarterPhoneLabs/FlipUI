@@ -30,6 +30,8 @@
 @synthesize sbMain;
 @synthesize itemList;
 @synthesize searchTimer;
+@synthesize scMain;
+@synthesize penrose;
 
 int unlockSize;
 int lastX;
@@ -131,8 +133,6 @@ bool IsSearching;
     searchTimer = [[NSTimer alloc]init];
     
     
-    
-    
     for(AsyncImageView *myPOI in itemList)
     {
         [myPOI blastOff];
@@ -147,7 +147,7 @@ bool IsSearching;
     }
     else 
     {
-        [service Search_Bookings:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
     }
     [service release];
     
@@ -224,7 +224,7 @@ bool IsSearching;
     if (self) {
         self.title = @"Flip Tabs";
         itemList    = [[NSMutableArray alloc] init];
-        
+
     }
     return self;
     
@@ -483,7 +483,11 @@ bool IsSearching;
         myTile.tileID = myPOI.Booking_ID;
         myTile.useRotation = YES;
         myTile.isAd = myPOI.Is_Ad;
-        myTile.hits = myPOI.Views;
+        myTile.hits = [[NSNumber alloc] initWithInt:myPOI.Views];
+        myTile.market = myPOI.Market_ID;
+        myTile.name = myPOI.First_Name;
+        myTile.sex = myPOI.Sex;
+        myTile.Booking_Date = myPOI.Date_Of_Offense;
         
         [self.svMain addSubview:myTile];
         myTile.personName = @"";                
@@ -508,10 +512,37 @@ bool IsSearching;
 {
 
     [super viewDidLoad];
+
+    
     UIScrollView *theScroll = (UIScrollView*)self.svMain;
+    
+    
     
     UIImage *img = [UIImage imageNamed:@"image-1-1024x960.jpg"];
     [theScroll setBackgroundColor:[UIColor colorWithPatternImage:img]];
+    
+    penrose = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"penrose.png"]];
+    penrose.frame = CGRectMake(60 ,100, 200, 200);
+    penrose.contentMode = UIViewContentModeScaleAspectFill;
+    [penrose setAlpha:0.0];
+    [theScroll addSubview:penrose];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            [UIView animateWithDuration:5.0
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^
+             {
+                 [penrose setAlpha:1.0];
+             }
+                             completion:nil];
+            
+        });
+    });
 
     
     theScroll.decelerationRate = UIScrollViewDecelerationRateNormal;
@@ -523,7 +554,7 @@ bool IsSearching;
     lastX = 0;
     lastY = 0;
 
-    
+
     
 }
 
@@ -549,11 +580,59 @@ bool IsSearching;
 
 
 -(void)touchedOK:(AsyncImageView *) controller
-{   
+{  
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
     if(controller.flipModeOn == YES)
     {
 
-        
+        [sbMain setAlpha:1.0];
+        [scMain setAlpha:1.0];
+        if(iPad == YES)
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:0.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                                 [sbMain setAlpha:0.0];
+                                 [scMain setAlpha:0.0];
+                         svMain.frame = CGRectMake(0, 0, 768, 1024);
+                     }
+                                     completion:nil];
+                    
+                });
+            });
+
+        }
+        else
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:0.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                                 [sbMain setAlpha:0.0];
+                                 [scMain setAlpha:0.0];
+                         svMain.frame = CGRectMake(0, 0, 320, 480);
+                     }
+                                     completion:nil];
+                    
+                });
+            });           
+        }
         if(controller.isAd == YES)
         {
             
@@ -575,6 +654,7 @@ bool IsSearching;
                 }
             }
             BackSideView *bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:controller.tileID];
+            bSV.parentController = self;
             controller.backSideView = bSV;
             [controller addSubview:controller.backSideView];
             [controller.imageView setAlpha:0.1];
@@ -582,10 +662,7 @@ bool IsSearching;
             
             tempRect = controller.frame;
             
-            BOOL iPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-            iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
+
             UIScrollView *svX = (UIScrollView*)self.svMain;
             if(iPad == YES)
             {
@@ -608,6 +685,51 @@ bool IsSearching;
     }
     else
     {
+        [sbMain setAlpha:0.0];
+        [scMain setAlpha:0.0];
+        if(iPad == YES)
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:0.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                         [sbMain setAlpha:1.0];
+                         [scMain setAlpha:1.0];
+                         svMain.frame = CGRectMake(0, 72, 768, 1024);
+                     }
+                                     completion:nil];
+                    
+                });
+            });
+            
+        }
+        else
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:0.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                         [sbMain setAlpha:1.0];
+                         [scMain setAlpha:1.0];
+                         svMain.frame = CGRectMake(0, 72, 320, 480);
+                     }
+                                     completion:nil];
+                    
+                });
+            });           
+        }
         UIScrollView *theScroll = (UIScrollView*)self.svMain;
         [theScroll setScrollEnabled: YES];
         
@@ -615,6 +737,12 @@ bool IsSearching;
         [controller minimize:tempRect];
         [controller.imageView setAlpha:1.0];
         [controller addSubview:controller.imageView ];
+        
+        
+      
+        
+        
+
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:controller  cache:YES]; 
         [UIView setAnimationDuration:1.5];
         
@@ -653,6 +781,7 @@ bool IsSearching;
     [self setLblReleaseToRefresh:nil];
     [self setLblLastRefreshDate:nil];
     [self setImgScrollArrow:nil];
+    [self setScMain:nil];
     [super viewDidUnload];
 }
 
@@ -665,6 +794,7 @@ bool IsSearching;
     [lblReleaseToRefresh release];
     [lblLastRefreshDate release];
     [imgScrollArrow release];
+    [scMain release];
     [super dealloc];
 }
 
@@ -675,6 +805,8 @@ bool IsSearching;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+
+    
     BOOL iPad = NO;
 #ifdef UI_USER_INTERFACE_IDIOM
     iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -710,6 +842,9 @@ bool IsSearching;
             [imgScrollArrow setAlpha:0.0];
         }        
     }
+    
+    UIScrollView *theScroll = (UIScrollView*)self.svMain;
+    penrose.frame = CGRectMake(60,100 + theScroll.contentOffset.y, 200, 200);
 
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -769,7 +904,7 @@ bool IsSearching;
     }
     else 
     {
-        [service Search_Bookings:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
     }
     [service release];
     
@@ -809,4 +944,97 @@ bool IsSearching;
 
 }
 
+- (IBAction)scMain_Touch:(id)sender 
+{
+    NSArray *sortedArray;
+    switch (self.scMain.selectedSegmentIndex) {
+        case 0:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSDate *first = [(AsyncImageView*)a  Booking_Date];
+                NSDate *second = [(AsyncImageView*)b Booking_Date];
+                return [first compare:second];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+            }
+ 
+            [self arrangeTiles];
+
+            
+
+            break;
+            
+        case 1:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSString *first = [NSString stringWithFormat:@"%i",[(AsyncImageView*)a market]];
+                NSString *second = [NSString stringWithFormat:@"%i", [(AsyncImageView*)b market]];
+                return [first compare:second];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+            }
+            [self arrangeTiles];
+            break; 
+            
+        case 2:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSString *first = [NSString stringWithFormat:@"%i",[(AsyncImageView*)a sex]];
+                NSString *second = [NSString stringWithFormat:@"%i", [(AsyncImageView*)b sex]];
+                return [first compare:second];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+            }
+            [self arrangeTiles];            
+            break; 
+            
+        case 3:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSString *first = [(AsyncImageView*)a name];
+                NSString *second = [(AsyncImageView*)b name];
+                return [first compare:second];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+            }
+            [self arrangeTiles];            
+            break;
+            
+        case 4:
+            
+            sortedArray = [itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSNumber *first = [(AsyncImageView*)a hits];
+                NSNumber *second = [(AsyncImageView*)b hits];
+                return [second compare:first];
+            }];
+            
+            [itemList removeAllObjects];
+            for(AsyncImageView *myPOI in sortedArray)
+            {
+                [itemList addObject:myPOI];
+
+            }
+            [self arrangeTiles];            
+            break; 
+            
+        default:
+            break;
+    }
+}
 @end
