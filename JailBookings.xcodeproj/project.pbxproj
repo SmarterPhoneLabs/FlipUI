@@ -100,6 +100,14 @@
 		52964C7115A870760022BD26 /* facebook-fan-icon-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964C7015A870760022BD26 /* facebook-fan-icon-shadow.png */; };
 		52964C7315A877370022BD26 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52964C7215A877370022BD26 /* Twitter.framework */; };
 		52964C7515A877650022BD26 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964C7415A877650022BD26 /* Twitter.png */; };
+		52964C8215AA62080022BD26 /* Main_Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52964C8115AA62080022BD26 /* Main_Window.xib */; };
+		52964C8C15AA66260022BD26 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52964C8B15AA66250022BD26 /* MapKit.framework */; };
+		52964C8E15AA67040022BD26 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52964C8D15AA67040022BD26 /* CoreLocation.framework */; };
+		52964C9015AA686C0022BD26 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52964C8F15AA686C0022BD26 /* Accounts.framework */; };
+		52964C9915AA69690022BD26 /* MapView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52964C9515AA69690022BD26 /* MapView_iPad.xib */; };
+		52964C9A15AA69690022BD26 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9715AA69690022BD26 /* MapView.m */; };
+		52964C9B15AA69690022BD26 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52964C9815AA69690022BD26 /* MapView.xib */; };
+		52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9D15AA69FE0022BD26 /* MyAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +293,16 @@
 		52964C7015A870760022BD26 /* facebook-fan-icon-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-fan-icon-shadow.png"; sourceTree = "<group>"; };
 		52964C7215A877370022BD26 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		52964C7415A877650022BD26 /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		52964C8115AA62080022BD26 /* Main_Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main_Window.xib; sourceTree = "<group>"; };
+		52964C8B15AA66250022BD26 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		52964C8D15AA67040022BD26 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		52964C8F15AA686C0022BD26 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		52964C9515AA69690022BD26 /* MapView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapView_iPad.xib; path = FlipView/MapView_iPad.xib; sourceTree = "<group>"; };
+		52964C9615AA69690022BD26 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapView.h; path = FlipView/MapView.h; sourceTree = "<group>"; };
+		52964C9715AA69690022BD26 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapView.m; path = FlipView/MapView.m; sourceTree = "<group>"; };
+		52964C9815AA69690022BD26 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapView.xib; path = FlipView/MapView.xib; sourceTree = "<group>"; };
+		52964C9C15AA69FE0022BD26 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = FlipView/MyAnnotation.h; sourceTree = "<group>"; };
+		52964C9D15AA69FE0022BD26 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAnnotation.m; path = FlipView/MyAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +310,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52964C9015AA686C0022BD26 /* Accounts.framework in Frameworks */,
+				52964C8E15AA67040022BD26 /* CoreLocation.framework in Frameworks */,
+				52964C8C15AA66260022BD26 /* MapKit.framework in Frameworks */,
 				52964C7315A877370022BD26 /* Twitter.framework in Frameworks */,
 				520C1784159F2CA300A4B4A8 /* SystemConfiguration.framework in Frameworks */,
 				52880339159ED20000C5D04A /* QuartzCore.framework in Frameworks */,
@@ -391,6 +412,12 @@
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				52964C9515AA69690022BD26 /* MapView_iPad.xib */,
+				52964C9615AA69690022BD26 /* MapView.h */,
+				52964C9715AA69690022BD26 /* MapView.m */,
+				52964C9815AA69690022BD26 /* MapView.xib */,
+				52964C8815AA65A40022BD26 /* MyAnnotations */,
+				52964C8015AA61F00022BD26 /* TabController */,
 				52964C3E15A86A000022BD26 /* FacebookSDK */,
 				520B2A2715A1DE570034DCF9 /* BackSide */,
 				520C1785159F3A4E00A4B4A8 /* AsyncImage */,
@@ -413,6 +440,9 @@
 		52880306159ECC1700C5D04A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52964C8F15AA686C0022BD26 /* Accounts.framework */,
+				52964C8D15AA67040022BD26 /* CoreLocation.framework */,
+				52964C8B15AA66250022BD26 /* MapKit.framework */,
 				52964C7215A877370022BD26 /* Twitter.framework */,
 				520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */,
 				52880338159ED20000C5D04A /* QuartzCore.framework */,
@@ -602,6 +632,23 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		52964C8015AA61F00022BD26 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				52964C8115AA62080022BD26 /* Main_Window.xib */,
+			);
+			name = TabController;
+			sourceTree = "<group>";
+		};
+		52964C8815AA65A40022BD26 /* MyAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				52964C9C15AA69FE0022BD26 /* MyAnnotation.h */,
+				52964C9D15AA69FE0022BD26 /* MyAnnotation.m */,
+			);
+			name = MyAnnotations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -685,6 +732,9 @@
 				52964C6215A86A110022BD26 /* FBDialog.bundle in Resources */,
 				52964C7115A870760022BD26 /* facebook-fan-icon-shadow.png in Resources */,
 				52964C7515A877650022BD26 /* Twitter.png in Resources */,
+				52964C8215AA62080022BD26 /* Main_Window.xib in Resources */,
+				52964C9915AA69690022BD26 /* MapView_iPad.xib in Resources */,
+				52964C9B15AA69690022BD26 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +816,8 @@
 				52964C6A15A86A110022BD26 /* SBJsonBase.m in Sources */,
 				52964C6B15A86A110022BD26 /* SBJsonParser.m in Sources */,
 				52964C6C15A86A110022BD26 /* SBJsonWriter.m in Sources */,
+				52964C9A15AA69690022BD26 /* MapView.m in Sources */,
+				52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

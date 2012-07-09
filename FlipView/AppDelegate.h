@@ -13,17 +13,28 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
-        Facebook *facebook;
+    Facebook *facebook;
     NSMutableDictionary *imageCache; 
+    NSMutableDictionary *marketList;
 }
 
 @property (nonatomic, retain) Facebook *facebook;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ViewController *viewController;
+//@property (strong, nonatomic) UIWindow *window;
+//@property (strong, nonatomic) ViewController *viewController;
 
 
+
+
+@property (retain, nonatomic) IBOutlet UINavigationController *navHome;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+
+@property (nonatomic, retain) NSMutableDictionary *marketList;
+
+
+-(NSString*)getMarkets;
 
 -(bool)loginFacebook;
 

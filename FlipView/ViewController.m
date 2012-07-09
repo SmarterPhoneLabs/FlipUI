@@ -13,12 +13,14 @@
 #import "AsyncImageView.h"
 #import "BackSideView.h"
 
+
 #define REFRESH_HEADER_HEIGHT_IPHONE 75.0f
 #define REFRESH_HEADER_HEIGHT_IPAD 150.0f
 
 
 
 @implementation ViewController
+
 
 @synthesize tileWidthTemplate;
 @synthesize tileHeightTemplate;
@@ -217,7 +219,19 @@ bool IsSearching;
 
 
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.title = @"Flip Tabs";
+        itemList    = [[NSMutableArray alloc] init];
+        
+        
+        
+    }
+    return self;
 
+}
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -561,6 +575,12 @@ bool IsSearching;
     lastX = 0;
     lastY = 0;
 
+    
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+    service.logging = NO;
+    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
+    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    [service release];
 
     
 }
@@ -774,11 +794,7 @@ bool IsSearching;
 -(void)viewDidAppear:(BOOL)animated 
 {
     [super viewDidAppear:animated];
-    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-    service.logging = NO;
-    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
-    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-    [service release];
+
 
 }
 - (void)viewDidUnload
@@ -789,6 +805,7 @@ bool IsSearching;
     [self setLblLastRefreshDate:nil];
     [self setImgScrollArrow:nil];
     [self setScMain:nil];
+    [self setSvOptions:nil];
     [super viewDidUnload];
 }
 
@@ -802,6 +819,7 @@ bool IsSearching;
     [lblLastRefreshDate release];
     [imgScrollArrow release];
     [scMain release];
+
     [super dealloc];
 }
 
@@ -966,6 +984,27 @@ bool IsSearching;
 
 - (IBAction)scMain_Touch:(id)sender 
 {
+    for(AsyncImageView *myPOI in itemList)
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:1.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                         
+                         myPOI.alpha = 0.0;
+                     }
+                                     completion:nil];
+                    
+                });
+            });
+        }
+        
     NSArray *sortedArray;
     switch (self.scMain.selectedSegmentIndex) {
         case 0:
@@ -1069,8 +1108,33 @@ bool IsSearching;
             [self arrangeTiles];            
             break;            
             
+        case 6:
+            NSLog(@"Options");
+
+            break;
         default:
             break;
+    }
+    
+    for(AsyncImageView *myPOI in itemList)
+    {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+        dispatch_async(queue, ^{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                
+                [UIView animateWithDuration:1.75
+                                      delay:0
+                                    options:UIViewAnimationOptionAllowUserInteraction
+                                 animations:^
+                 {
+                     
+                     myPOI.alpha = 1.0;
+                 }
+                                 completion:nil];
+                
+            });
+        });
     }
 }
 @end

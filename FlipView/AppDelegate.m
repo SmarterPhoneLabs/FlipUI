@@ -13,9 +13,13 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+//@synthesize viewController = _viewController;
 @synthesize imageCache;
 @synthesize facebook;
+@synthesize tabBarController;
+@synthesize navHome;
+@synthesize marketList;
+
 
 
 -(void)launchURL:(NSString *)URL
@@ -31,6 +35,7 @@
     if (self) 
     {
         imageCache = [[NSMutableDictionary alloc] init];
+        marketList = [[NSMutableDictionary  alloc] init];
     }
     return self;
 }
@@ -39,26 +44,45 @@
 {
     [imageCache release];
     [_window release];
-    [_viewController release];
+    //[_viewController release];
     [facebook release];
+        [marketList release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
         NSLog(@"App Finished Launching");
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
-    } else {
-        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
-    }
-    self.window.rootViewController = self.viewController;
+//    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+//    // Override point for customization after application launch.
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
+//    } else {
+//        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
+//    }
+//    self.window.rootViewController = self.viewController;
+//    [self.window makeKeyAndVisible];
+
+    
+    self.window.rootViewController = self.tabBarController;
+    
     [self.window makeKeyAndVisible];
     
-    
     facebook = [[Facebook alloc] initWithAppId:@"146076692192037" andDelegate:self];
+    
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"] == nil)
+    {
+        //marketList = [[NSMutableDictionary  alloc] init];
+        [marketList setValue:@"YES" forKey:@"1"];
+        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        //        marketList = [[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"];
+    }
+    else
+    {
+        marketList = [[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"];
+    }
     
     return YES;
 }
@@ -312,6 +336,27 @@
     {
         return NO;
     }
+}
+
+-(NSString*)getMarkets
+{
+    NSString *retVal =@"";
+    
+    for (NSString* key in marketList)
+    {
+        id *value = [marketList objectForKey:key];
+        if([(NSString*)value isEqualToString: @"YES"])
+        {
+            NSString *temp;
+            temp = [retVal stringByAppendingString:[NSString stringWithFormat:@"%@,",key]]; 
+            
+            retVal = temp;
+        }
+        
+        
+    }
+    
+    return  retVal;
 }
 
 @end

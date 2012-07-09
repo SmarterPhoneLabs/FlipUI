@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52880302159ECC1700C5D04A"
-               BuildableName = "FlipView.app"
+               BuildableName = "JailBookings.app"
                BlueprintName = "JailBookings"
                ReferencedContainer = "container:JailBookings.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
+            BuildableName = "JailBookings.app"
             BlueprintName = "JailBookings"
             ReferencedContainer = "container:JailBookings.xcodeproj">
          </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
+            BuildableName = "JailBookings.app"
             BlueprintName = "JailBookings"
             ReferencedContainer = "container:JailBookings.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52880302159ECC1700C5D04A"
-            BuildableName = "FlipView.app"
+            BuildableName = "JailBookings.app"
             BlueprintName = "JailBookings"
             ReferencedContainer = "container:JailBookings.xcodeproj">
          </BuildableReference>

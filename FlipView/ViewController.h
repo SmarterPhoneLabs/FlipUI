@@ -19,6 +19,7 @@
     UIImageView *penrose;
 
 }
+
 - (IBAction)scMain_Touch:(id)sender;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *scMain;
 @property (nonatomic, retain) UIImageView   *penrose;
