@@ -20,6 +20,7 @@
 
 
 @implementation ViewController
+@synthesize lblSelectMarket;
 
 
 @synthesize tileWidthTemplate;
@@ -142,7 +143,16 @@ bool IsSearching;
     [itemList removeAllObjects];
     SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
     service.logging = NO;
-    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString *markets = [delegate getMarkets];
+    if(markets.length ==0 || [markets isEqualToString:@"0"])
+    {
+        lblSelectMarket.hidden = NO;
+    }
+    else
+    {
+        lblSelectMarket.hidden = YES;
+    }
     if(sbMain.text.length == 0)
     {
         [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
@@ -500,7 +510,7 @@ bool IsSearching;
         
         [self.svMain addSubview:myTile];
         myTile.personName = @"";                
-        [myTile setCrimeType];
+        //[myTile setCrimeType];
         
         [itemList addObject:myTile];
         [myTile release];
@@ -568,21 +578,108 @@ bool IsSearching;
     
     theScroll.decelerationRate = UIScrollViewDecelerationRateNormal;
 	
-    tileWidthTemplate = 100;
-    tileHeightTemplate = 100;
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if(delegate.tileSize == 1)
+    {
+        tileWidthTemplate = 25;
+        tileHeightTemplate = 25;
+
+    }
+    else
+    {
+        if(delegate.tileSize == 2)
+        {
+            tileWidthTemplate = 50;
+            tileHeightTemplate = 50;
+            
+        }  
+        else
+        {
+            if(delegate.tileSize == 3)
+            {
+                tileWidthTemplate = 100;
+                tileHeightTemplate = 100;
+                
+            }    
+            else
+            {
+                tileWidthTemplate = 200;
+                tileHeightTemplate = 200;                
+            }
+        }
+    }
+    
+//    tileWidthTemplate = 100;
+//    tileHeightTemplate = 100;
  
     colCount =0;
     lastX = 0;
     lastY = 0;
 
     
-    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-    service.logging = NO;
-    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
-    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-    [service release];
+
+
 
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if(delegate.tileSize == 1)
+    {
+        tileWidthTemplate = 25;
+        tileHeightTemplate = 25;
+        
+    }
+    else
+    {
+        if(delegate.tileSize == 2)
+        {
+            tileWidthTemplate = 50;
+            tileHeightTemplate = 50;
+            
+        }  
+        else
+        {
+            if(delegate.tileSize == 3)
+            {
+                tileWidthTemplate = 100;
+                tileHeightTemplate = 100;
+                
+            }    
+            else
+            {
+                tileWidthTemplate = 200;
+                tileHeightTemplate = 200;                
+            }
+        }
+    }
+
+    
+    for(AsyncImageView *myPOI in itemList)
+    {
+        [myPOI blastOff];
+        
+    }
+    [itemList removeAllObjects];
+    
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+    service.logging = NO;
+
+    NSString *markets = [delegate getMarkets];
+    if(markets.length ==0 || [markets isEqualToString:@"0"])
+    {
+        lblSelectMarket.hidden = NO;
+    }
+    else
+    {
+        lblSelectMarket.hidden = YES;
+    }
+    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    [service release];
 }
 
 -(void) handleURL:(id)result
@@ -791,12 +888,7 @@ bool IsSearching;
         }
     }
 }
--(void)viewDidAppear:(BOOL)animated 
-{
-    [super viewDidAppear:animated];
 
-
-}
 - (void)viewDidUnload
 {
     [self setSbMain:nil];
@@ -806,6 +898,7 @@ bool IsSearching;
     [self setImgScrollArrow:nil];
     [self setScMain:nil];
     [self setSvOptions:nil];
+    [self setLblSelectMarket:nil];
     [super viewDidUnload];
 }
 
@@ -820,6 +913,7 @@ bool IsSearching;
     [imgScrollArrow release];
     [scMain release];
 
+    [lblSelectMarket release];
     [super dealloc];
 }
 
@@ -935,7 +1029,16 @@ bool IsSearching;
     [itemList removeAllObjects];
     SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
     service.logging = NO;
-    NSString *markets = @"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18";
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString *markets = [delegate getMarkets];
+    if(markets.length ==0 || [markets isEqualToString:@"0"])
+    {
+        lblSelectMarket.hidden = NO;
+    }
+    else
+    {
+        lblSelectMarket.hidden = YES;
+    }
     if(sbMain.text.length == 0)
     {
         [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];

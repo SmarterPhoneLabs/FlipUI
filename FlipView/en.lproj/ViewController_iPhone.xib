@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50d</string>
+		<string key="IBDocument.SystemVersion">11D50</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1181</string>
+			<string key="NS.object.0">1179</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -65,6 +65,7 @@
 						<string key="NSFrame">{{0, 72}, {320, 451}}</string>
 						<reference key="NSSuperview" ref="625383691"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="101771282"/>
 						<string key="NSReuseIdentifierKey">_NS:10</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -102,12 +103,33 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
+					<object class="IBUILabel" id="802098118">
+						<reference key="NSNextResponder" ref="625383691"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{5, 205}, {310, 21}}</string>
+						<reference key="NSSuperview" ref="625383691"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="IBUIText">Please Select Markets in Options Screen</string>
+						<reference key="IBUITextColor" ref="1070177211"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumFontSize">10</float>
+						<reference key="IBUIFontDescription" ref="497432865"/>
+						<reference key="IBUIFont" ref="861335330"/>
+					</object>
 					<object class="IBUILabel" id="912414946">
 						<reference key="NSNextResponder" ref="625383691"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{92, 108}, {208, 21}}</string>
 						<reference key="NSSuperview" ref="625383691"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="802098118"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -279,6 +301,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">lblSelectMarket</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="802098118"/>
+					</object>
+					<int key="connectionID">43</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="63859837"/>
 						<reference key="destination" ref="372490531"/>
@@ -332,6 +362,7 @@
 							<reference ref="912414946"/>
 							<reference ref="307200203"/>
 							<reference ref="627718351"/>
+							<reference ref="802098118"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -366,6 +397,11 @@
 						<reference key="object" ref="627718351"/>
 						<reference key="parent" ref="625383691"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">42</int>
+						<reference key="object" ref="802098118"/>
+						<reference key="parent" ref="625383691"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -381,12 +417,13 @@
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<integer value="5" key="36.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">41</int>
+			<int key="maxID">43</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -408,6 +445,7 @@
 						<string key="imgScrollArrow">UIImageView</string>
 						<string key="lblLastRefreshDate">UILabel</string>
 						<string key="lblReleaseToRefresh">UILabel</string>
+						<string key="lblSelectMarket">UILabel</string>
 						<string key="sbMain">UISearchBar</string>
 						<string key="scMain">UISegmentedControl</string>
 						<string key="svMain">UIScrollView</string>
@@ -423,6 +461,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="lblReleaseToRefresh">
 							<string key="name">lblReleaseToRefresh</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="lblSelectMarket">
+							<string key="name">lblSelectMarket</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="sbMain">
@@ -457,6 +499,6 @@
 			<string key="NS.key.0">Arrowup.png</string>
 			<string key="NS.object.0">{256, 256}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">1181</string>
+		<string key="IBCocoaTouchPluginVersion">1179</string>
 	</data>
 </archive>

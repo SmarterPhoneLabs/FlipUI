@@ -16,8 +16,10 @@
     Facebook *facebook;
     NSMutableDictionary *imageCache; 
     NSMutableDictionary *marketList;
+    int tileSize;
 }
 
+@property (nonatomic) int tileSize;
 @property (nonatomic, retain) Facebook *facebook;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 

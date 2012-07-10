@@ -43,13 +43,14 @@ int oldHeight;
 
 -(void)setCrimeType
 {
-    
+    if(self.isAd == NO)
+    {
     AppDelegate *delegateX = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     crimeTypeImage = [delegateX getImageView:crimeTypeImageLink size:CGSizeMake( 24, 24) glass:YES isWebBased:YES];
     crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
     [crimeTypeImage setAlpha:0.5];
     [imageView addSubview:crimeTypeImage];
-    
+    }
     
 }
 
@@ -308,6 +309,8 @@ int oldHeight;
                     }                    
 
                     
+                    [self setCrimeType];
+
                     
                     [UIView animateWithDuration:2.0 
                                           delay:0
@@ -458,6 +461,7 @@ int oldHeight;
 
 	[self addSubview:imageView];
 
+     [self setCrimeType];
     
                 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
                 dispatch_async(queue, ^{

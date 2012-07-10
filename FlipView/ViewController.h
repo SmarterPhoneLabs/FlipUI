@@ -19,6 +19,7 @@
     UIImageView *penrose;
 
 }
+@property (retain, nonatomic) IBOutlet UILabel *lblSelectMarket;
 
 - (IBAction)scMain_Touch:(id)sender;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *scMain;

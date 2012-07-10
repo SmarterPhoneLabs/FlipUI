@@ -33,6 +33,9 @@
 		520C1781159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C174B159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m */; };
 		520C1784159F2CA300A4B4A8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */; };
 		520C1788159F3A7900A4B4A8 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C1787159F3A7900A4B4A8 /* AsyncImageView.m */; };
+		527C232E15AC77CE004F0D84 /* Options_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527C232A15AC77CE004F0D84 /* Options_iPad.xib */; };
+		527C232F15AC77CE004F0D84 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 527C232C15AC77CE004F0D84 /* Options.m */; };
+		527C233015AC77CE004F0D84 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527C232D15AC77CE004F0D84 /* Options.xib */; };
 		52880308159ECC1700C5D04A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52880307159ECC1700C5D04A /* UIKit.framework */; };
 		5288030A159ECC1700C5D04A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52880309159ECC1700C5D04A /* Foundation.framework */; };
 		5288030C159ECC1700C5D04A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288030B159ECC1700C5D04A /* CoreGraphics.framework */; };
@@ -170,6 +173,10 @@
 		520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		520C1786159F3A7900A4B4A8 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		520C1787159F3A7900A4B4A8 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		527C232A15AC77CE004F0D84 /* Options_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Options_iPad.xib; path = FlipView/Options_iPad.xib; sourceTree = "<group>"; };
+		527C232B15AC77CE004F0D84 /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Options.h; path = FlipView/Options.h; sourceTree = "<group>"; };
+		527C232C15AC77CE004F0D84 /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Options.m; path = FlipView/Options.m; sourceTree = "<group>"; };
+		527C232D15AC77CE004F0D84 /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Options.xib; path = FlipView/Options.xib; sourceTree = "<group>"; };
 		52880303159ECC1700C5D04A /* JailBookings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JailBookings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52880307159ECC1700C5D04A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		52880309159ECC1700C5D04A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -412,6 +419,10 @@
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				527C232A15AC77CE004F0D84 /* Options_iPad.xib */,
+				527C232B15AC77CE004F0D84 /* Options.h */,
+				527C232C15AC77CE004F0D84 /* Options.m */,
+				527C232D15AC77CE004F0D84 /* Options.xib */,
 				52964C9515AA69690022BD26 /* MapView_iPad.xib */,
 				52964C9615AA69690022BD26 /* MapView.h */,
 				52964C9715AA69690022BD26 /* MapView.m */,
@@ -735,6 +746,8 @@
 				52964C8215AA62080022BD26 /* Main_Window.xib in Resources */,
 				52964C9915AA69690022BD26 /* MapView_iPad.xib in Resources */,
 				52964C9B15AA69690022BD26 /* MapView.xib in Resources */,
+				527C232E15AC77CE004F0D84 /* Options_iPad.xib in Resources */,
+				527C233015AC77CE004F0D84 /* Options.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +831,7 @@
 				52964C6C15A86A110022BD26 /* SBJsonWriter.m in Sources */,
 				52964C9A15AA69690022BD26 /* MapView.m in Sources */,
 				52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */,
+				527C232F15AC77CE004F0D84 /* Options.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

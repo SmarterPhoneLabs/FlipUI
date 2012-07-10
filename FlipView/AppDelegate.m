@@ -19,6 +19,7 @@
 @synthesize tabBarController;
 @synthesize navHome;
 @synthesize marketList;
+@synthesize tileSize;
 
 
 
@@ -36,6 +37,19 @@
     {
         imageCache = [[NSMutableDictionary alloc] init];
         marketList = [[NSMutableDictionary  alloc] init];
+        
+        if([[NSUserDefaults standardUserDefaults] integerForKey:@"TileSize"] == 0)
+        {
+            
+            [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TileSize"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            tileSize = 2;
+        }
+        else
+        {
+            tileSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"TileSize"];
+        }
+
     }
     return self;
 }
@@ -73,16 +87,16 @@
     
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"] == nil)
     {
-        //marketList = [[NSMutableDictionary  alloc] init];
-        [marketList setValue:@"YES" forKey:@"1"];
-        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        //        marketList = [[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"];
+//        [marketList setValue:@"YES" forKey:@"0"];
+//        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else
     {
         marketList = [[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"];
     }
+    
+
     
     return YES;
 }
@@ -341,7 +355,7 @@
 -(NSString*)getMarkets
 {
     NSString *retVal =@"";
-    
+
     for (NSString* key in marketList)
     {
         id *value = [marketList objectForKey:key];
