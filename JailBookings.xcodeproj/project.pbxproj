@@ -117,6 +117,8 @@
 		52964C9A15AA69690022BD26 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9715AA69690022BD26 /* MapView.m */; };
 		52964C9B15AA69690022BD26 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52964C9815AA69690022BD26 /* MapView.xib */; };
 		52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9D15AA69FE0022BD26 /* MyAnnotation.m */; };
+		52B8856515AF5DEF006E0DEA /* Main_Window_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B8856415AF5DEF006E0DEA /* Main_Window_iPad.xib */; };
+		52B8856715AF676D006E0DEA /* MapOptions_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B8856615AF676D006E0DEA /* MapOptions_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,6 +328,8 @@
 		52964C9815AA69690022BD26 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapView.xib; path = FlipView/MapView.xib; sourceTree = "<group>"; };
 		52964C9C15AA69FE0022BD26 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = FlipView/MyAnnotation.h; sourceTree = "<group>"; };
 		52964C9D15AA69FE0022BD26 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAnnotation.m; path = FlipView/MyAnnotation.m; sourceTree = "<group>"; };
+		52B8856415AF5DEF006E0DEA /* Main_Window_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main_Window_iPad.xib; sourceTree = "<group>"; };
+		52B8856615AF676D006E0DEA /* MapOptions_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,17 +540,11 @@
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				52B8856315AF0BB2006E0DEA /* MapView */,
+				52B8856215AF0BA3006E0DEA /* Options */,
 				524F22B415AE92B8006F6007 /* Delegate */,
 				524F22B315AE9283006F6007 /* NavController */,
 				528D280D15AE55B0001B9957 /* MapOptions */,
-				527C232A15AC77CE004F0D84 /* Options_iPad.xib */,
-				527C232B15AC77CE004F0D84 /* Options.h */,
-				527C232C15AC77CE004F0D84 /* Options.m */,
-				527C232D15AC77CE004F0D84 /* Options.xib */,
-				52964C9515AA69690022BD26 /* MapView_iPad.xib */,
-				52964C9615AA69690022BD26 /* MapView.h */,
-				52964C9715AA69690022BD26 /* MapView.m */,
-				52964C9815AA69690022BD26 /* MapView.xib */,
 				52964C8815AA65A40022BD26 /* MyAnnotations */,
 				52964C8015AA61F00022BD26 /* TabController */,
 				52964C3E15A86A000022BD26 /* FacebookSDK */,
@@ -631,6 +629,7 @@
 				524F22A915AE90CD006F6007 /* MapOptions.h */,
 				524F22AA15AE90CD006F6007 /* MapOptions.m */,
 				524F22AB15AE90CD006F6007 /* MapOptions.xib */,
+				52B8856615AF676D006E0DEA /* MapOptions_iPad.xib */,
 			);
 			name = MapOptions;
 			sourceTree = "<group>";
@@ -697,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				52964C8115AA62080022BD26 /* Main_Window.xib */,
+				52B8856415AF5DEF006E0DEA /* Main_Window_iPad.xib */,
 			);
 			name = TabController;
 			sourceTree = "<group>";
@@ -708,6 +708,28 @@
 				52964C9D15AA69FE0022BD26 /* MyAnnotation.m */,
 			);
 			name = MyAnnotations;
+			sourceTree = "<group>";
+		};
+		52B8856215AF0BA3006E0DEA /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				527C232A15AC77CE004F0D84 /* Options_iPad.xib */,
+				527C232B15AC77CE004F0D84 /* Options.h */,
+				527C232C15AC77CE004F0D84 /* Options.m */,
+				527C232D15AC77CE004F0D84 /* Options.xib */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		52B8856315AF0BB2006E0DEA /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				52964C9515AA69690022BD26 /* MapView_iPad.xib */,
+				52964C9615AA69690022BD26 /* MapView.h */,
+				52964C9715AA69690022BD26 /* MapView.m */,
+				52964C9815AA69690022BD26 /* MapView.xib */,
+			);
+			name = MapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -800,6 +822,8 @@
 				527C233015AC77CE004F0D84 /* Options.xib in Resources */,
 				524F22AD15AE90CD006F6007 /* MapOptions.xib in Resources */,
 				524F232915AEA6CF006F6007 /* cogs.png in Resources */,
+				52B8856515AF5DEF006E0DEA /* Main_Window_iPad.xib in Resources */,
+				52B8856715AF676D006E0DEA /* MapOptions_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

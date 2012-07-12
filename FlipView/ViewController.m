@@ -778,7 +778,15 @@ bool IsSearching;
                     [myPOI blastOff];
                 }
             }
-            BackSideView *bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:controller.tileID];
+            BackSideView *bSV;
+            if(iPad)
+            {
+               bSV  = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 768, 1024) andTag:controller.tileID];
+            }
+            else 
+            {
+                bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:controller.tileID];                
+            }
             bSV.parentController = self;
             controller.backSideView = bSV;
             [controller addSubview:controller.backSideView];
