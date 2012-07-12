@@ -33,6 +33,48 @@
 		520C1781159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C174B159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m */; };
 		520C1784159F2CA300A4B4A8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */; };
 		520C1788159F3A7900A4B4A8 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C1787159F3A7900A4B4A8 /* AsyncImageView.m */; };
+		524F22AC15AE90CD006F6007 /* MapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22AA15AE90CD006F6007 /* MapOptions.m */; };
+		524F22AD15AE90CD006F6007 /* MapOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524F22AB15AE90CD006F6007 /* MapOptions.xib */; };
+		524F22B215AE9230006F6007 /* MyNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22B115AE9230006F6007 /* MyNavController.m */; };
+		524F230215AE9915006F6007 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22B715AE9915006F6007 /* Soap+Prefix.m */; };
+		524F230315AE9915006F6007 /* SQLSTUDIOAdCycle_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22B915AE9915006F6007 /* SQLSTUDIOAdCycle_Result.m */; };
+		524F230415AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22BB15AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.m */; };
+		524F230515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22BD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */; };
+		524F230615AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22BF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.m */; };
+		524F230715AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22C115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.m */; };
+		524F230815AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22C315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */; };
+		524F230915AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22C515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */; };
+		524F230A15AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22C715AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */; };
+		524F230B15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22C915AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.m */; };
+		524F230C15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22CB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.m */; };
+		524F230D15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22CD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */; };
+		524F230E15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22CF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */; };
+		524F230F15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22D115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */; };
+		524F231015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22D315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */; };
+		524F231115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22D515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.m */; };
+		524F231215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22D715AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.m */; };
+		524F231315AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22D915AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.m */; };
+		524F231415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22DB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */; };
+		524F231515AE9915006F6007 /* SQLSTUDIOMyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22DD15AE9915006F6007 /* SQLSTUDIOMyService.m */; };
+		524F231615AE9915006F6007 /* SQLSTUDIOServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22DF15AE9915006F6007 /* SQLSTUDIOServices.m */; };
+		524F231715AE9915006F6007 /* SQLSTUDIOssAudit_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22E115AE9915006F6007 /* SQLSTUDIOssAudit_Result.m */; };
+		524F231815AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22E315AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.m */; };
+		524F231915AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22E515AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.m */; };
+		524F231A15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22E715AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.m */; };
+		524F231B15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22E915AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.m */; };
+		524F231C15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22EB15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.m */; };
+		524F231D15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22ED15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.m */; };
+		524F231E15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22EF15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.m */; };
+		524F231F15AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22F115AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.m */; };
+		524F232015AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22F315AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.m */; };
+		524F232115AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22F515AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.m */; };
+		524F232215AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22F715AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.m */; };
+		524F232315AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22F915AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.m */; };
+		524F232415AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22FB15AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.m */; };
+		524F232515AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22FD15AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m */; };
+		524F232615AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22FF15AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m */; };
+		524F232715AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F230115AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m */; };
+		524F232915AEA6CF006F6007 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = 524F232815AEA6CF006F6007 /* cogs.png */; };
 		527C232E15AC77CE004F0D84 /* Options_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527C232A15AC77CE004F0D84 /* Options_iPad.xib */; };
 		527C232F15AC77CE004F0D84 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 527C232C15AC77CE004F0D84 /* Options.m */; };
 		527C233015AC77CE004F0D84 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527C232D15AC77CE004F0D84 /* Options.xib */; };
@@ -47,45 +89,7 @@
 		52880321159ECC1700C5D04A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5288031F159ECC1700C5D04A /* ViewController_iPad.xib */; };
 		52880339159ED20000C5D04A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52880338159ED20000C5D04A /* QuartzCore.framework */; };
 		5289012D15A3E2840059098B /* Arrowup.png in Resources */ = {isa = PBXBuildFile; fileRef = 5289012C15A3E2840059098B /* Arrowup.png */; };
-		528D281015AE55D5001B9957 /* MapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D280F15AE55D5001B9957 /* MapOptions.m */; };
-		528D281215AE568D001B9957 /* MapOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D281115AE568C001B9957 /* MapOptions.xib */; };
 		52964BB415A6A3180022BD26 /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964BB315A6A3180022BD26 /* goldstar.png */; };
-		52964C0815A7C9B90022BD26 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC115A7C9B90022BD26 /* Soap+Prefix.m */; };
-		52964C0915A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC315A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m */; };
-		52964C0A15A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC515A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.m */; };
-		52964C0B15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */; };
-		52964C0C15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.m */; };
-		52964C0D15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BCB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.m */; };
-		52964C0E15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BCD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */; };
-		52964C0F15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BCF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */; };
-		52964C1015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BD115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */; };
-		52964C1115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BD315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.m */; };
-		52964C1215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BD515A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */; };
-		52964C1315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BD715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */; };
-		52964C1415A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BD915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */; };
-		52964C1515A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BDB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */; };
-		52964C1615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BDD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.m */; };
-		52964C1715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BDF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.m */; };
-		52964C1815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BE115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.m */; };
-		52964C1915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BE315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */; };
-		52964C1A15A7C9B90022BD26 /* SQLSTUDIOMyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BE515A7C9B90022BD26 /* SQLSTUDIOMyService.m */; };
-		52964C1B15A7C9B90022BD26 /* SQLSTUDIOServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BE715A7C9B90022BD26 /* SQLSTUDIOServices.m */; };
-		52964C1C15A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BE915A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.m */; };
-		52964C1D15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BEB15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.m */; };
-		52964C1E15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BED15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.m */; };
-		52964C1F15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BEF15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.m */; };
-		52964C2015A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BF115A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.m */; };
-		52964C2115A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BF315A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.m */; };
-		52964C2215A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BF515A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.m */; };
-		52964C2315A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BF715A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.m */; };
-		52964C2415A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BF915A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.m */; };
-		52964C2515A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BFB15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.m */; };
-		52964C2615A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BFD15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.m */; };
-		52964C2715A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BFF15A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.m */; };
-		52964C2815A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C0115A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.m */; };
-		52964C2915A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C0315A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.m */; };
-		52964C2A15A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C0515A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.m */; };
-		52964C2B15A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C0715A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.m */; };
 		52964C2E15A7E4760022BD26 /* slate320.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964C2C15A7E4760022BD26 /* slate320.png */; };
 		52964C2F15A7E4760022BD26 /* slate768.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964C2D15A7E4760022BD26 /* slate768.png */; };
 		52964C3115A7E6520022BD26 /* penrose.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964C3015A7E6520022BD26 /* penrose.png */; };
@@ -175,6 +179,88 @@
 		520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		520C1786159F3A7900A4B4A8 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		520C1787159F3A7900A4B4A8 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		524F22A915AE90CD006F6007 /* MapOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptions.h; sourceTree = "<group>"; };
+		524F22AA15AE90CD006F6007 /* MapOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOptions.m; sourceTree = "<group>"; };
+		524F22AB15AE90CD006F6007 /* MapOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions.xib; sourceTree = "<group>"; };
+		524F22B015AE9230006F6007 /* MyNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNavController.h; path = FlipView/MyNavController.h; sourceTree = "<group>"; };
+		524F22B115AE9230006F6007 /* MyNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNavController.m; path = FlipView/MyNavController.m; sourceTree = "<group>"; };
+		524F22B615AE9915006F6007 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
+		524F22B715AE9915006F6007 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
+		524F22B815AE9915006F6007 /* SQLSTUDIOAdCycle_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOAdCycle_Result.h; sourceTree = "<group>"; };
+		524F22B915AE9915006F6007 /* SQLSTUDIOAdCycle_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOAdCycle_Result.m; sourceTree = "<group>"; };
+		524F22BA15AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOfssAudit_Result.h; sourceTree = "<group>"; };
+		524F22BB15AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOfssAudit_Result.m; sourceTree = "<group>"; };
+		524F22BC15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Ad_Status_Result.h; sourceTree = "<group>"; };
+		524F22BD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Ad_Status_Result.m; sourceTree = "<group>"; };
+		524F22BE15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Ads_Result.h; sourceTree = "<group>"; };
+		524F22BF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Ads_Result.m; sourceTree = "<group>"; };
+		524F22C015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Result.h; sourceTree = "<group>"; };
+		524F22C115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Result.m; sourceTree = "<group>"; };
+		524F22C215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Result_V2.h; sourceTree = "<group>"; };
+		524F22C315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Result_V2.m; sourceTree = "<group>"; };
+		524F22C415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Status_Result.h; sourceTree = "<group>"; };
+		524F22C515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Status_Result.m; sourceTree = "<group>"; };
+		524F22C615AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_CMS_Tag_Result.h; sourceTree = "<group>"; };
+		524F22C715AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_CMS_Tag_Result.m; sourceTree = "<group>"; };
+		524F22C815AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Crime_Type_Result.h; sourceTree = "<group>"; };
+		524F22C915AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Crime_Type_Result.m; sourceTree = "<group>"; };
+		524F22CA15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Market_Result.h; sourceTree = "<group>"; };
+		524F22CB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Market_Result.m; sourceTree = "<group>"; };
+		524F22CC15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Market_Status_Result.h; sourceTree = "<group>"; };
+		524F22CD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Market_Status_Result.m; sourceTree = "<group>"; };
+		524F22CE15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Missing_Child_Result.h; sourceTree = "<group>"; };
+		524F22CF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Missing_Child_Result.m; sourceTree = "<group>"; };
+		524F22D015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Missing_Status_Result.h; sourceTree = "<group>"; };
+		524F22D115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Missing_Status_Result.m; sourceTree = "<group>"; };
+		524F22D215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Most_Wanted_Result.h; sourceTree = "<group>"; };
+		524F22D315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Most_Wanted_Result.m; sourceTree = "<group>"; };
+		524F22D415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Race_Result.h; sourceTree = "<group>"; };
+		524F22D515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Race_Result.m; sourceTree = "<group>"; };
+		524F22D615AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Sex_Result.h; sourceTree = "<group>"; };
+		524F22D715AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Sex_Result.m; sourceTree = "<group>"; };
+		524F22D815AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_User_Result.h; sourceTree = "<group>"; };
+		524F22D915AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_User_Result.m; sourceTree = "<group>"; };
+		524F22DA15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Wanted_Status_Result.h; sourceTree = "<group>"; };
+		524F22DB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Wanted_Status_Result.m; sourceTree = "<group>"; };
+		524F22DC15AE9915006F6007 /* SQLSTUDIOMyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOMyService.h; sourceTree = "<group>"; };
+		524F22DD15AE9915006F6007 /* SQLSTUDIOMyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOMyService.m; sourceTree = "<group>"; };
+		524F22DE15AE9915006F6007 /* SQLSTUDIOServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOServices.h; sourceTree = "<group>"; };
+		524F22DF15AE9915006F6007 /* SQLSTUDIOServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOServices.m; sourceTree = "<group>"; };
+		524F22E015AE9915006F6007 /* SQLSTUDIOssAudit_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOssAudit_Result.h; sourceTree = "<group>"; };
+		524F22E115AE9915006F6007 /* SQLSTUDIOssAudit_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOssAudit_Result.m; sourceTree = "<group>"; };
+		524F22E215AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Ad_Status_Result.h; sourceTree = "<group>"; };
+		524F22E315AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Ad_Status_Result.m; sourceTree = "<group>"; };
+		524F22E415AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Ads_Result.h; sourceTree = "<group>"; };
+		524F22E515AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Ads_Result.m; sourceTree = "<group>"; };
+		524F22E615AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Result.h; sourceTree = "<group>"; };
+		524F22E715AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Result.m; sourceTree = "<group>"; };
+		524F22E815AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Result_V2.h; sourceTree = "<group>"; };
+		524F22E915AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Result_V2.m; sourceTree = "<group>"; };
+		524F22EA15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Status_Result.h; sourceTree = "<group>"; };
+		524F22EB15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Status_Result.m; sourceTree = "<group>"; };
+		524F22EC15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_CMS_Tag_Result.h; sourceTree = "<group>"; };
+		524F22ED15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_CMS_Tag_Result.m; sourceTree = "<group>"; };
+		524F22EE15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Crime_Type_Result.h; sourceTree = "<group>"; };
+		524F22EF15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Crime_Type_Result.m; sourceTree = "<group>"; };
+		524F22F015AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Market_Result.h; sourceTree = "<group>"; };
+		524F22F115AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Market_Result.m; sourceTree = "<group>"; };
+		524F22F215AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Market_Status_Result.h; sourceTree = "<group>"; };
+		524F22F315AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Market_Status_Result.m; sourceTree = "<group>"; };
+		524F22F415AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Missing_Child_Result.h; sourceTree = "<group>"; };
+		524F22F515AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Missing_Child_Result.m; sourceTree = "<group>"; };
+		524F22F615AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Missing_Status_Result.h; sourceTree = "<group>"; };
+		524F22F715AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Missing_Status_Result.m; sourceTree = "<group>"; };
+		524F22F815AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Most_Wanted_Result.h; sourceTree = "<group>"; };
+		524F22F915AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Most_Wanted_Result.m; sourceTree = "<group>"; };
+		524F22FA15AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Race_Result.h; sourceTree = "<group>"; };
+		524F22FB15AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Race_Result.m; sourceTree = "<group>"; };
+		524F22FC15AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Sex_Result.h; sourceTree = "<group>"; };
+		524F22FD15AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Sex_Result.m; sourceTree = "<group>"; };
+		524F22FE15AE9915006F6007 /* SQLSTUDIOtbl_User_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_User_Result.h; sourceTree = "<group>"; };
+		524F22FF15AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_User_Result.m; sourceTree = "<group>"; };
+		524F230015AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Wanted_Status_Result.h; sourceTree = "<group>"; };
+		524F230115AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Wanted_Status_Result.m; sourceTree = "<group>"; };
+		524F232815AEA6CF006F6007 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cogs.png; sourceTree = "<group>"; };
 		527C232A15AC77CE004F0D84 /* Options_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Options_iPad.xib; path = FlipView/Options_iPad.xib; sourceTree = "<group>"; };
 		527C232B15AC77CE004F0D84 /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Options.h; path = FlipView/Options.h; sourceTree = "<group>"; };
 		527C232C15AC77CE004F0D84 /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Options.m; path = FlipView/Options.m; sourceTree = "<group>"; };
@@ -187,90 +273,15 @@
 		52880311159ECC1700C5D04A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52880313159ECC1700C5D04A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52880315159ECC1700C5D04A /* JailBookings-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JailBookings-Prefix.pch"; sourceTree = "<group>"; };
-		52880316159ECC1700C5D04A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		52880317159ECC1700C5D04A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52880316159ECC1700C5D04A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FlipView/AppDelegate.h; sourceTree = "<group>"; };
+		52880317159ECC1700C5D04A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FlipView/AppDelegate.m; sourceTree = "<group>"; };
 		52880319159ECC1700C5D04A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5288031A159ECC1700C5D04A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5288031D159ECC1700C5D04A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		52880320159ECC1700C5D04A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		52880338159ED20000C5D04A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5289012C15A3E2840059098B /* Arrowup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrowup.png; sourceTree = "<group>"; };
-		528D280E15AE55D5001B9957 /* MapOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptions.h; sourceTree = "<group>"; };
-		528D280F15AE55D5001B9957 /* MapOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOptions.m; sourceTree = "<group>"; };
-		528D281115AE568C001B9957 /* MapOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions.xib; sourceTree = "<group>"; };
 		52964BB315A6A3180022BD26 /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
-		52964BC015A7C9B90022BD26 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
-		52964BC115A7C9B90022BD26 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
-		52964BC215A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOAdCycle_Result.h; sourceTree = "<group>"; };
-		52964BC315A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOAdCycle_Result.m; sourceTree = "<group>"; };
-		52964BC415A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOfssAudit_Result.h; sourceTree = "<group>"; };
-		52964BC515A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOfssAudit_Result.m; sourceTree = "<group>"; };
-		52964BC615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Ad_Status_Result.h; sourceTree = "<group>"; };
-		52964BC715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Ad_Status_Result.m; sourceTree = "<group>"; };
-		52964BC815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Ads_Result.h; sourceTree = "<group>"; };
-		52964BC915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Ads_Result.m; sourceTree = "<group>"; };
-		52964BCA15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Result.h; sourceTree = "<group>"; };
-		52964BCB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Result.m; sourceTree = "<group>"; };
-		52964BCC15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Result_V2.h; sourceTree = "<group>"; };
-		52964BCD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Result_V2.m; sourceTree = "<group>"; };
-		52964BCE15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Booking_Status_Result.h; sourceTree = "<group>"; };
-		52964BCF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Booking_Status_Result.m; sourceTree = "<group>"; };
-		52964BD015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_CMS_Tag_Result.h; sourceTree = "<group>"; };
-		52964BD115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_CMS_Tag_Result.m; sourceTree = "<group>"; };
-		52964BD215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Market_Result.h; sourceTree = "<group>"; };
-		52964BD315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Market_Result.m; sourceTree = "<group>"; };
-		52964BD415A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Market_Status_Result.h; sourceTree = "<group>"; };
-		52964BD515A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Market_Status_Result.m; sourceTree = "<group>"; };
-		52964BD615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Missing_Child_Result.h; sourceTree = "<group>"; };
-		52964BD715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Missing_Child_Result.m; sourceTree = "<group>"; };
-		52964BD815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Missing_Status_Result.h; sourceTree = "<group>"; };
-		52964BD915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Missing_Status_Result.m; sourceTree = "<group>"; };
-		52964BDA15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Most_Wanted_Result.h; sourceTree = "<group>"; };
-		52964BDB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Most_Wanted_Result.m; sourceTree = "<group>"; };
-		52964BDC15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Race_Result.h; sourceTree = "<group>"; };
-		52964BDD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Race_Result.m; sourceTree = "<group>"; };
-		52964BDE15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Sex_Result.h; sourceTree = "<group>"; };
-		52964BDF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Sex_Result.m; sourceTree = "<group>"; };
-		52964BE015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_User_Result.h; sourceTree = "<group>"; };
-		52964BE115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_User_Result.m; sourceTree = "<group>"; };
-		52964BE215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOArrayOftbl_Wanted_Status_Result.h; sourceTree = "<group>"; };
-		52964BE315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOArrayOftbl_Wanted_Status_Result.m; sourceTree = "<group>"; };
-		52964BE415A7C9B90022BD26 /* SQLSTUDIOMyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOMyService.h; sourceTree = "<group>"; };
-		52964BE515A7C9B90022BD26 /* SQLSTUDIOMyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOMyService.m; sourceTree = "<group>"; };
-		52964BE615A7C9B90022BD26 /* SQLSTUDIOServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOServices.h; sourceTree = "<group>"; };
-		52964BE715A7C9B90022BD26 /* SQLSTUDIOServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOServices.m; sourceTree = "<group>"; };
-		52964BE815A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOssAudit_Result.h; sourceTree = "<group>"; };
-		52964BE915A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOssAudit_Result.m; sourceTree = "<group>"; };
-		52964BEA15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Ad_Status_Result.h; sourceTree = "<group>"; };
-		52964BEB15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Ad_Status_Result.m; sourceTree = "<group>"; };
-		52964BEC15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Ads_Result.h; sourceTree = "<group>"; };
-		52964BED15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Ads_Result.m; sourceTree = "<group>"; };
-		52964BEE15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Result.h; sourceTree = "<group>"; };
-		52964BEF15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Result.m; sourceTree = "<group>"; };
-		52964BF015A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Result_V2.h; sourceTree = "<group>"; };
-		52964BF115A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Result_V2.m; sourceTree = "<group>"; };
-		52964BF215A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Booking_Status_Result.h; sourceTree = "<group>"; };
-		52964BF315A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Booking_Status_Result.m; sourceTree = "<group>"; };
-		52964BF415A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_CMS_Tag_Result.h; sourceTree = "<group>"; };
-		52964BF515A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_CMS_Tag_Result.m; sourceTree = "<group>"; };
-		52964BF615A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Market_Result.h; sourceTree = "<group>"; };
-		52964BF715A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Market_Result.m; sourceTree = "<group>"; };
-		52964BF815A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Market_Status_Result.h; sourceTree = "<group>"; };
-		52964BF915A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Market_Status_Result.m; sourceTree = "<group>"; };
-		52964BFA15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Missing_Child_Result.h; sourceTree = "<group>"; };
-		52964BFB15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Missing_Child_Result.m; sourceTree = "<group>"; };
-		52964BFC15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Missing_Status_Result.h; sourceTree = "<group>"; };
-		52964BFD15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Missing_Status_Result.m; sourceTree = "<group>"; };
-		52964BFE15A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Most_Wanted_Result.h; sourceTree = "<group>"; };
-		52964BFF15A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Most_Wanted_Result.m; sourceTree = "<group>"; };
-		52964C0015A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Race_Result.h; sourceTree = "<group>"; };
-		52964C0115A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Race_Result.m; sourceTree = "<group>"; };
-		52964C0215A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Sex_Result.h; sourceTree = "<group>"; };
-		52964C0315A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Sex_Result.m; sourceTree = "<group>"; };
-		52964C0415A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_User_Result.h; sourceTree = "<group>"; };
-		52964C0515A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_User_Result.m; sourceTree = "<group>"; };
-		52964C0615A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLSTUDIOtbl_Wanted_Status_Result.h; sourceTree = "<group>"; };
-		52964C0715A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLSTUDIOtbl_Wanted_Status_Result.m; sourceTree = "<group>"; };
 		52964C2C15A7E4760022BD26 /* slate320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slate320.png; sourceTree = "<group>"; };
 		52964C2D15A7E4760022BD26 /* slate768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slate768.png; sourceTree = "<group>"; };
 		52964C3015A7E6520022BD26 /* penrose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penrose.png; sourceTree = "<group>"; };
@@ -351,7 +362,7 @@
 		520C16DD159F2C9000A4B4A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				52964BBF15A7C9B90022BD26 /* Generated */,
+				524F22B515AE9915006F6007 /* Generated */,
 				520C1723159F2C9000A4B4A8 /* Soap */,
 				520C173F159F2C9000A4B4A8 /* TouchXML */,
 			);
@@ -421,9 +432,112 @@
 			name = AsyncImage;
 			sourceTree = "<group>";
 		};
+		524F22B315AE9283006F6007 /* NavController */ = {
+			isa = PBXGroup;
+			children = (
+				524F22B015AE9230006F6007 /* MyNavController.h */,
+				524F22B115AE9230006F6007 /* MyNavController.m */,
+			);
+			name = NavController;
+			sourceTree = "<group>";
+		};
+		524F22B415AE92B8006F6007 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				52880316159ECC1700C5D04A /* AppDelegate.h */,
+				52880317159ECC1700C5D04A /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		524F22B515AE9915006F6007 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				524F22B615AE9915006F6007 /* Soap+Prefix.h */,
+				524F22B715AE9915006F6007 /* Soap+Prefix.m */,
+				524F22B815AE9915006F6007 /* SQLSTUDIOAdCycle_Result.h */,
+				524F22B915AE9915006F6007 /* SQLSTUDIOAdCycle_Result.m */,
+				524F22BA15AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.h */,
+				524F22BB15AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.m */,
+				524F22BC15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.h */,
+				524F22BD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */,
+				524F22BE15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.h */,
+				524F22BF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.m */,
+				524F22C015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.h */,
+				524F22C115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.m */,
+				524F22C215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.h */,
+				524F22C315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */,
+				524F22C415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.h */,
+				524F22C515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */,
+				524F22C615AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.h */,
+				524F22C715AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */,
+				524F22C815AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.h */,
+				524F22C915AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.m */,
+				524F22CA15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.h */,
+				524F22CB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.m */,
+				524F22CC15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.h */,
+				524F22CD15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */,
+				524F22CE15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.h */,
+				524F22CF15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */,
+				524F22D015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.h */,
+				524F22D115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */,
+				524F22D215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.h */,
+				524F22D315AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */,
+				524F22D415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.h */,
+				524F22D515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.m */,
+				524F22D615AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.h */,
+				524F22D715AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.m */,
+				524F22D815AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.h */,
+				524F22D915AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.m */,
+				524F22DA15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.h */,
+				524F22DB15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */,
+				524F22DC15AE9915006F6007 /* SQLSTUDIOMyService.h */,
+				524F22DD15AE9915006F6007 /* SQLSTUDIOMyService.m */,
+				524F22DE15AE9915006F6007 /* SQLSTUDIOServices.h */,
+				524F22DF15AE9915006F6007 /* SQLSTUDIOServices.m */,
+				524F22E015AE9915006F6007 /* SQLSTUDIOssAudit_Result.h */,
+				524F22E115AE9915006F6007 /* SQLSTUDIOssAudit_Result.m */,
+				524F22E215AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.h */,
+				524F22E315AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.m */,
+				524F22E415AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.h */,
+				524F22E515AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.m */,
+				524F22E615AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.h */,
+				524F22E715AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.m */,
+				524F22E815AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.h */,
+				524F22E915AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.m */,
+				524F22EA15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.h */,
+				524F22EB15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.m */,
+				524F22EC15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.h */,
+				524F22ED15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.m */,
+				524F22EE15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.h */,
+				524F22EF15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.m */,
+				524F22F015AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.h */,
+				524F22F115AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.m */,
+				524F22F215AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.h */,
+				524F22F315AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.m */,
+				524F22F415AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.h */,
+				524F22F515AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.m */,
+				524F22F615AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.h */,
+				524F22F715AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.m */,
+				524F22F815AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.h */,
+				524F22F915AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.m */,
+				524F22FA15AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.h */,
+				524F22FB15AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.m */,
+				524F22FC15AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.h */,
+				524F22FD15AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m */,
+				524F22FE15AE9915006F6007 /* SQLSTUDIOtbl_User_Result.h */,
+				524F22FF15AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m */,
+				524F230015AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.h */,
+				524F230115AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				524F22B415AE92B8006F6007 /* Delegate */,
+				524F22B315AE9283006F6007 /* NavController */,
 				528D280D15AE55B0001B9957 /* MapOptions */,
 				527C232A15AC77CE004F0D84 /* Options_iPad.xib */,
 				527C232B15AC77CE004F0D84 /* Options.h */,
@@ -473,8 +587,6 @@
 		5288030D159ECC1700C5D04A /* FlipView */ = {
 			isa = PBXGroup;
 			children = (
-				52880316159ECC1700C5D04A /* AppDelegate.h */,
-				52880317159ECC1700C5D04A /* AppDelegate.m */,
 				52880319159ECC1700C5D04A /* ViewController.h */,
 				5288031A159ECC1700C5D04A /* ViewController.m */,
 				5288031C159ECC1700C5D04A /* ViewController_iPhone.xib */,
@@ -498,6 +610,7 @@
 		5288032B159ED01300C5D04A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				524F232815AEA6CF006F6007 /* cogs.png */,
 				52964C7415A877650022BD26 /* Twitter.png */,
 				52964C7015A870760022BD26 /* facebook-fan-icon-shadow.png */,
 				52964C3215A7F46A0022BD26 /* anibar.gif */,
@@ -515,90 +628,11 @@
 		528D280D15AE55B0001B9957 /* MapOptions */ = {
 			isa = PBXGroup;
 			children = (
-				528D280E15AE55D5001B9957 /* MapOptions.h */,
-				528D280F15AE55D5001B9957 /* MapOptions.m */,
-				528D281115AE568C001B9957 /* MapOptions.xib */,
+				524F22A915AE90CD006F6007 /* MapOptions.h */,
+				524F22AA15AE90CD006F6007 /* MapOptions.m */,
+				524F22AB15AE90CD006F6007 /* MapOptions.xib */,
 			);
 			name = MapOptions;
-			sourceTree = "<group>";
-		};
-		52964BBF15A7C9B90022BD26 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				52964BC015A7C9B90022BD26 /* Soap+Prefix.h */,
-				52964BC115A7C9B90022BD26 /* Soap+Prefix.m */,
-				52964BC215A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.h */,
-				52964BC315A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m */,
-				52964BC415A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.h */,
-				52964BC515A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.m */,
-				52964BC615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.h */,
-				52964BC715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m */,
-				52964BC815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.h */,
-				52964BC915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.m */,
-				52964BCA15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.h */,
-				52964BCB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.m */,
-				52964BCC15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.h */,
-				52964BCD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m */,
-				52964BCE15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.h */,
-				52964BCF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m */,
-				52964BD015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.h */,
-				52964BD115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m */,
-				52964BD215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.h */,
-				52964BD315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.m */,
-				52964BD415A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.h */,
-				52964BD515A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m */,
-				52964BD615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.h */,
-				52964BD715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m */,
-				52964BD815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.h */,
-				52964BD915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m */,
-				52964BDA15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.h */,
-				52964BDB15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m */,
-				52964BDC15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.h */,
-				52964BDD15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.m */,
-				52964BDE15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.h */,
-				52964BDF15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.m */,
-				52964BE015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.h */,
-				52964BE115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.m */,
-				52964BE215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.h */,
-				52964BE315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m */,
-				52964BE415A7C9B90022BD26 /* SQLSTUDIOMyService.h */,
-				52964BE515A7C9B90022BD26 /* SQLSTUDIOMyService.m */,
-				52964BE615A7C9B90022BD26 /* SQLSTUDIOServices.h */,
-				52964BE715A7C9B90022BD26 /* SQLSTUDIOServices.m */,
-				52964BE815A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.h */,
-				52964BE915A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.m */,
-				52964BEA15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.h */,
-				52964BEB15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.m */,
-				52964BEC15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.h */,
-				52964BED15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.m */,
-				52964BEE15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.h */,
-				52964BEF15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.m */,
-				52964BF015A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.h */,
-				52964BF115A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.m */,
-				52964BF215A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.h */,
-				52964BF315A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.m */,
-				52964BF415A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.h */,
-				52964BF515A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.m */,
-				52964BF615A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.h */,
-				52964BF715A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.m */,
-				52964BF815A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.h */,
-				52964BF915A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.m */,
-				52964BFA15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.h */,
-				52964BFB15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.m */,
-				52964BFC15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.h */,
-				52964BFD15A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.m */,
-				52964BFE15A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.h */,
-				52964BFF15A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.m */,
-				52964C0015A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.h */,
-				52964C0115A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.m */,
-				52964C0215A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.h */,
-				52964C0315A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.m */,
-				52964C0415A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.h */,
-				52964C0515A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.m */,
-				52964C0615A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.h */,
-				52964C0715A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.m */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		52964C3E15A86A000022BD26 /* FacebookSDK */ = {
@@ -764,7 +798,8 @@
 				52964C9B15AA69690022BD26 /* MapView.xib in Resources */,
 				527C232E15AC77CE004F0D84 /* Options_iPad.xib in Resources */,
 				527C233015AC77CE004F0D84 /* Options.xib in Resources */,
-				528D281215AE568D001B9957 /* MapOptions.xib in Resources */,
+				524F22AD15AE90CD006F6007 /* MapOptions.xib in Resources */,
+				524F232915AEA6CF006F6007 /* cogs.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,42 +834,6 @@
 				520C1781159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m in Sources */,
 				520C1788159F3A7900A4B4A8 /* AsyncImageView.m in Sources */,
 				520B2A2C15A1DE720034DCF9 /* BackSideView.m in Sources */,
-				52964C0815A7C9B90022BD26 /* Soap+Prefix.m in Sources */,
-				52964C0915A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m in Sources */,
-				52964C0A15A7C9B90022BD26 /* SQLSTUDIOArrayOfssAudit_Result.m in Sources */,
-				52964C0B15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m in Sources */,
-				52964C0C15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Ads_Result.m in Sources */,
-				52964C0D15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result.m in Sources */,
-				52964C0E15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m in Sources */,
-				52964C0F15A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m in Sources */,
-				52964C1015A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m in Sources */,
-				52964C1115A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Result.m in Sources */,
-				52964C1215A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m in Sources */,
-				52964C1315A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m in Sources */,
-				52964C1415A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m in Sources */,
-				52964C1515A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m in Sources */,
-				52964C1615A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Race_Result.m in Sources */,
-				52964C1715A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Sex_Result.m in Sources */,
-				52964C1815A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_User_Result.m in Sources */,
-				52964C1915A7C9B90022BD26 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m in Sources */,
-				52964C1A15A7C9B90022BD26 /* SQLSTUDIOMyService.m in Sources */,
-				52964C1B15A7C9B90022BD26 /* SQLSTUDIOServices.m in Sources */,
-				52964C1C15A7C9B90022BD26 /* SQLSTUDIOssAudit_Result.m in Sources */,
-				52964C1D15A7C9B90022BD26 /* SQLSTUDIOtbl_Ad_Status_Result.m in Sources */,
-				52964C1E15A7C9B90022BD26 /* SQLSTUDIOtbl_Ads_Result.m in Sources */,
-				52964C1F15A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result.m in Sources */,
-				52964C2015A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Result_V2.m in Sources */,
-				52964C2115A7C9B90022BD26 /* SQLSTUDIOtbl_Booking_Status_Result.m in Sources */,
-				52964C2215A7C9B90022BD26 /* SQLSTUDIOtbl_CMS_Tag_Result.m in Sources */,
-				52964C2315A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Result.m in Sources */,
-				52964C2415A7C9B90022BD26 /* SQLSTUDIOtbl_Market_Status_Result.m in Sources */,
-				52964C2515A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Child_Result.m in Sources */,
-				52964C2615A7C9B90022BD26 /* SQLSTUDIOtbl_Missing_Status_Result.m in Sources */,
-				52964C2715A7C9B90022BD26 /* SQLSTUDIOtbl_Most_Wanted_Result.m in Sources */,
-				52964C2815A7C9B90022BD26 /* SQLSTUDIOtbl_Race_Result.m in Sources */,
-				52964C2915A7C9B90022BD26 /* SQLSTUDIOtbl_Sex_Result.m in Sources */,
-				52964C2A15A7C9B90022BD26 /* SQLSTUDIOtbl_User_Result.m in Sources */,
-				52964C2B15A7C9B90022BD26 /* SQLSTUDIOtbl_Wanted_Status_Result.m in Sources */,
 				52964C6115A86A110022BD26 /* Facebook.m in Sources */,
 				52964C6315A86A110022BD26 /* FBDialog.m in Sources */,
 				52964C6415A86A110022BD26 /* FBFrictionlessRequestSettings.m in Sources */,
@@ -849,7 +848,46 @@
 				52964C9A15AA69690022BD26 /* MapView.m in Sources */,
 				52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */,
 				527C232F15AC77CE004F0D84 /* Options.m in Sources */,
-				528D281015AE55D5001B9957 /* MapOptions.m in Sources */,
+				524F22AC15AE90CD006F6007 /* MapOptions.m in Sources */,
+				524F22B215AE9230006F6007 /* MyNavController.m in Sources */,
+				524F230215AE9915006F6007 /* Soap+Prefix.m in Sources */,
+				524F230315AE9915006F6007 /* SQLSTUDIOAdCycle_Result.m in Sources */,
+				524F230415AE9915006F6007 /* SQLSTUDIOArrayOfssAudit_Result.m in Sources */,
+				524F230515AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ad_Status_Result.m in Sources */,
+				524F230615AE9915006F6007 /* SQLSTUDIOArrayOftbl_Ads_Result.m in Sources */,
+				524F230715AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result.m in Sources */,
+				524F230815AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Result_V2.m in Sources */,
+				524F230915AE9915006F6007 /* SQLSTUDIOArrayOftbl_Booking_Status_Result.m in Sources */,
+				524F230A15AE9915006F6007 /* SQLSTUDIOArrayOftbl_CMS_Tag_Result.m in Sources */,
+				524F230B15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Crime_Type_Result.m in Sources */,
+				524F230C15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Result.m in Sources */,
+				524F230D15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Market_Status_Result.m in Sources */,
+				524F230E15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Child_Result.m in Sources */,
+				524F230F15AE9915006F6007 /* SQLSTUDIOArrayOftbl_Missing_Status_Result.m in Sources */,
+				524F231015AE9915006F6007 /* SQLSTUDIOArrayOftbl_Most_Wanted_Result.m in Sources */,
+				524F231115AE9915006F6007 /* SQLSTUDIOArrayOftbl_Race_Result.m in Sources */,
+				524F231215AE9915006F6007 /* SQLSTUDIOArrayOftbl_Sex_Result.m in Sources */,
+				524F231315AE9915006F6007 /* SQLSTUDIOArrayOftbl_User_Result.m in Sources */,
+				524F231415AE9915006F6007 /* SQLSTUDIOArrayOftbl_Wanted_Status_Result.m in Sources */,
+				524F231515AE9915006F6007 /* SQLSTUDIOMyService.m in Sources */,
+				524F231615AE9915006F6007 /* SQLSTUDIOServices.m in Sources */,
+				524F231715AE9915006F6007 /* SQLSTUDIOssAudit_Result.m in Sources */,
+				524F231815AE9915006F6007 /* SQLSTUDIOtbl_Ad_Status_Result.m in Sources */,
+				524F231915AE9915006F6007 /* SQLSTUDIOtbl_Ads_Result.m in Sources */,
+				524F231A15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result.m in Sources */,
+				524F231B15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Result_V2.m in Sources */,
+				524F231C15AE9915006F6007 /* SQLSTUDIOtbl_Booking_Status_Result.m in Sources */,
+				524F231D15AE9915006F6007 /* SQLSTUDIOtbl_CMS_Tag_Result.m in Sources */,
+				524F231E15AE9915006F6007 /* SQLSTUDIOtbl_Crime_Type_Result.m in Sources */,
+				524F231F15AE9915006F6007 /* SQLSTUDIOtbl_Market_Result.m in Sources */,
+				524F232015AE9915006F6007 /* SQLSTUDIOtbl_Market_Status_Result.m in Sources */,
+				524F232115AE9915006F6007 /* SQLSTUDIOtbl_Missing_Child_Result.m in Sources */,
+				524F232215AE9915006F6007 /* SQLSTUDIOtbl_Missing_Status_Result.m in Sources */,
+				524F232315AE9915006F6007 /* SQLSTUDIOtbl_Most_Wanted_Result.m in Sources */,
+				524F232415AE9915006F6007 /* SQLSTUDIOtbl_Race_Result.m in Sources */,
+				524F232515AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m in Sources */,
+				524F232615AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m in Sources */,
+				524F232715AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,18 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MapOptions;
 
-@protocol MapOptionsDelegate
--(void)touchedOK:(MapOptions *) controller;
-@end
-
-@interface MapOptions : UIView
+@interface MapOptions : UIViewController
 {
-
+    NSMutableArray *rawData;
+    IBOutlet UITableView *dgMain;
 }
-@property (nonatomic, retain) NSObject<MapOptionsDelegate> *delegate;
-@property (retain, nonatomic) IBOutlet UIButton *btnDont;
-- (IBAction)btnDone_Touch:(id)sender;
-
+@property (nonatomic,retain) NSMutableArray *rawData;
+@property (retain, nonatomic) IBOutlet UITableView *dgMain;
 @end

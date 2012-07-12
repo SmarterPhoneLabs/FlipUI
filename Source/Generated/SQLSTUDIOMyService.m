@@ -23,6 +23,7 @@
 #import "SQLSTUDIOArrayOftbl_Sex_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Status_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Result.h"
+#import "SQLSTUDIOArrayOftbl_Crime_Type_Result.h"
 #import "SQLSTUDIOArrayOftbl_Booking_Result_V2.h"
 #import "SQLSTUDIOArrayOftbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Most_Wanted_Result.h"
@@ -37,6 +38,7 @@
 #import "SQLSTUDIOtbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Booking_Result_V2.h"
 #import "SQLSTUDIOtbl_Market_Result.h"
+#import "SQLSTUDIOtbl_Crime_Type_Result.h"
 #import "SQLSTUDIOtbl_CMS_Tag_Result.h"
 #import "SQLSTUDIOssAudit_Result.h"
 #import "SQLSTUDIOtbl_User_Result.h"
@@ -206,6 +208,95 @@
 		[_params addObject: [[[SoapParameter alloc] initWithValue: Markets forName: @"Markets"] autorelease]];
 		NSString* _envelope = [Soap createEnvelope: @"Search_Bookings_V2" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
 		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Search_Bookings_V2" postData: _envelope deserializeTo: [[SQLSTUDIOArrayOftbl_Booking_Result_V2 alloc] autorelease]];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns int.  */
+	- (SoapRequest*) Create_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt
+	{
+		return [self Create_tbl_Crime_Type: handler action: nil Crime_Type_Name: Crime_Type_Name ssImage_Crime_Type_Image: ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: ssImage_Crime_Type_ImageExt];
+	}
+
+	- (SoapRequest*) Create_tbl_Crime_Type: (id) _target action: (SEL) _action Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: Crime_Type_Name forName: @"Crime_Type_Name"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: ssImage_Crime_Type_Image forName: @"ssImage_Crime_Type_Image"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: ssImage_Crime_Type_ImageExt forName: @"ssImage_Crime_Type_ImageExt"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"Create_tbl_Crime_Type" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Create_tbl_Crime_Type" postData: _envelope deserializeTo: @"int"];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns int.  */
+	- (SoapRequest*) Update_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt
+	{
+		return [self Update_tbl_Crime_Type: handler action: nil Crime_Type_ID: Crime_Type_ID Crime_Type_Name: Crime_Type_Name ssImage_Crime_Type_Image: ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: ssImage_Crime_Type_ImageExt];
+	}
+
+	- (SoapRequest*) Update_tbl_Crime_Type: (id) _target action: (SEL) _action Crime_Type_ID: (int) Crime_Type_ID Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: [NSNumber numberWithInt: Crime_Type_ID] forName: @"Crime_Type_ID"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: Crime_Type_Name forName: @"Crime_Type_Name"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: ssImage_Crime_Type_Image forName: @"ssImage_Crime_Type_Image"] autorelease]];
+		[_params addObject: [[[SoapParameter alloc] initWithValue: ssImage_Crime_Type_ImageExt forName: @"ssImage_Crime_Type_ImageExt"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"Update_tbl_Crime_Type" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Update_tbl_Crime_Type" postData: _envelope deserializeTo: @"int"];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns SQLSTUDIOtbl_Crime_Type_Result*.  */
+	- (SoapRequest*) Get_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID
+	{
+		return [self Get_tbl_Crime_Type: handler action: nil Crime_Type_ID: Crime_Type_ID];
+	}
+
+	- (SoapRequest*) Get_tbl_Crime_Type: (id) _target action: (SEL) _action Crime_Type_ID: (int) Crime_Type_ID
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: [NSNumber numberWithInt: Crime_Type_ID] forName: @"Crime_Type_ID"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"Get_tbl_Crime_Type" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Get_tbl_Crime_Type" postData: _envelope deserializeTo: [[SQLSTUDIOtbl_Crime_Type_Result alloc] autorelease]];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) List_All_tbl_Crime_Type: (id <SoapDelegate>) handler
+	{
+		return [self List_All_tbl_Crime_Type: handler action: nil];
+	}
+
+	- (SoapRequest*) List_All_tbl_Crime_Type: (id) _target action: (SEL) _action
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		NSString* _envelope = [Soap createEnvelope: @"List_All_tbl_Crime_Type" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/List_All_tbl_Crime_Type" postData: _envelope deserializeTo: [[SQLSTUDIOArrayOftbl_Crime_Type_Result alloc] autorelease]];
+		[_request send];
+		return _request;
+	}
+
+	/* Returns int.  */
+	- (SoapRequest*) Delete_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID
+	{
+		return [self Delete_tbl_Crime_Type: handler action: nil Crime_Type_ID: Crime_Type_ID];
+	}
+
+	- (SoapRequest*) Delete_tbl_Crime_Type: (id) _target action: (SEL) _action Crime_Type_ID: (int) Crime_Type_ID
+		{
+		NSMutableArray* _params = [NSMutableArray array];
+		
+		[_params addObject: [[[SoapParameter alloc] initWithValue: [NSNumber numberWithInt: Crime_Type_ID] forName: @"Crime_Type_ID"] autorelease]];
+		NSString* _envelope = [Soap createEnvelope: @"Delete_tbl_Crime_Type" forNamespace: self.namespace withParameters: _params withHeaders: self.headers];
+		SoapRequest* _request = [SoapRequest create: _target action: _action service: self soapAction: @"http://tempuri.org/IMyService/Delete_tbl_Crime_Type" postData: _envelope deserializeTo: @"int"];
 		[_request send];
 		return _request;
 	}

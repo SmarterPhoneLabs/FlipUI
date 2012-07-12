@@ -23,6 +23,7 @@
 #import "SQLSTUDIOArrayOftbl_Sex_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Status_Result.h"
 #import "SQLSTUDIOArrayOftbl_Market_Result.h"
+#import "SQLSTUDIOArrayOftbl_Crime_Type_Result.h"
 #import "SQLSTUDIOArrayOftbl_Booking_Result_V2.h"
 #import "SQLSTUDIOArrayOftbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Most_Wanted_Result.h"
@@ -37,6 +38,7 @@
 #import "SQLSTUDIOtbl_Wanted_Status_Result.h"
 #import "SQLSTUDIOtbl_Booking_Result_V2.h"
 #import "SQLSTUDIOtbl_Market_Result.h"
+#import "SQLSTUDIOtbl_Crime_Type_Result.h"
 #import "SQLSTUDIOtbl_CMS_Tag_Result.h"
 #import "SQLSTUDIOssAudit_Result.h"
 #import "SQLSTUDIOtbl_User_Result.h"
@@ -77,6 +79,26 @@
 	/* Returns NSMutableArray*.  */
 	- (SoapRequest*) Search_Bookings_V2: (id <SoapDelegate>) handler Phrase: (NSString*) Phrase Markets: (NSString*) Markets;
 	- (SoapRequest*) Search_Bookings_V2: (id) target action: (SEL) action Phrase: (NSString*) Phrase Markets: (NSString*) Markets;
+
+	/* Returns int.  */
+	- (SoapRequest*) Create_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt;
+	- (SoapRequest*) Create_tbl_Crime_Type: (id) target action: (SEL) action Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt;
+
+	/* Returns int.  */
+	- (SoapRequest*) Update_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt;
+	- (SoapRequest*) Update_tbl_Crime_Type: (id) target action: (SEL) action Crime_Type_ID: (int) Crime_Type_ID Crime_Type_Name: (NSString*) Crime_Type_Name ssImage_Crime_Type_Image: (NSData*) ssImage_Crime_Type_Image ssImage_Crime_Type_ImageExt: (NSString*) ssImage_Crime_Type_ImageExt;
+
+	/* Returns SQLSTUDIOtbl_Crime_Type_Result*.  */
+	- (SoapRequest*) Get_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID;
+	- (SoapRequest*) Get_tbl_Crime_Type: (id) target action: (SEL) action Crime_Type_ID: (int) Crime_Type_ID;
+
+	/* Returns NSMutableArray*.  */
+	- (SoapRequest*) List_All_tbl_Crime_Type: (id <SoapDelegate>) handler;
+	- (SoapRequest*) List_All_tbl_Crime_Type: (id) target action: (SEL) action;
+
+	/* Returns int.  */
+	- (SoapRequest*) Delete_tbl_Crime_Type: (id <SoapDelegate>) handler Crime_Type_ID: (int) Crime_Type_ID;
+	- (SoapRequest*) Delete_tbl_Crime_Type: (id) target action: (SEL) action Crime_Type_ID: (int) Crime_Type_ID;
 
 	/* Returns NSMutableArray*.  */
 	- (SoapRequest*) List_All_tbl_Market: (id <SoapDelegate>) handler;

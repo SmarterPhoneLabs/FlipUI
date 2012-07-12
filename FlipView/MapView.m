@@ -22,7 +22,7 @@ int selectedX;
 
 bool allowTouch = YES;
 
-MapOptions *bSV;
+
 
 -(void)showDetails:(id)sender
 {
@@ -174,6 +174,17 @@ MapOptions *bSV;
 	}
     
     SQLSTUDIOtbl_Booking_Result *myPOI = (SQLSTUDIOtbl_Booking_Result*)result;
+    
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString *crimeTypes = [delegate getMapCrimeTypes];
+    NSRange textRange;
+    textRange =[crimeTypes rangeOfString:[NSString stringWithFormat:@"%i,",myPOI.Crime_Type]];
+    
+    if(textRange.location != NSNotFound)
+    {
+        
+        //Does contain the substring
+    
 
         double longitude = [myPOI.Booking_Long doubleValue];
         double latitude = [myPOI.Booking_Lat doubleValue];
@@ -194,7 +205,7 @@ MapOptions *bSV;
         
         [mvMain addAnnotation:annotation];
         [annotation release];
-    
+    }
   //  [activityMain stopAnimating];
 }
 
@@ -257,6 +268,14 @@ MapOptions *bSV;
     NSMutableArray *myData = (NSMutableArray*)result;
     for(SQLSTUDIOtbl_Booking_Result *myPOI in myData)
     {
+        AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        NSString *crimeTypes = [delegate getMapCrimeTypes];
+        NSRange textRange;
+        textRange =[crimeTypes rangeOfString:[NSString stringWithFormat:@"%i,",myPOI.Crime_Type]];
+        
+        if(textRange.location != NSNotFound)
+        {
+
         double longitude = [myPOI.Booking_Long doubleValue];
         double latitude = [myPOI.Booking_Lat doubleValue];
         
@@ -279,6 +298,7 @@ MapOptions *bSV;
         
         [mvMain addAnnotation:annotation];
         [annotation release];
+        }
     }
     //[activityMain stopAnimating];
 }
@@ -317,7 +337,7 @@ MapOptions *bSV;
         
         [self gumball];
         
-        UIImage *image = [UIImage imageNamed:@"goldstar.png"];
+        UIImage *image = [UIImage imageNamed:@"cogs.png"];
         UIButton *myCustomButton = [UIButton buttonWithType:UIButtonTypeCustom];
         myCustomButton.bounds = CGRectMake( 0, 0, image.size.width, image.size.height );    
         [myCustomButton setImage:image forState:UIControlStateNormal];
@@ -339,12 +359,29 @@ MapOptions *bSV;
 }
 -(void)showMapOptions
 {
-            [self.view addSubview:bSV];
-
-    [UIView beginAnimations:@"animation" context:nil];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
-    [UIView setAnimationDuration:1.5];
-    [UIView commitAnimations]; 
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif   
+    [UIView beginAnimations:@"animation" context:nil];        
+    MapOptions *newView2;
+    if(iPad == YES)
+    {
+        newView2 = [[MapOptions alloc] initWithNibName:@"MapOptions_iPad" bundle:nil];              
+    }
+    else
+    {
+        newView2 = [[MapOptions alloc] initWithNibName:@"MapOptions" bundle:nil];              
+    }        
+    
+    [self.navigationController  pushViewController:newView2 animated:NO];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO]; 
+    [UIView setAnimationDuration:0.5];
+    [UIView commitAnimations];
+    
+    [newView2 release];  
+    
+    
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -445,8 +482,7 @@ MapOptions *bSV;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    bSV = [[MapOptions alloc] initWithFrame:CGRectMake(0,0, 320, 480)];
-    [bSV setDelegate:self];
+
         [self gumball];
     // Do any additional setup after loading the view from its nib.
 }
@@ -466,16 +502,16 @@ MapOptions *bSV;
 
 - (void)dealloc {
     [mvMain release];
-    [bSV release];
+    //[bSV release];
     [super dealloc];
 }
 
 -(void)touchedOK:(MapOptions *)controller
 {
-    [bSV removeFromSuperview];
-    [UIView beginAnimations:@"animation" context:nil];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:bSV cache:YES]; 
-    [UIView setAnimationDuration:1.5];
-    [UIView commitAnimations]; 
+//    [bSV removeFromSuperview];
+//    [UIView beginAnimations:@"animation" context:nil];
+//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:bSV cache:YES]; 
+//    [UIView setAnimationDuration:1.5];
+//    [UIView commitAnimations]; 
 }
 @end

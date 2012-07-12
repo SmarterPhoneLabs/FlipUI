@@ -16,6 +16,7 @@
     Facebook *facebook;
     NSMutableDictionary *imageCache; 
     NSMutableDictionary *marketList;
+    NSMutableDictionary *crimeMapList;
     int tileSize;
 }
 
@@ -34,10 +35,11 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @property (nonatomic, retain) NSMutableDictionary *marketList;
+@property (nonatomic, retain) NSMutableDictionary *crimeMapList;
 
 
 -(NSString*)getMarkets;
-
+-(NSString*)getMapCrimeTypes;
 -(bool)loginFacebook;
 
 -(void) launchURL:(NSString*)URL;

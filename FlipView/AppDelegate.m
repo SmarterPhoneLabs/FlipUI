@@ -20,6 +20,7 @@
 @synthesize navHome;
 @synthesize marketList;
 @synthesize tileSize;
+@synthesize crimeMapList;
 
 
 
@@ -37,6 +38,7 @@
     {
         imageCache = [[NSMutableDictionary alloc] init];
         marketList = [[NSMutableDictionary  alloc] init];
+        crimeMapList = [[NSMutableDictionary alloc] init];
         
         if([[NSUserDefaults standardUserDefaults] integerForKey:@"TileSize"] == 0)
         {
@@ -94,6 +96,17 @@
     else
     {
         marketList = [[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"];
+    }
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"CrimeMapList"] == nil)
+    {
+        //        [marketList setValue:@"YES" forKey:@"0"];
+        //        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
+        //        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else
+    {
+        crimeMapList = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrimeMapList"];
     }
     
 
@@ -359,6 +372,27 @@
     for (NSString* key in marketList)
     {
         id *value = [marketList objectForKey:key];
+        if([(NSString*)value isEqualToString: @"YES"])
+        {
+            NSString *temp;
+            temp = [retVal stringByAppendingString:[NSString stringWithFormat:@"%@,",key]]; 
+            
+            retVal = temp;
+        }
+        
+        
+    }
+    
+    return  retVal;
+}
+
+-(NSString*)getMapCrimeTypes
+{
+    NSString *retVal =@"";
+    
+    for (NSString* key in crimeMapList)
+    {
+        id *value = [crimeMapList objectForKey:key];
         if([(NSString*)value isEqualToString: @"YES"])
         {
             NSString *temp;
