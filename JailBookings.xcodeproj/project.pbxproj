@@ -47,6 +47,8 @@
 		52880321159ECC1700C5D04A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5288031F159ECC1700C5D04A /* ViewController_iPad.xib */; };
 		52880339159ED20000C5D04A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52880338159ED20000C5D04A /* QuartzCore.framework */; };
 		5289012D15A3E2840059098B /* Arrowup.png in Resources */ = {isa = PBXBuildFile; fileRef = 5289012C15A3E2840059098B /* Arrowup.png */; };
+		528D281015AE55D5001B9957 /* MapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D280F15AE55D5001B9957 /* MapOptions.m */; };
+		528D281215AE568D001B9957 /* MapOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D281115AE568C001B9957 /* MapOptions.xib */; };
 		52964BB415A6A3180022BD26 /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 52964BB315A6A3180022BD26 /* goldstar.png */; };
 		52964C0815A7C9B90022BD26 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC115A7C9B90022BD26 /* Soap+Prefix.m */; };
 		52964C0915A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964BC315A7C9B90022BD26 /* SQLSTUDIOAdCycle_Result.m */; };
@@ -193,6 +195,9 @@
 		52880320159ECC1700C5D04A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		52880338159ED20000C5D04A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5289012C15A3E2840059098B /* Arrowup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrowup.png; sourceTree = "<group>"; };
+		528D280E15AE55D5001B9957 /* MapOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptions.h; sourceTree = "<group>"; };
+		528D280F15AE55D5001B9957 /* MapOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOptions.m; sourceTree = "<group>"; };
+		528D281115AE568C001B9957 /* MapOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions.xib; sourceTree = "<group>"; };
 		52964BB315A6A3180022BD26 /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
 		52964BC015A7C9B90022BD26 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
 		52964BC115A7C9B90022BD26 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
@@ -419,6 +424,7 @@
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				528D280D15AE55B0001B9957 /* MapOptions */,
 				527C232A15AC77CE004F0D84 /* Options_iPad.xib */,
 				527C232B15AC77CE004F0D84 /* Options.h */,
 				527C232C15AC77CE004F0D84 /* Options.m */,
@@ -504,6 +510,16 @@
 				520B2A2E15A1E0810034DCF9 /* image-1-1024x960.jpg */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		528D280D15AE55B0001B9957 /* MapOptions */ = {
+			isa = PBXGroup;
+			children = (
+				528D280E15AE55D5001B9957 /* MapOptions.h */,
+				528D280F15AE55D5001B9957 /* MapOptions.m */,
+				528D281115AE568C001B9957 /* MapOptions.xib */,
+			);
+			name = MapOptions;
 			sourceTree = "<group>";
 		};
 		52964BBF15A7C9B90022BD26 /* Generated */ = {
@@ -748,6 +764,7 @@
 				52964C9B15AA69690022BD26 /* MapView.xib in Resources */,
 				527C232E15AC77CE004F0D84 /* Options_iPad.xib in Resources */,
 				527C233015AC77CE004F0D84 /* Options.xib in Resources */,
+				528D281215AE568D001B9957 /* MapOptions.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +849,7 @@
 				52964C9A15AA69690022BD26 /* MapView.m in Sources */,
 				52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */,
 				527C232F15AC77CE004F0D84 /* Options.m in Sources */,
+				528D281015AE55D5001B9957 /* MapOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

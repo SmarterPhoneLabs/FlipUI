@@ -47,7 +47,25 @@ int oldHeight;
     {
     AppDelegate *delegateX = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     crimeTypeImage = [delegateX getImageView:crimeTypeImageLink size:CGSizeMake( 24, 24) glass:YES isWebBased:YES];
-    crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
+        
+        if(self.frame.size.width == 25)
+        {
+            crimeTypeImage.frame = CGRectMake(0, 0, 10, 10);
+        }
+        if(self.frame.size.width == 50)
+        {
+            crimeTypeImage.frame = CGRectMake(0, 0, 12, 12);
+        }
+        if(self.frame.size.width == 100)
+        {
+            crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
+        } 
+        if(self.frame.size.width == 200)
+        {
+            crimeTypeImage.frame = CGRectMake(0, 0, 48, 48);
+        } 
+        
+
     [crimeTypeImage setAlpha:0.5];
     [imageView addSubview:crimeTypeImage];
     }

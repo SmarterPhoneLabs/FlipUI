@@ -10,37 +10,40 @@
 #import "AppDelegate.h"
 #import "SQLSTUDIOServices.h"
 #import "BackSideView.h"
+#import "MapOptions.h"
 
 #define METERS_PER_MILE 1609.344
 int selectedLocation;
 int selectedX;
+
 @implementation MapView
 @synthesize mvMain;
 @synthesize avtivityMain;
 
 bool allowTouch = YES;
 
+MapOptions *bSV;
 
 -(void)showDetails:(id)sender
 {
 
-    BackSideView *web;
-    BOOL iPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-    if(iPad)
-    {
-        web = [[BackSideView alloc] initWithNibName:@"BackSideView_iPad" bundle:nil Booking_ID:selectedLocation];
-        [self.navigationController  pushViewController:web animated:YES];
-        [web release];
-    }
-    else
-    {
-        web = [[BackSideView alloc] initWithNibName:@"BackSideView" bundle:nil Booking_ID:selectedLocation];
-        [self.navigationController  pushViewController:web animated:YES];    
-        [web release];
-    }
+//    BackSideView *web;
+//    BOOL iPad = NO;
+//#ifdef UI_USER_INTERFACE_IDIOM
+//    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+//#endif
+//    if(iPad)
+//    {
+//        web = [[BackSideView alloc] initWithNibName:@"BackSideView_iPad" bundle:nil Booking_ID:selectedLocation];
+//        [self.navigationController  pushViewController:web animated:YES];
+//        [web release];
+//    }
+//    else
+//    {
+//        web = [[BackSideView alloc] initWithNibName:@"BackSideView" bundle:nil Booking_ID:selectedLocation];
+//        [self.navigationController  pushViewController:web animated:YES];    
+//        [web release];
+//    }
 
 }
 
@@ -313,11 +316,36 @@ bool allowTouch = YES;
         [mvMain setRegion:adjustedRegion animated:YES]; 
         
         [self gumball];
+        
+        UIImage *image = [UIImage imageNamed:@"goldstar.png"];
+        UIButton *myCustomButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        myCustomButton.bounds = CGRectMake( 0, 0, image.size.width, image.size.height );    
+        [myCustomButton setImage:image forState:UIControlStateNormal];
+        [myCustomButton addTarget:self action:@selector(showMapOptions) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:myCustomButton];
+        self.navigationItem.rightBarButtonItem = button;
+        self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+        
+        [button release];
+        [myCustomButton release];
+        [image release];
+        
+
 
     }
     return self;
 }
+-(void)showMapOptions
+{
+            [self.view addSubview:bSV];
 
+    [UIView beginAnimations:@"animation" context:nil];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
+    [UIView setAnimationDuration:1.5];
+    [UIView commitAnimations]; 
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -360,6 +388,11 @@ bool allowTouch = YES;
         MKCoordinateRegion adjustedRegion = [mvMain regionThatFits:viewRegion];                
         [mvMain setRegion:adjustedRegion animated:YES]; 
         [self gumballSingle:Booking_ID];
+        
+        
+        
+
+  
 
     }
     return self;
@@ -412,7 +445,8 @@ bool allowTouch = YES;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    bSV = [[MapOptions alloc] initWithFrame:CGRectMake(0,0, 320, 480)];
+    [bSV setDelegate:self];
         [self gumball];
     // Do any additional setup after loading the view from its nib.
 }
@@ -432,6 +466,16 @@ bool allowTouch = YES;
 
 - (void)dealloc {
     [mvMain release];
+    [bSV release];
     [super dealloc];
+}
+
+-(void)touchedOK:(MapOptions *)controller
+{
+    [bSV removeFromSuperview];
+    [UIView beginAnimations:@"animation" context:nil];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:bSV cache:YES]; 
+    [UIView setAnimationDuration:1.5];
+    [UIView commitAnimations]; 
 }
 @end

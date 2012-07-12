@@ -515,15 +515,16 @@ bool IsSearching;
         [itemList addObject:myTile];
         [myTile release];
     }
-        [self arrangeTiles];
-    
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd hh:mm"];
-    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-    lblLastRefreshDate.text = [NSString stringWithFormat:@"Last Updted %@", dateString];
-    [dateFormatter release];
-    
 
+
+      [self arrangeTiles];
+    [self SortTiles: NO];        
+//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"MM/dd hh:mm"];
+//    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+//    lblLastRefreshDate.text = [NSString stringWithFormat:@"Last Updted %@", dateString];
+//    [dateFormatter release];
+ 
 }
 
 
@@ -897,7 +898,6 @@ bool IsSearching;
     [self setLblLastRefreshDate:nil];
     [self setImgScrollArrow:nil];
     [self setScMain:nil];
-    [self setSvOptions:nil];
     [self setLblSelectMarket:nil];
     [super viewDidUnload];
 }
@@ -1085,9 +1085,12 @@ bool IsSearching;
 
 }
 
-- (IBAction)scMain_Touch:(id)sender 
+- (void)SortTiles:(BOOL)FadeModeOn
 {
-    for(AsyncImageView *myPOI in itemList)
+    if (FadeModeOn == YES)
+    {
+        
+        for(AsyncImageView *myPOI in itemList)
         {
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
             dispatch_async(queue, ^{
@@ -1107,7 +1110,7 @@ bool IsSearching;
                 });
             });
         }
-        
+    }
     NSArray *sortedArray;
     switch (self.scMain.selectedSegmentIndex) {
         case 0:
@@ -1123,11 +1126,11 @@ bool IsSearching;
             {
                 [itemList addObject:myPOI];
             }
- 
-            [self arrangeTiles];
-
             
-
+            [self arrangeTiles];
+            
+            
+            
             break;
             
         case 1:
@@ -1190,7 +1193,7 @@ bool IsSearching;
             for(AsyncImageView *myPOI in sortedArray)
             {
                 [itemList addObject:myPOI];
-
+                
             }
             [self arrangeTiles];            
             break; 
@@ -1213,31 +1216,39 @@ bool IsSearching;
             
         case 6:
             NSLog(@"Options");
-
+            
             break;
         default:
             break;
     }
     
-    for(AsyncImageView *myPOI in itemList)
+    if(FadeModeOn == YES)
     {
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
-        dispatch_async(queue, ^{
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                
-                
-                [UIView animateWithDuration:1.75
-                                      delay:0
-                                    options:UIViewAnimationOptionAllowUserInteraction
-                                 animations:^
-                 {
-                     
-                     myPOI.alpha = 1.0;
-                 }
-                                 completion:nil];
-                
+        for(AsyncImageView *myPOI in itemList)
+        {
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+            dispatch_async(queue, ^{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    
+                    [UIView animateWithDuration:1.75
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction
+                                     animations:^
+                     {
+                         
+                         myPOI.alpha = 1.0;
+                     }
+                                     completion:nil];
+                    
+                });
             });
-        });
+        }
     }
+}
+
+- (IBAction)scMain_Touch:(id)sender 
+{
+    [self SortTiles: YES];
 }
 @end
