@@ -12,6 +12,7 @@
 #import "BackSideView.h"
 #import "MapOptions.h"
 #import "BackSideView.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define METERS_PER_MILE 1609.344
 int selectedLocation;
@@ -79,6 +80,19 @@ bool allowTouch = YES;
 //    {
 //        [controller maximize:svX.contentOffset.y];
 //    }
+
+    
+//    CATransition *animation = [CATransition animation];
+//    animation.type = @"zoomyOut";
+//    animation.duration = 3.0f;
+//    animation.timingFunction = UIViewAnimationCurveEaseInOut;
+//    //self.opacity = 1.0f;
+//    //self.mvMain.alpha = 0.0;
+//    [self.view addSubview:bSV ];
+//    [self.view.layer addAnimation:animation forKey:@"transitionViewAnimation"];
+    
+    
+    
     [UIView beginAnimations:@"animation" context:nil];
     [self.view addSubview:bSV];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 

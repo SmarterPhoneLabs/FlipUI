@@ -34,6 +34,7 @@
 -(id)initWithFrame:(CGRect)frame andTag:(int)TagID;
 -(void)remove;
 
+@property (retain, nonatomic) IBOutlet UIScrollView *svMini;
 @property (retain, nonatomic) IBOutlet UILabel *lblGender;
 @property (retain, nonatomic) IBOutlet UILabel *lblDOB;
 @property (retain, nonatomic) IBOutlet UILabel *lblDOO;

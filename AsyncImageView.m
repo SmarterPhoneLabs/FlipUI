@@ -45,29 +45,47 @@ int oldHeight;
 {
     if(self.isAd == NO)
     {
+            UILabel *lblName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        lblName.text = name;
+        [lblName setBackgroundColor:[UIColor clearColor]];
+        [lblName setTextColor:[UIColor whiteColor]];
+
+        [imageView addSubview:lblName];
+
+        
     AppDelegate *delegateX = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     crimeTypeImage = [delegateX getImageView:crimeTypeImageLink size:CGSizeMake( 24, 24) glass:YES isWebBased:YES];
         
         if(self.frame.size.width == 25)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 10, 10);
+            [lblName setFrame:CGRectMake(2,19, 23, 6)];
+            [lblName setFont: [UIFont fontWithName:@"Helvetica" size:3]];
         }
         if(self.frame.size.width == 50)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 12, 12);
+            [lblName setFrame:CGRectMake(2,40, 48, 10)];
+            [lblName setFont: [UIFont fontWithName:@"Helvetica" size:6]];
+
         }
         if(self.frame.size.width == 100)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
+            [lblName setFrame:CGRectMake(5,80, 95, 20)];
+            [lblName setFont: [UIFont fontWithName:@"Helvetica" size:10]];
         } 
         if(self.frame.size.width == 200)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 48, 48);
+            [lblName setFrame:CGRectMake(5,180, 195, 20)];
+            [lblName setFont: [UIFont fontWithName:@"Helvetica" size:15]];
         } 
         
 
     [crimeTypeImage setAlpha:0.5];
     [imageView addSubview:crimeTypeImage];
+    [lblName release];
     }
     
 }
@@ -190,6 +208,9 @@ int oldHeight;
         star4.frame = CGRectMake(144,self.frame.size.height-48,48,48);        
     }  
 
+    
+
+    
     
     
 	return self;

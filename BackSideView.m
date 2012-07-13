@@ -18,6 +18,7 @@
 @end
 
 @implementation BackSideView
+@synthesize svMini;
 @synthesize lblGender;
 @synthesize lblDOB;
 @synthesize lblDOO;
@@ -54,7 +55,7 @@ int selectedMarket;
     SQLSTUDIOArrayOftbl_Market_Result *results =(SQLSTUDIOArrayOftbl_Market_Result*) result;
     for(SQLSTUDIOtbl_Market_Result *result in results)
     {
-        if (result.Market_ID = selectedMarket)
+        if (result.Market_ID == selectedMarket)
         {
             lblMarketName.text = result.Market_Name;
         }
@@ -246,6 +247,7 @@ int selectedMarket;
     [lblMarketName release];
     [txtStory release];
     [lblBond release];
+    [svMini release];
     [super dealloc];
 }
 

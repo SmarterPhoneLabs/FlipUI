@@ -58,6 +58,7 @@ bool IsSearching;
     if(debugMode == YES)
     {
         NSLog(LogMessage);
+        
     }
 }
 
@@ -502,7 +503,7 @@ bool IsSearching;
         myTile.isAd = myPOI.Is_Ad;
         myTile.hits = [[NSNumber alloc] initWithInt:myPOI.Views];
         myTile.market = myPOI.Market_ID;
-        myTile.name = myPOI.First_Name;
+        myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
         myTile.sex = myPOI.Sex;
         myTile.Booking_Date = myPOI.Date_Of_Offense;
         myTile.crimeTypeImageLink = [NSString stringWithFormat:@"http://jail-bookings.com/%@",myPOI.Crime_Type_Image];
