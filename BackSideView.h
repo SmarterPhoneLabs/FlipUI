@@ -30,7 +30,21 @@
 @property (retain, nonatomic) IBOutlet UITextView *txtCharges;
 @property (retain, nonatomic) IBOutlet UILabel *lblName;
 
+@property (retain, nonatomic) IBOutlet UIImageView *imgCrimeType;
 -(id)initWithFrame:(CGRect)frame andTag:(int)TagID;
 -(void)remove;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblGender;
+@property (retain, nonatomic) IBOutlet UILabel *lblDOB;
+@property (retain, nonatomic) IBOutlet UILabel *lblDOO;
+@property (retain, nonatomic) IBOutlet UILabel *lblMarketName;
+@property (retain, nonatomic) IBOutlet UITextView *txtStory;
+@property (retain, nonatomic) IBOutlet UILabel *lblBond;
+
+
+
+
+
+
 @end
 

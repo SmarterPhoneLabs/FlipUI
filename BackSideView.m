@@ -18,6 +18,12 @@
 @end
 
 @implementation BackSideView
+@synthesize lblGender;
+@synthesize lblDOB;
+@synthesize lblDOO;
+@synthesize lblMarketName;
+@synthesize txtStory;
+@synthesize lblBond;
 @synthesize btnTwitter;
 
 NSString *cachedImage;
@@ -27,8 +33,35 @@ int selectedBooking;
 @synthesize activityMain;
 @synthesize txtCharges;
 @synthesize lblName;
+@synthesize imgCrimeType;
 @synthesize parentController;
 
+int selectedMarket;
+-(void) handleMarkets:(id)result
+{
+    [activityMain stopAnimating];
+    if([result isKindOfClass:[NSError class]]) 
+    {
+        NSError *MyError = (NSError*) result;
+        if(MyError.code == 410)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network" message:@"Your Network Connection is not Present" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil ];
+            [alert show];
+            [alert release];
+        }
+		return;
+	}
+    SQLSTUDIOArrayOftbl_Market_Result *results =(SQLSTUDIOArrayOftbl_Market_Result*) result;
+    for(SQLSTUDIOtbl_Market_Result *result in results)
+    {
+        if (result.Market_ID = selectedMarket)
+        {
+            lblMarketName.text = result.Market_Name;
+        }
+    }
+
+    
+}
 -(void) handleIt:(id)result
 {
     [activityMain stopAnimating];
@@ -49,6 +82,54 @@ int selectedBooking;
     
     lblName.text = [NSString stringWithFormat:@"%@ %@", myResult.First_Name, myResult.Last_Name];
     txtCharges.text = myResult.Charge;
+    if(myResult.Sex == 1)
+    {
+        lblGender.text = @"Male";
+    }
+    else
+    {
+        lblGender.text = @"Female";
+    }
+    
+    txtStory.text = myResult.Story;
+
+    
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+        NSString *dateString = [dateFormatter stringFromDate:myResult.Date_Of_Birth];
+        lblDOB.text = [NSString stringWithFormat:@"%@", dateString];
+    
+        dateString = [dateFormatter stringFromDate:myResult.Date_Of_Offense];
+        lblDOO.text = [NSString stringWithFormat:@"%@", dateString];
+        [dateFormatter release];
+    
+    if([myResult.Bond_Amount doubleValue] <= 0.00)
+    {
+        lblBond.text = @"Unknown at this time";    
+    }
+    else
+    {
+        NSNumberFormatter * formatter = [[[NSNumberFormatter alloc] init] autorelease];
+        formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+        formatter.currencyCode = @"USD";
+        
+        NSString * formattedAmount = [formatter stringFromNumber: myResult.Bond_Amount];
+        lblBond.text = [NSString stringWithFormat:@"%@",formattedAmount];
+    }
+    
+    [imgCrimeType setImage: [delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myResult.Crime_Type_Image] size:CGSizeMake(72, 72) isWebBased:YES]];
+    
+    selectedMarket = myResult.Market_ID;
+    
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+
+    [service List_All_tbl_Market:self action:@selector(handleMarkets:)];
+    [service release];
+    
+//    myResult.Views
+
+
+    
    
     NSString *imagePaht = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myResult.ssImage_Booking_Image_1];
     cachedImage = [imagePaht copy];
@@ -112,10 +193,11 @@ int selectedBooking;
         }
         
         [self addSubview:[screens objectAtIndex:0]];
-        
+    
         
         SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
         [service Get_tbl_Booking:self action:@selector(handleIt:) Booking_ID:TagID];
+        [service List_All_tbl_Market:self action:@selector(handleMarkets:)];
         [service release];
         [activityMain startAnimating];
     }
@@ -157,6 +239,13 @@ int selectedBooking;
 //    [imgConvict release];
     [btnFacebook release];
     [btnTwitter release];
+    [imgCrimeType release];
+    [lblGender release];
+    [lblDOB release];
+    [lblDOO release];
+    [lblMarketName release];
+    [txtStory release];
+    [lblBond release];
     [super dealloc];
 }
 

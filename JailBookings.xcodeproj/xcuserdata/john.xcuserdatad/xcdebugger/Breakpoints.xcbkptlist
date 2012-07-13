@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FlipView/MapView.m"
-         timestampString = "363817030.092398"
+         timestampString = "363835511.02471"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "370"
-         endingLineNumber = "370"
+         startingLineNumber = "411"
+         endingLineNumber = "411"
          landmarkName = "-showMapOptions"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BackSideView.m"
-         timestampString = "363817989.624525"
+         timestampString = "363833563.184839"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
          landmarkName = "-btnTwitter_Touch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BackSideView.m"
-         timestampString = "363817990.310076"
+         timestampString = "363833563.184839"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "-btnTwitter_Touch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BackSideView.m"
-         timestampString = "363817992.819457"
+         timestampString = "363833563.184839"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "205"
-         endingLineNumber = "205"
+         startingLineNumber = "294"
+         endingLineNumber = "294"
          landmarkName = "-btnFacebook_Touch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -118,6 +118,19 @@
          startingLineNumber = "777"
          endingLineNumber = "777"
          landmarkName = "-touchedOK:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "FlipView/MapView.m"
+         timestampString = "363835474.440275"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "254"
+         endingLineNumber = "254"
+         landmarkName = "-handleListSingleMissing:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

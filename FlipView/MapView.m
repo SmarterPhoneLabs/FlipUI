@@ -11,6 +11,7 @@
 #import "SQLSTUDIOServices.h"
 #import "BackSideView.h"
 #import "MapOptions.h"
+#import "BackSideView.h"
 
 #define METERS_PER_MILE 1609.344
 int selectedLocation;
@@ -44,6 +45,45 @@ bool allowTouch = YES;
 //        [self.navigationController  pushViewController:web animated:YES];    
 //        [web release];
 //    }
+    
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    BackSideView *bSV;
+    if(iPad)
+    {
+        bSV  = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 768, 1024) andTag:101];
+    }
+    else 
+    {
+        bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:101];                
+    }
+    bSV.parentController = self;
+//    controller.backSideView = bSV;
+    //[self.view addSubview:bSV];
+    //[controller.imageView setAlpha:0.1];
+    [bSV release];     
+    
+   // tempRect = controller.frame;
+    
+    
+//    UIScrollView *svX = (UIScrollView*)self.svMain;
+//    if(iPad == YES)
+//    {
+//        
+//        [controller maximize:svX.contentOffset.y];
+//    }
+//    else
+//    {
+//        [controller maximize:svX.contentOffset.y];
+//    }
+    [UIView beginAnimations:@"animation" context:nil];
+    [self.view addSubview:bSV];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
+    [UIView setAnimationDuration:1.5];
+    [UIView commitAnimations];
 
 }
 
@@ -160,7 +200,7 @@ bool allowTouch = YES;
 
 -(void)handleListSingle:(id)result
 {
-    
+    [avtivityMain stopAnimating];
     if([result isKindOfClass:[NSError class]]) 
     {
         NSError *MyError = (NSError*) result;
@@ -211,6 +251,7 @@ bool allowTouch = YES;
 
 -(void)handleListSingleMissing:(id)result
 {
+        [avtivityMain stopAnimating];
     
     if([result isKindOfClass:[NSError class]]) 
     {
@@ -252,7 +293,7 @@ bool allowTouch = YES;
 
 -(void)handleList:(id)result
 {
-    
+        [avtivityMain stopAnimating];
     if([result isKindOfClass:[NSError class]]) 
     {
         NSError *MyError = (NSError*) result;

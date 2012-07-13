@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50</string>
+		<string key="IBDocument.SystemVersion">11D50d</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1179</string>
+			<string key="NS.object.0">1181</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -71,9 +71,13 @@
 				<bool key="IBUIDefinesPresentationContext">YES</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="726524846">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="560828992">
-						<string key="IBUITitle">Crime Map</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="459619708">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="408303183">
+						<string key="IBUITitle">Options</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">cogs.png</string>
+						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="487362153"/>
@@ -87,7 +91,7 @@
 					<bool key="IBUIDefinesPresentationContext">YES</bool>
 					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="476135063">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="731163235">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -95,16 +99,15 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIBarStyle">1</int>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUIViewController" id="1071763475">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="835501220">
+						<object class="IBUIViewController" id="934447932">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="662967334">
 								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="726524846"/>
-							<string key="IBUINibName">MapView_iPad</string>
+							<reference key="IBUIParentViewController" ref="459619708"/>
+							<string key="IBUINibName">Options_iPad</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -113,11 +116,16 @@
 							<bool key="IBUIHorizontal">NO</bool>
 						</object>
 					</array>
+					<bool key="IBUINavigationBarHidden">YES</bool>
 				</object>
 				<array class="NSMutableArray" key="IBUIViewControllers">
 					<object class="IBUINavigationController" id="635403482">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="129896982">
 							<string key="IBUITitle">Bookings</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">handcuffs.png</string>
+							</object>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="487362153"/>
@@ -158,10 +166,13 @@
 						</array>
 						<bool key="IBUINavigationBarHidden">YES</bool>
 					</object>
-					<reference ref="726524846"/>
-					<object class="IBUINavigationController" id="459619708">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="408303183">
-							<string key="IBUITitle">Options</string>
+					<object class="IBUINavigationController" id="726524846">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="560828992">
+							<string key="IBUITitle">Crime Map</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">iphone_globe_icon.png</string>
+							</object>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="487362153"/>
@@ -175,7 +186,7 @@
 						<bool key="IBUIDefinesPresentationContext">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="731163235">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="476135063">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -183,15 +194,16 @@
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="934447932">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="662967334">
+							<object class="IBUIViewController" id="1071763475">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="835501220">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="459619708"/>
-								<string key="IBUINibName">Options_iPad</string>
+								<reference key="IBUIParentViewController" ref="726524846"/>
+								<string key="IBUINibName">MapView_iPad</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -200,8 +212,8 @@
 								<bool key="IBUIHorizontal">NO</bool>
 							</object>
 						</array>
-						<bool key="IBUINavigationBarHidden">YES</bool>
 					</object>
+					<reference ref="459619708"/>
 				</array>
 				<object class="IBUITabBar" key="IBUITabBar" id="467156981">
 					<reference key="NSNextResponder"/>
@@ -435,6 +447,11 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">1179</string>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="cogs.png">{44, 44}</string>
+			<string key="handcuffs.png">{30, 30}</string>
+			<string key="iphone_globe_icon.png">{30, 30}</string>
+		</dictionary>
+		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

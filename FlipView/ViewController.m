@@ -519,11 +519,11 @@ bool IsSearching;
 
       [self arrangeTiles];
     [self SortTiles: NO];        
-//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"MM/dd hh:mm"];
-//    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-//    lblLastRefreshDate.text = [NSString stringWithFormat:@"Last Updted %@", dateString];
-//    [dateFormatter release];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd hh:mm"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    lblLastRefreshDate.text = [NSString stringWithFormat:@"Last Updted %@", dateString];
+   [dateFormatter release];
  
 }
 

@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50</string>
+		<string key="IBDocument.SystemVersion">11D50d</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1179</string>
+			<string key="NS.object.0">1181</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -74,7 +74,7 @@
 					<object class="IBUILabel" id="793136045">
 						<reference key="NSNextResponder" ref="459414620"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{311, 70}, {146, 21}}</string>
+						<string key="NSFrame">{{311, 99}, {146, 21}}</string>
 						<reference key="NSSuperview" ref="459414620"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -105,7 +105,7 @@
 					<object class="IBUIImageView" id="949785573">
 						<reference key="NSNextResponder" ref="459414620"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 70}, {64, 64}}</string>
+						<string key="NSFrame">{{20, 100}, {64, 64}}</string>
 						<reference key="NSSuperview" ref="459414620"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="245047297"/>
@@ -122,7 +122,7 @@
 					<object class="IBUILabel" id="245047297">
 						<reference key="NSNextResponder" ref="459414620"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{280, 90}, {208, 21}}</string>
+						<string key="NSFrame">{{280, 120}, {208, 21}}</string>
 						<reference key="NSSuperview" ref="459414620"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="793136045"/>
@@ -4852,6 +4852,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 			<string key="NS.key.0">Arrowup.png</string>
 			<string key="NS.object.0">{256, 256}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">1179</string>
+		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

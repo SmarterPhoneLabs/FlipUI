@@ -33,6 +33,8 @@
 		520C1781159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C174B159F2C9000A4B4A8 /* CXMLNode_XPathExtensions.m */; };
 		520C1784159F2CA300A4B4A8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */; };
 		520C1788159F3A7900A4B4A8 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C1787159F3A7900A4B4A8 /* AsyncImageView.m */; };
+		5228C3C715AFAD7D000C034B /* handcuffs.png in Resources */ = {isa = PBXBuildFile; fileRef = 5228C3C515AFAD7D000C034B /* handcuffs.png */; };
+		5228C3C815AFAD7D000C034B /* iphone_globe_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5228C3C615AFAD7D000C034B /* iphone_globe_icon.png */; };
 		524F22AC15AE90CD006F6007 /* MapOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22AA15AE90CD006F6007 /* MapOptions.m */; };
 		524F22AD15AE90CD006F6007 /* MapOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524F22AB15AE90CD006F6007 /* MapOptions.xib */; };
 		524F22B215AE9230006F6007 /* MyNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F22B115AE9230006F6007 /* MyNavController.m */; };
@@ -181,6 +183,8 @@
 		520C1783159F2CA300A4B4A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		520C1786159F3A7900A4B4A8 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		520C1787159F3A7900A4B4A8 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		5228C3C515AFAD7D000C034B /* handcuffs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handcuffs.png; sourceTree = "<group>"; };
+		5228C3C615AFAD7D000C034B /* iphone_globe_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_globe_icon.png; sourceTree = "<group>"; };
 		524F22A915AE90CD006F6007 /* MapOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptions.h; sourceTree = "<group>"; };
 		524F22AA15AE90CD006F6007 /* MapOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOptions.m; sourceTree = "<group>"; };
 		524F22AB15AE90CD006F6007 /* MapOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions.xib; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 		5288032B159ED01300C5D04A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5228C3C515AFAD7D000C034B /* handcuffs.png */,
+				5228C3C615AFAD7D000C034B /* iphone_globe_icon.png */,
 				524F232815AEA6CF006F6007 /* cogs.png */,
 				52964C7415A877650022BD26 /* Twitter.png */,
 				52964C7015A870760022BD26 /* facebook-fan-icon-shadow.png */,
@@ -824,6 +830,8 @@
 				524F232915AEA6CF006F6007 /* cogs.png in Resources */,
 				52B8856515AF5DEF006E0DEA /* Main_Window_iPad.xib in Resources */,
 				52B8856715AF676D006E0DEA /* MapOptions_iPad.xib in Resources */,
+				5228C3C715AFAD7D000C034B /* handcuffs.png in Resources */,
+				5228C3C815AFAD7D000C034B /* iphone_globe_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
