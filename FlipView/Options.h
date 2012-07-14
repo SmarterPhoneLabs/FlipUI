@@ -30,6 +30,7 @@
 - (IBAction)btnMoreInfo_Touch:(id)sender;
 @property (retain, nonatomic) IBOutlet UISlider *slTileSize;
 - (IBAction)slTileSize_Touch:(id)sender;
+@property (retain, nonatomic) IBOutlet UILabel *lblImageCacheSize;
 
 @property (retain, nonatomic) IBOutlet UIButton *btnSPL;
 - (IBAction)btnSPL_Touch:(id)sender;

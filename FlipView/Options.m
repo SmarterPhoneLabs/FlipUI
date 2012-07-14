@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "SQLSTUDIOMyService.h"
 #import "SQLSTUDIOServices.h"
+#import "MoreInfo.h"
 
 
 @implementation Options
@@ -18,6 +19,7 @@
 @synthesize swBossier;
 @synthesize tblMarkets;
 @synthesize slTileSize;
+@synthesize lblImageCacheSize;
 @synthesize btnSPL;
 @synthesize btnMoreInfo;
 @synthesize activityMain;
@@ -29,8 +31,10 @@
     if(self)
     {
         
+        
         [activityMain startAnimating];
         AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+
         [delegate addGradient:btnClearCache];
         rawData = [[NSMutableArray alloc] init];
         
@@ -128,13 +132,18 @@
 {
     [super viewDidAppear:animated];
     [activityMain stopAnimating];
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    int bytes = [delegate countImageCache];
+    float floatSize = bytes;
+    floatSize = floatSize / 1024 / 1024;
+    lblImageCacheSize.text = [NSString stringWithFormat:@"%1.1f MB total storage.",floatSize];
 
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+            AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//            lblImageCacheSize.text = [NSString stringWithFormat:@"%i bytes total storage.",[delegate countImageCache]];
    // UIScrollView *theScroll = (UIScrollView*)self.svMain;
     
     UIImageView *penrose;
@@ -170,7 +179,7 @@
                                 options:UIViewAnimationOptionAllowUserInteraction
                              animations:^
              {
-                 [penrose setAlpha:1.0];
+                 [penrose setAlpha:0.75];
              }
                              completion:nil];
             
@@ -179,7 +188,6 @@
     
     
     
-    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [delegate addGradient:btnMoreInfo];
     [delegate addGradient:btnClearCache];
     // Do any additional setup after loading the view from its nib.
@@ -196,6 +204,7 @@
     [self setActivityMain:nil];
     [self setBtnMoreInfo:nil];
     [self setSlTileSize:nil];
+    [self setLblImageCacheSize:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -216,6 +225,7 @@
     [activityMain release];
     [btnMoreInfo release];
     [slTileSize release];
+    [lblImageCacheSize release];
     [super dealloc];
 }
 - (IBAction)btnSPL_Touch:(id)sender 
@@ -230,15 +240,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:delegate.marketList forKey:@"MarketList"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-- (IBAction)swCaddo_Changed:(id)sender 
-{
-    [ self gumballSave ];
-}
 
-- (IBAction)swBossier_Changed:(id)sender 
-{
-    [self gumballSave];
-}
 
 - (IBAction)btnClearCache_Touch:(id)sender 
 {
@@ -246,6 +248,10 @@
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [delegate clearImageCache];
     
+    int bytes = [delegate countImageCache];
+    float floatSize = bytes;
+    floatSize = floatSize / 1024 / 1024;
+    lblImageCacheSize.text = [NSString stringWithFormat:@"%1.1f MB total storage.",floatSize];
     
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"SwipeDemoCount"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -383,7 +389,28 @@
 {
 
 }
-- (IBAction)btnMoreInfo_Touch:(id)sender {
+- (IBAction)btnMoreInfo_Touch:(id)sender 
+{
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    MoreInfo *mI;
+    if(iPad)
+    {
+        mI  = [[MoreInfo alloc] initWithNibName:@"MoreInfo_iPad" bundle:nil];
+    }
+    else 
+    {
+        mI = [[MoreInfo alloc] initWithNibName:@"MoreInfo" bundle:nil];              
+    }
+    [UIView beginAnimations:@"animation" context:nil];
+    [self.navigationController pushViewController:mI animated:NO];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
+    [UIView setAnimationDuration:1.5];
+    [UIView commitAnimations];
+    [mI release];
 }
 - (IBAction)slTileSize_Touch:(id)sender 
 {

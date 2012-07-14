@@ -221,7 +221,9 @@
 
 
    // cell.imageView.contentMode = UIViewContentModeScaleToFill;
-    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rowgradient.png"]];
+    cell.backgroundView = tempImageView;
+    [tempImageView release];
     
     return cell;
     

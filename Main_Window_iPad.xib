@@ -46,6 +46,7 @@
 				<int key="NSvFlags">292</int>
 				<string key="NSFrameSize">{768, 1024}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -71,12 +72,12 @@
 				<bool key="IBUIDefinesPresentationContext">YES</bool>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="459619708">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="408303183">
-						<string key="IBUITitle">Options</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="726524846">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="560828992">
+						<string key="IBUITitle">Crime Map</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">cogs.png</string>
+							<string key="NSResourceName">iphone_globe_icon.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
@@ -91,7 +92,7 @@
 					<bool key="IBUIDefinesPresentationContext">YES</bool>
 					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="731163235">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="476135063">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -99,15 +100,16 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIBarStyle">1</int>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUIViewController" id="934447932">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="662967334">
+						<object class="IBUIViewController" id="1071763475">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="835501220">
 								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="459619708"/>
-							<string key="IBUINibName">Options_iPad</string>
+							<reference key="IBUIParentViewController" ref="726524846"/>
+							<string key="IBUINibName">MapView_iPad</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -116,7 +118,6 @@
 							<bool key="IBUIHorizontal">NO</bool>
 						</object>
 					</array>
-					<bool key="IBUINavigationBarHidden">YES</bool>
 				</object>
 				<array class="NSMutableArray" key="IBUIViewControllers">
 					<object class="IBUINavigationController" id="635403482">
@@ -166,12 +167,13 @@
 						</array>
 						<bool key="IBUINavigationBarHidden">YES</bool>
 					</object>
-					<object class="IBUINavigationController" id="726524846">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="560828992">
-							<string key="IBUITitle">Crime Map</string>
+					<reference ref="726524846"/>
+					<object class="IBUINavigationController" id="459619708">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="408303183">
+							<string key="IBUITitle">Options</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">iphone_globe_icon.png</string>
+								<string key="NSResourceName">cogs.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
@@ -186,7 +188,7 @@
 						<bool key="IBUIDefinesPresentationContext">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="476135063">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="731163235">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -197,13 +199,13 @@
 							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="1071763475">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="835501220">
-									<string key="IBUITitle">Root View Controller</string>
+							<object class="IBUIViewController" id="934447932">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="662967334">
+									<string key="IBUITitle">Options</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="726524846"/>
-								<string key="IBUINibName">MapView_iPad</string>
+								<reference key="IBUIParentViewController" ref="459619708"/>
+								<string key="IBUINibName">Options_iPad</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -213,13 +215,13 @@
 							</object>
 						</array>
 					</object>
-					<reference ref="459619708"/>
 				</array>
 				<object class="IBUITabBar" key="IBUITabBar" id="467156981">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 975}, {768, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<string key="NSReuseIdentifierKey">_NS:29</string>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>

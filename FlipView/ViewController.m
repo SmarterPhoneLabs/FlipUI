@@ -57,7 +57,7 @@ bool IsSearching;
 {
     if(debugMode == YES)
     {
-        NSLog(LogMessage);
+        NSLog(@"%@",LogMessage);
         
     }
 }
@@ -570,7 +570,7 @@ bool IsSearching;
                                 options:UIViewAnimationOptionAllowUserInteraction
                              animations:^
              {
-                 [penrose setAlpha:1.0];
+                 [penrose setAlpha:0.75];
              }
                              completion:nil];
             

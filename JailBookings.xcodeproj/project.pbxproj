@@ -119,6 +119,11 @@
 		52964C9A15AA69690022BD26 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9715AA69690022BD26 /* MapView.m */; };
 		52964C9B15AA69690022BD26 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52964C9815AA69690022BD26 /* MapView.xib */; };
 		52964C9E15AA69FE0022BD26 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964C9D15AA69FE0022BD26 /* MyAnnotation.m */; };
+		52992DDB15B10E66002E00C7 /* MoreInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 52992DD915B10E66002E00C7 /* MoreInfo.m */; };
+		52992DDC15B10E66002E00C7 /* MoreInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52992DDA15B10E66002E00C7 /* MoreInfo.xib */; };
+		52992DDE15B110A0002E00C7 /* SPL.png in Resources */ = {isa = PBXBuildFile; fileRef = 52992DDD15B110A0002E00C7 /* SPL.png */; };
+		52992DE015B12389002E00C7 /* rowgradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 52992DDF15B12389002E00C7 /* rowgradient.png */; };
+		52998AEE15B1374100F22FFA /* MoreInfo_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52998AED15B1374100F22FFA /* MoreInfo_iPad.xib */; };
 		52B8856515AF5DEF006E0DEA /* Main_Window_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B8856415AF5DEF006E0DEA /* Main_Window_iPad.xib */; };
 		52B8856715AF676D006E0DEA /* MapOptions_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B8856615AF676D006E0DEA /* MapOptions_iPad.xib */; };
 /* End PBXBuildFile section */
@@ -332,6 +337,12 @@
 		52964C9815AA69690022BD26 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapView.xib; path = FlipView/MapView.xib; sourceTree = "<group>"; };
 		52964C9C15AA69FE0022BD26 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAnnotation.h; path = FlipView/MyAnnotation.h; sourceTree = "<group>"; };
 		52964C9D15AA69FE0022BD26 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAnnotation.m; path = FlipView/MyAnnotation.m; sourceTree = "<group>"; };
+		52992DD815B10E66002E00C7 /* MoreInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreInfo.h; sourceTree = "<group>"; };
+		52992DD915B10E66002E00C7 /* MoreInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreInfo.m; sourceTree = "<group>"; };
+		52992DDA15B10E66002E00C7 /* MoreInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInfo.xib; sourceTree = "<group>"; };
+		52992DDD15B110A0002E00C7 /* SPL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPL.png; sourceTree = "<group>"; };
+		52992DDF15B12389002E00C7 /* rowgradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rowgradient.png; sourceTree = "<group>"; };
+		52998AED15B1374100F22FFA /* MoreInfo_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreInfo_iPad.xib; sourceTree = "<group>"; };
 		52B8856415AF5DEF006E0DEA /* Main_Window_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main_Window_iPad.xib; sourceTree = "<group>"; };
 		52B8856615AF676D006E0DEA /* MapOptions_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptions_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,6 +555,7 @@
 		528802F8159ECC1600C5D04A = {
 			isa = PBXGroup;
 			children = (
+				52992DD715B10E48002E00C7 /* MoreInfo */,
 				52B8856315AF0BB2006E0DEA /* MapView */,
 				52B8856215AF0BA3006E0DEA /* Options */,
 				524F22B415AE92B8006F6007 /* Delegate */,
@@ -612,6 +624,8 @@
 		5288032B159ED01300C5D04A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52992DDF15B12389002E00C7 /* rowgradient.png */,
+				52992DDD15B110A0002E00C7 /* SPL.png */,
 				5228C3C515AFAD7D000C034B /* handcuffs.png */,
 				5228C3C615AFAD7D000C034B /* iphone_globe_icon.png */,
 				524F232815AEA6CF006F6007 /* cogs.png */,
@@ -714,6 +728,17 @@
 				52964C9D15AA69FE0022BD26 /* MyAnnotation.m */,
 			);
 			name = MyAnnotations;
+			sourceTree = "<group>";
+		};
+		52992DD715B10E48002E00C7 /* MoreInfo */ = {
+			isa = PBXGroup;
+			children = (
+				52992DD815B10E66002E00C7 /* MoreInfo.h */,
+				52992DD915B10E66002E00C7 /* MoreInfo.m */,
+				52992DDA15B10E66002E00C7 /* MoreInfo.xib */,
+				52998AED15B1374100F22FFA /* MoreInfo_iPad.xib */,
+			);
+			name = MoreInfo;
 			sourceTree = "<group>";
 		};
 		52B8856215AF0BA3006E0DEA /* Options */ = {
@@ -832,6 +857,10 @@
 				52B8856715AF676D006E0DEA /* MapOptions_iPad.xib in Resources */,
 				5228C3C715AFAD7D000C034B /* handcuffs.png in Resources */,
 				5228C3C815AFAD7D000C034B /* iphone_globe_icon.png in Resources */,
+				52992DDC15B10E66002E00C7 /* MoreInfo.xib in Resources */,
+				52992DDE15B110A0002E00C7 /* SPL.png in Resources */,
+				52992DE015B12389002E00C7 /* rowgradient.png in Resources */,
+				52998AEE15B1374100F22FFA /* MoreInfo_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +949,7 @@
 				524F232515AE9915006F6007 /* SQLSTUDIOtbl_Sex_Result.m in Sources */,
 				524F232615AE9915006F6007 /* SQLSTUDIOtbl_User_Result.m in Sources */,
 				524F232715AE9915006F6007 /* SQLSTUDIOtbl_Wanted_Status_Result.m in Sources */,
+				52992DDB15B10E66002E00C7 /* MoreInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

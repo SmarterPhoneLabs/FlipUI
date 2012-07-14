@@ -24,81 +24,43 @@ int selectedX;
 
 bool allowTouch = YES;
 
+BackSideView *bSV;
 
-
+-(void)touchedOK:(BackSideView *) controller
+{ 
+    
+    [UIView beginAnimations:@"animation" context:nil];
+    [bSV removeFromSuperview];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES]; 
+    [UIView setAnimationDuration:1.0];
+    [UIView commitAnimations];  
+}
 -(void)showDetails:(id)sender
 {
-
-//    BackSideView *web;
-//    BOOL iPad = NO;
-//#ifdef UI_USER_INTERFACE_IDIOM
-//    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-//#endif
-//    if(iPad)
-//    {
-//        web = [[BackSideView alloc] initWithNibName:@"BackSideView_iPad" bundle:nil Booking_ID:selectedLocation];
-//        [self.navigationController  pushViewController:web animated:YES];
-//        [web release];
-//    }
-//    else
-//    {
-//        web = [[BackSideView alloc] initWithNibName:@"BackSideView" bundle:nil Booking_ID:selectedLocation];
-//        [self.navigationController  pushViewController:web animated:YES];    
-//        [web release];
-//    }
     
     BOOL iPad = NO;
 #ifdef UI_USER_INTERFACE_IDIOM
     iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
     
-    BackSideView *bSV;
+
     if(iPad)
     {
-        bSV  = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 768, 1024) andTag:101];
+        bSV  = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 768, 1024) andTag:selectedLocation];
     }
     else 
     {
-        bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:101];                
+        bSV = [[BackSideView alloc] initWithFrame:CGRectMake(0,0, 320, 480) andTag:selectedLocation];                
     }
     bSV.parentController = self;
-//    controller.backSideView = bSV;
-    //[self.view addSubview:bSV];
-    //[controller.imageView setAlpha:0.1];
-    [bSV release];     
-    
-   // tempRect = controller.frame;
-    
-    
-//    UIScrollView *svX = (UIScrollView*)self.svMain;
-//    if(iPad == YES)
-//    {
-//        
-//        [controller maximize:svX.contentOffset.y];
-//    }
-//    else
-//    {
-//        [controller maximize:svX.contentOffset.y];
-//    }
-
-    
-//    CATransition *animation = [CATransition animation];
-//    animation.type = @"zoomyOut";
-//    animation.duration = 3.0f;
-//    animation.timingFunction = UIViewAnimationCurveEaseInOut;
-//    //self.opacity = 1.0f;
-//    //self.mvMain.alpha = 0.0;
-//    [self.view addSubview:bSV ];
-//    [self.view.layer addAnimation:animation forKey:@"transitionViewAnimation"];
-    
-    
-    
+     
+    bSV.delegate = self;
     [UIView beginAnimations:@"animation" context:nil];
     [self.view addSubview:bSV];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
-    [UIView setAnimationDuration:1.5];
+    [UIView setAnimationDuration:1.0];
     [UIView commitAnimations];
-
+    [bSV release];
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -123,35 +85,9 @@ bool allowTouch = YES;
             pinAnnotation = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPinID] autorelease];
         pinAnnotation.canShowCallout = YES;
         MyAnnotation *ma = (MyAnnotation*)annotation;
-        switch (ma.locationType) {
-            case 1:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-violent.png"];
-                break;
-            case 2:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-drugs.png"];
-                break;
-            case 3:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-vice.png"];
-                break;
-            case 4:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-white-collar.png"];
-                break;
-            case 5:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-theft.png"];
-                break;
-                
-            case 6:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-missing.png"];
-                break;                
-                
-            case 999:
-                pinAnnotation.image = [delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@", ma.imgURL] size:CGSizeMake(0, 0) isWebBased:YES ];
-                break;
-            default:
-                pinAnnotation.image = [UIImage imageNamed:@"map-icon-default.png"];
-                
-                break;
-        }
+
+                pinAnnotation.image = [delegate scaleMe:[delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@", ma.imgURL] size:CGSizeMake(0, 0) isWebBased:YES] toSize:CGSizeMake(24, 24)  ];
+
 
         UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         
@@ -561,12 +497,5 @@ bool allowTouch = YES;
     [super dealloc];
 }
 
--(void)touchedOK:(MapOptions *)controller
-{
-//    [bSV removeFromSuperview];
-//    [UIView beginAnimations:@"animation" context:nil];
-//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:bSV cache:YES]; 
-//    [UIView setAnimationDuration:1.5];
-//    [UIView commitAnimations]; 
-}
+
 @end

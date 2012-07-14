@@ -11,7 +11,7 @@
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, FBDialogDelegate, FBLoginDialogDelegate, FBRequestDelegate, FBSessionDelegate>
 {
     Facebook *facebook;
     NSMutableDictionary *imageCache; 
@@ -58,6 +58,8 @@
 
 //a function to clear the entire image cache
 - (void)clearImageCache;
+
+- (int)countImageCache;
 
 //clear a single image from the cache
 - (void)clearImageCache:(NSString*)ImageName;

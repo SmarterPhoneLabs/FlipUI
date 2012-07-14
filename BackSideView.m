@@ -26,6 +26,7 @@
 @synthesize txtStory;
 @synthesize lblBond;
 @synthesize btnTwitter;
+@synthesize delegate;
 
 NSString *cachedImage;
 int selectedBooking;
@@ -79,7 +80,7 @@ int selectedMarket;
 	}
     SQLSTUDIOtbl_Booking_Result_V2 *myResult = (SQLSTUDIOtbl_Booking_Result_V2*)result;
     
-    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     lblName.text = [NSString stringWithFormat:@"%@ %@", myResult.First_Name, myResult.Last_Name];
     txtCharges.text = myResult.Charge;
@@ -118,7 +119,7 @@ int selectedMarket;
         lblBond.text = [NSString stringWithFormat:@"%@",formattedAmount];
     }
     
-    [imgCrimeType setImage: [delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myResult.Crime_Type_Image] size:CGSizeMake(72, 72) isWebBased:YES]];
+    [imgCrimeType setImage: [appDelegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myResult.Crime_Type_Image] size:CGSizeMake(72, 72) isWebBased:YES]];
     
     selectedMarket = myResult.Market_ID;
     
@@ -148,13 +149,13 @@ int selectedMarket;
             [imgConvict setAlpha:0.0];
             if(iPad == YES)
             {
-                [imgConvict  setImage:[delegate getImage:imagePaht size:CGSizeMake(500, 500)  isWebBased:YES]]; 
-                [delegate addGradientImage:imgConvict];
+                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(500, 500)  isWebBased:YES]]; 
+                [appDelegate addGradientImage:imgConvict];
             }
             else 
             {
-                [imgConvict  setImage:[delegate getImage:imagePaht size:CGSizeMake(250, 250)  isWebBased:YES]]; 
-                [delegate addGradientImage:imgConvict];
+                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(250, 250)  isWebBased:YES]]; 
+                [appDelegate addGradientImage:imgConvict];
             }
             
             
@@ -295,8 +296,8 @@ int selectedMarket;
 
 - (IBAction)btnFacebook_Touch:(id)sender 
 {
-    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [delegate loginFacebook];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate loginFacebook];
     NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    @"146076692192037", @"app_id",
                                    [NSString stringWithFormat:@"http://www.jail-bookings.com/Bookings.aspx?BookingID=%i",selectedBooking], @"link",
@@ -307,6 +308,12 @@ int selectedMarket;
                                    cachedImage, @"picture",
                                    nil];
     
-    [delegate.facebook dialog:@"feed" andParams:params andDelegate:delegate];
+    [appDelegate.facebook dialog:@"feed" andParams:params andDelegate:appDelegate];
+}
+
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+        [delegate touchedOK:self];
 }
 @end

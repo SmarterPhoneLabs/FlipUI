@@ -69,15 +69,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
         NSLog(@"App Finished Launching");
-//    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-//    // Override point for customization after application launch.
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
-//    } else {
-//        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
-//    }
-//    self.window.rootViewController = self.viewController;
-//    [self.window makeKeyAndVisible];
+
 
     
     self.window.rootViewController = self.tabBarController;
@@ -89,9 +81,7 @@
     
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"MarketList"] == nil)
     {
-//        [marketList setValue:@"YES" forKey:@"0"];
-//        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
+
     }
     else
     {
@@ -100,9 +90,6 @@
     
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"CrimeMapList"] == nil)
     {
-        //        [marketList setValue:@"YES" forKey:@"0"];
-        //        [[NSUserDefaults standardUserDefaults] setObject:marketList forKey:@"MarketList"];
-        //        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else
     {
@@ -162,6 +149,30 @@
         // Error handling
         
     }
+}
+
+//calculate file storage
+- (int)countImageCache
+{
+    int storage = 0;
+    NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@""]];
+    NSFileManager *fileMgr = [[[NSFileManager alloc] init] autorelease];
+    NSError *error = nil;
+    NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:imagePath error:&error];
+    if (error == nil) {
+        for (NSString *path in directoryContents) {
+            NSString *fullPath = [imagePath stringByAppendingPathComponent:path];
+            
+            NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:&error];
+            
+            NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
+            storage = storage + [fileSizeNumber intValue];
+        }
+    } else {
+        // Error handling
+    }
+    
+    return  storage;
 }
 
 //a function to clear the entire image cache

@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
+
+@class BackSideView;
+
+@protocol BackSideViewDelegate
+-(void)touchedOK:(BackSideView *) controller;
+@end
+
 @interface BackSideView : UIView
 {
     IBOutlet UILabel *lblName;
@@ -17,6 +24,7 @@
     IBOutlet UIImageView *imgConvict;
     UIViewController *parentController;
 }
+@property (nonatomic, retain) NSObject<BackSideViewDelegate> *delegate;
 @property(nonatomic, assign) UIViewController *parentController;
 @property (retain, nonatomic) IBOutlet UIButton *btnTwitter;
 - (IBAction)btnTwitter_Touch:(id)sender;

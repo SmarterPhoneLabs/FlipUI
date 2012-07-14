@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50</string>
+		<string key="IBDocument.SystemVersion">11D50d</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1179</string>
+			<string key="NS.object.0">1181</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -70,6 +70,10 @@
 				<object class="IBUINavigationController" key="IBUISelectedViewController" id="413941426">
 					<object class="IBUITabBarItem" key="IBUITabBarItem" id="625167118">
 						<string key="IBUITitle">Crime Map</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">iphone_globe_icon.png</string>
+						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="30433644"/>
@@ -113,6 +117,10 @@
 					<object class="IBUINavigationController" id="187793341">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="703625749">
 							<string key="IBUITitle">Bookings</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">handcuffs.png</string>
+							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="30433644"/>
@@ -156,6 +164,10 @@
 					<object class="IBUINavigationController" id="1039124890">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="731451793">
 							<string key="IBUITitle">Options</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">cogs.png</string>
+							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="30433644"/>
@@ -181,7 +193,7 @@
 						<array class="NSMutableArray" key="IBUIViewControllers">
 							<object class="IBUIViewController" id="691662681">
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="20782797">
-									<string key="IBUITitle">Root View Controller</string>
+									<string key="IBUITitle">Options</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="1039124890"/>
@@ -194,7 +206,6 @@
 								<bool key="IBUIHorizontal">NO</bool>
 							</object>
 						</array>
-						<bool key="IBUINavigationBarHidden">YES</bool>
 					</object>
 				</array>
 				<object class="IBUITabBar" key="IBUITabBar" id="577027240">
@@ -429,6 +440,11 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">1179</string>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="cogs.png">{44, 44}</string>
+			<string key="handcuffs.png">{30, 30}</string>
+			<string key="iphone_globe_icon.png">{30, 30}</string>
+		</dictionary>
+		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

@@ -10,8 +10,9 @@
 #import <MapKit/MapKit.h>
 #import"MyAnnotation.h"
 #import "MapOptions.h"
+#import "BackSideView.h"
 
-@interface MapView : UIViewController
+@interface MapView : UIViewController<BackSideViewDelegate>
 {
     IBOutlet MKMapView *mvMain;
     IBOutlet UIActivityIndicatorView *avtivityMain;
