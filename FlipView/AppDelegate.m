@@ -32,7 +32,6 @@
 //init
 - (id)init
 {
-    NSLog(@"App Init");
     self = [super init];
     if (self) 
     {
@@ -68,10 +67,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-        NSLog(@"App Finished Launching");
-
-
-    
     self.window.rootViewController = self.tabBarController;
     
     [self.window makeKeyAndVisible];

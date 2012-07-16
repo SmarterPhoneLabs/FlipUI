@@ -50,29 +50,20 @@
         switch (x)
         {
             case 1:
-                NSLog(@"");
                 myf = 1.0;
                 slTileSize.value = myf;
-//                [slTileSize setValue:1.0f animated:YES];
                 break;
             case 2:
-                NSLog(@"");
                 myf = 2.0;
                 slTileSize.value = myf;
-                //                [slTileSize setValue:2.0f animated:YES];
                 break;
             case 3:
-                
-                NSLog(@"");
                 myf = 3.0;
                 slTileSize.value = myf;
-//                [slTileSize setValue:3.0f animated:YES];
                 break;
             case 4:
-                NSLog(@"");
                 myf = 4.0;
                 slTileSize.value = myf;
-//                [slTileSize setValue:4.0f animated:YES];
                 break;                
                 
             default:
@@ -418,7 +409,7 @@
     [[NSUserDefaults standardUserDefaults] setInteger:x forKey:@"TileSize"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     delegate.tileSize = x;
-    NSLog(@"%i", x);
+
     
     
 }

@@ -598,7 +598,6 @@ int oldHeight;
 {
     if(isTouchable == YES)
     {
-        //NSLog(@"%i SWIPE", tileID);
     }
 }
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event 
@@ -618,7 +617,6 @@ int oldHeight;
         { 
             flipModeOn = NO;
         }
-       // NSLog(@"Touch Ended");
         [delegate touchedOK:self];
     }
 }

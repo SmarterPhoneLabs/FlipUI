@@ -177,10 +177,10 @@ bool zoomMode;
                  // [appDelegate addGradient:btnConvict];
             }
             
-            
+             UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn  | UIViewAnimationOptionAllowUserInteraction;
             [UIView animateWithDuration:2.5 
                                   delay:0
-                                options:UIViewAnimationOptionAllowUserInteraction
+                                options:options
                              animations:^{
                                  [btnConvict  setAlpha:1.0];
                                  if(iPad == YES)
@@ -371,11 +371,11 @@ if(zoomMode == NO)
     dispatch_async(queue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
             
-            
+             UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn  | UIViewAnimationOptionAllowUserInteraction;
             
             [UIView animateWithDuration:1.0 
                                   delay:0
-                                options:UIViewAnimationOptionAllowUserInteraction
+                                options:options
                              animations:^{
                                  [btnConvict  setAlpha:1.0];
                                  [lblDescriptors setAlpha:0.0];
@@ -391,7 +391,7 @@ if(zoomMode == NO)
                                  [lblDOO setAlpha:0.0];
                                  [lblGender setAlpha:0.0];
                                  [lblMarketName setAlpha:0.0];
-                                 [lblName setAlpha:0.0];
+//                                 [lblName setAlpha:0.0];
                                  [txtCharges setAlpha:0.0];
                                  [txtStory setAlpha: 0.0];
                                  [btnFacebook setAlpha:0.0];
@@ -400,10 +400,12 @@ if(zoomMode == NO)
                                  if(iPad == YES)
                                  {
                                      [btnConvict setFrame:CGRectMake(0, 0, 768, 768)]; 
+                                     [lblName setFrame:CGRectMake(10, 800, 528, 26) ];
                                  }
                                  else 
                                  {
                                      [btnConvict setFrame:CGRectMake(0, 0, 320, 320)];
+                                     [lblName setFrame:CGRectMake(10, 350, 143, 21)];
                                  }
                              }
                              completion:nil];
@@ -419,11 +421,11 @@ else
     dispatch_async(queue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
             
-            
+            UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn  | UIViewAnimationOptionAllowUserInteraction;
             
             [UIView animateWithDuration:1.0 
                                   delay:0
-                                options:UIViewAnimationOptionAllowUserInteraction
+                                options:options
                              animations:^{
                                  [btnConvict  setAlpha:1.0];
                                  [lblDescriptors setAlpha:1.0];
@@ -439,7 +441,7 @@ else
                                  [lblDOO setAlpha:1.0];
                                  [lblGender setAlpha:1.0];
                                  [lblMarketName setAlpha:1.0];
-                                 [lblName setAlpha:1.0];
+                                 //[lblName setAlpha:1.0];
                                  [txtCharges setAlpha:1.0];
                                  [txtStory setAlpha: 1.0];
                                  [btnFacebook setAlpha:1.0];
@@ -447,10 +449,12 @@ else
                                  if(iPad == YES)
                                  {
                                      [btnConvict setFrame:CGRectMake(184, 134, 400, 400)]; 
+                                     [lblName setFrame:CGRectMake(220, 562, 528, 26)];
                                  }
                                  else 
                                  {
                                      [btnConvict setFrame:CGRectMake(73, 9, 175, 175)];
+                                     [lblName setFrame:CGRectMake(157, 192, 143, 21)];                                     
                                  }
                              }
                              completion:nil];

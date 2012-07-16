@@ -141,33 +141,7 @@ bool IsSearching;
     {
    
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];        
-        [self Gumball:delegate];        
-//    for(AsyncImageView *myPOI in itemList)
-//    {
-//        [myPOI blastOff];
-//    }
-//    [itemList removeAllObjects];
-//    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-//    service.logging = NO;
-//    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    NSString *markets = [delegate getMarkets];
-//    if(markets.length ==0 || [markets isEqualToString:@"0"])
-//    {
-//        lblSelectMarket.hidden = NO;
-//    }
-//    else
-//    {
-//        lblSelectMarket.hidden = YES;
-//    }
-//    if(sbMain.text.length == 0)
-//    {
-//        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-//    }
-//    else 
-//    {
-//        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
-//    }
-//    [service release];
+    [self Gumball:delegate];        
     
     [lblLastRefreshDate setAlpha:1.0];
     [lblReleaseToRefresh setAlpha:1.0];
@@ -477,7 +451,7 @@ bool IsSearching;
 -(void)handleList:(id)result
 {
     //lblPleaseWait.hidden = YES;
-    
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn  | UIViewAnimationOptionAllowUserInteraction;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
     dispatch_async(queue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -485,7 +459,7 @@ bool IsSearching;
             
             [UIView animateWithDuration:1.25
                                   delay:0
-                                options:UIViewAnimationOptionAllowUserInteraction
+                                options:options
                              animations:^
              {
                  
@@ -511,39 +485,76 @@ bool IsSearching;
     [itemList removeAllObjects];
     
     NSMutableArray *myData = (NSMutableArray*)result;
-    for(SQLSTUDIOtbl_Booking_Result_V2 *myPOI in myData)
+    if([self.navigationController.title isEqualToString:@"BOOKINGS"])
     {
-        NSString *myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
-        
-        
-
-         NSURL *url = [NSURL URLWithString:myTilePath];
-        AsyncImageView *myTile;
-        myTile = [[AsyncImageView alloc] initWithFrame:CGRectMake(lastX + tileMargin, lastY + tileMargin,tileWidthTemplate,tileHeightTemplate)];
-        myTile.useGlass = YES;   
-        [myTile loadImageFromURL:url];
-        myTile.delegate = self;
-        myTile.tileID = myPOI.Booking_ID;
-        myTile.useRotation = YES;
-        myTile.isAd = myPOI.Is_Ad;
-        myTile.hits = [[NSNumber alloc] initWithInt:myPOI.Views];
-        myTile.market = myPOI.Market_ID;
-        myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
-        myTile.sex = myPOI.Sex;
-        myTile.Booking_Date = myPOI.Date_Of_Offense;
-        myTile.crimeTypeImageLink = [NSString stringWithFormat:@"http://jail-bookings.com/%@",myPOI.Crime_Type_Image];
-       // [self doLog:        myTile.crimeTypeImageLink];
-        
-        [self.svMain addSubview:myTile];
-        myTile.personName = @"";                
-        //[myTile setCrimeType];
-        
-        [itemList addObject:myTile];
-        [myTile release];
+        for(SQLSTUDIOtbl_Booking_Result_V2 *myPOI in myData)
+        {
+            NSString *myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Booking_Image_2];
+            
+            
+            
+            NSURL *url = [NSURL URLWithString:myTilePath];
+            AsyncImageView *myTile;
+            myTile = [[AsyncImageView alloc] initWithFrame:CGRectMake(lastX + tileMargin, lastY + tileMargin,tileWidthTemplate,tileHeightTemplate)];
+            myTile.useGlass = YES;   
+            [myTile loadImageFromURL:url];
+            myTile.delegate = self;
+            myTile.tileID = myPOI.Booking_ID;
+            myTile.useRotation = YES;
+            myTile.isAd = myPOI.Is_Ad;
+            myTile.hits = [[NSNumber alloc] initWithInt:myPOI.Views];
+            myTile.market = myPOI.Market_ID;
+            myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
+            myTile.sex = myPOI.Sex;
+            myTile.Booking_Date = myPOI.Date_Of_Offense;
+            myTile.crimeTypeImageLink = [NSString stringWithFormat:@"http://jail-bookings.com/%@",myPOI.Crime_Type_Image];
+            // [self doLog:        myTile.crimeTypeImageLink];
+            
+            [self.svMain addSubview:myTile];
+            myTile.personName = @"";                
+            //[myTile setCrimeType];
+            
+            [itemList addObject:myTile];
+            [myTile release];
+        }
     }
+    
+    
+    if([self.navigationController.title isEqualToString:@"WANTED"])
+    {
+        for(SQLSTUDIOtbl_Most_Wanted_Result *myPOI in myData)
+        {
+            NSString *myTilePath = [NSString stringWithFormat:@"http://www.jail-bookings.com/%@",myPOI.ssImage_Photo];
+            
+            
+            
+            NSURL *url = [NSURL URLWithString:myTilePath];
+            AsyncImageView *myTile;
+            myTile = [[AsyncImageView alloc] initWithFrame:CGRectMake(lastX + tileMargin, lastY + tileMargin,tileWidthTemplate,tileHeightTemplate)];
+            myTile.useGlass = YES;   
+            [myTile loadImageFromURL:url];
+            myTile.delegate = self;
+            myTile.tileID = myPOI.Most_Wanted_ID;
+            myTile.useRotation = YES;
+            myTile.isAd = NO;
+            myTile.hits = [[NSNumber alloc] initWithInt:0];
+            myTile.market = myPOI.Market_ID;
+            myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
+            myTile.sex = myPOI.Sex;
+            myTile.Booking_Date = myPOI.Date_Of_Birth;
+            myTile.crimeTypeImageLink = @"http://bookings.smarterphonelabs.com/Images/ba989f4e-3db0-4b70-aff5-48c6e0b89d7d.png";
+            // [self doLog:        myTile.crimeTypeImageLink];
+            
+            [self.svMain addSubview:myTile];
+            myTile.personName = @"";                
+            //[myTile setCrimeType];
+            
+            [itemList addObject:myTile];
+            [myTile release];
+        }
+    }    
 
-
-      [self arrangeTiles];
+    [self arrangeTiles];
     [self SortTiles: NO];        
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd hh:mm"];
@@ -652,7 +663,7 @@ bool IsSearching;
 - (void)Gumball:(AppDelegate *)delegate
 {
     //lblPleaseWait.hidden = NO;
-    
+         UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseIn  | UIViewAnimationOptionAllowUserInteraction| UIViewAnimationOptionRepeat;
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
     dispatch_async(queue, ^{
@@ -661,11 +672,12 @@ bool IsSearching;
             
             [UIView animateWithDuration:1.25
                                   delay:0
-                                options:UIViewAnimationOptionAllowUserInteraction
+                                options:options 
                              animations:^
              {
                  
                  [lblPleaseWait setAlpha:1.0];
+                 
              }
                              completion:nil];
             
@@ -690,6 +702,10 @@ bool IsSearching;
     {
         lblSelectMarket.hidden = YES;
     }
+    
+if([self.navigationController.title isEqualToString:@"BOOKINGS"])
+{
+    
     if(sbMain.text.length == 0)
     {
         [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
@@ -698,6 +714,35 @@ bool IsSearching;
     {
         [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
     }
+}
+    
+    
+    if([self.navigationController.title isEqualToString:@"WANTED"])
+    {
+        
+        if(sbMain.text.length == 0)
+        {
+             [service List_All_tbl_Most_Wanted:self action:@selector(handleList:) Markets:markets];
+        }
+        else 
+        {
+            [service Search_Most_Wanted:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets];
+//            [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+        }
+    }    
+    
+    if([self.navigationController.title isEqualToString:@"MISSING"])
+    {
+        
+        if(sbMain.text.length == 0)
+        {
+            [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+        }
+        else 
+        {
+            [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+        }
+    }    
     
     //[service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
     [service release];
@@ -1286,9 +1331,7 @@ bool IsSearching;
             }
             [self arrangeTiles];            
             break;            
-            
-        case 6:
-            NSLog(@"Options");
+
             
             break;
         default:
