@@ -62,7 +62,7 @@
     //[_viewController release];
     [facebook release];
         [marketList release];
-    [super dealloc];
+    [super dealloc]; 
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
