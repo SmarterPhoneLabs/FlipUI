@@ -20,6 +20,7 @@
 
 }
 @property (retain, nonatomic) IBOutlet UILabel *lblSelectMarket;
+@property (retain, nonatomic) IBOutlet UILabel *lblPleaseWait;
 
 - (IBAction)scMain_Touch:(id)sender;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *scMain;

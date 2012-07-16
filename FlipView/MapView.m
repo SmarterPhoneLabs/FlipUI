@@ -243,6 +243,7 @@ BackSideView *bSV;
 
 -(void)handleList:(id)result
 {
+
         [avtivityMain stopAnimating];
     if([result isKindOfClass:[NSError class]]) 
     {
@@ -255,7 +256,7 @@ BackSideView *bSV;
         }
 		return;
 	}
-    
+
     NSMutableArray *myData = (NSMutableArray*)result;
     for(SQLSTUDIOtbl_Booking_Result *myPOI in myData)
     {

@@ -18,6 +18,14 @@
 @end
 
 @implementation BackSideView
+@synthesize lblDescriptors8;
+@synthesize lblDescriptors7;
+@synthesize lblDescriptors6;
+@synthesize lblDescriptors5;
+@synthesize lblDescriptors4;
+@synthesize lblDescriptors3;
+@synthesize lblDescriptors2;
+@synthesize lblDescriptors;
 @synthesize svMini;
 @synthesize lblGender;
 @synthesize lblDOB;
@@ -26,6 +34,7 @@
 @synthesize txtStory;
 @synthesize lblBond;
 @synthesize btnTwitter;
+@synthesize btnConvict;
 @synthesize delegate;
 
 NSString *cachedImage;
@@ -39,6 +48,7 @@ int selectedBooking;
 @synthesize parentController;
 
 int selectedMarket;
+bool zoomMode;
 -(void) handleMarkets:(id)result
 {
     [activityMain stopAnimating];
@@ -146,24 +156,43 @@ int selectedMarket;
             
             
             
-            [imgConvict setAlpha:0.0];
+//            [imgConvict setAlpha:0.0];
+            [btnConvict setAlpha:0.0];
             if(iPad == YES)
             {
-                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(500, 500)  isWebBased:YES]]; 
-                [appDelegate addGradientImage:imgConvict];
+
+
+                [btnConvict setImage:[appDelegate getImage:imagePaht size:CGSizeMake(1500, 1500)  isWebBased:YES] forState:UIControlStateNormal]; 
+//                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(500, 500)  isWebBased:YES]]; 
+//                [appDelegate addGradientImage:imgConvict];
+               // [appDelegate addGradient:btnConvict];
             }
             else 
             {
-                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(250, 250)  isWebBased:YES]]; 
-                [appDelegate addGradientImage:imgConvict];
+
+                [btnConvict setImage:[appDelegate getImage:imagePaht size:CGSizeMake(500, 500)  isWebBased:YES] forState:UIControlStateNormal]; 
+//                [imgConvict  setImage:[appDelegate getImage:imagePaht size:CGSizeMake(250, 250)  isWebBased:YES]]; 
+                
+//                [appDelegate addGradientImage:imgConvict];
+                 // [appDelegate addGradient:btnConvict];
             }
             
             
-            [UIView animateWithDuration:4.0 
+            [UIView animateWithDuration:2.5 
                                   delay:0
                                 options:UIViewAnimationOptionAllowUserInteraction
                              animations:^{
-                                 [imgConvict  setAlpha:1.0];
+                                 [btnConvict  setAlpha:1.0];
+                                 if(iPad == YES)
+                                 {
+                                     [btnConvict setFrame:CGRectMake(184, 134, 400, 400)]; 
+                                 }
+                                 else 
+                                 {
+                                     [btnConvict setFrame:CGRectMake(73, 9, 175, 175)];
+                                 }
+
+//                                 73,9
                              }
                              completion:nil];
             
@@ -179,6 +208,7 @@ int selectedMarket;
     self = [super initWithFrame:frame];
     if (self) 
     {
+        zoomMode = NO;
         selectedBooking = TagID;
         BOOL iPad = NO;
 #ifdef UI_USER_INTERFACE_IDIOM
@@ -249,6 +279,17 @@ int selectedMarket;
     [txtStory release];
     [lblBond release];
     [svMini release];
+    [btnConvict release];
+    [lblDescriptors release];
+
+    [lblDescriptors2 release];
+    [lblDescriptors3 release];
+    [lblDescriptors4 release];
+    [lblDescriptors5 release];
+    [lblDescriptors6 release];
+    [lblDescriptors7 release];
+    [lblDescriptors7 release];
+    [lblDescriptors8 release];
     [super dealloc];
 }
 
@@ -315,5 +356,110 @@ int selectedMarket;
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
         [delegate touchedOK:self];
+}
+- (IBAction)btnConvict_Touch:(id)sender 
+{
+    BOOL iPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif 
+    
+if(zoomMode == NO)
+{
+    zoomMode = YES;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            
+            [UIView animateWithDuration:1.0 
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^{
+                                 [btnConvict  setAlpha:1.0];
+                                 [lblDescriptors setAlpha:0.0];
+                                 [lblDescriptors2 setAlpha:0.0];
+                                 [lblDescriptors3 setAlpha:0.0];
+                                 [lblDescriptors4 setAlpha:0.0];
+                                 [lblDescriptors5 setAlpha:0.0];
+                                 [lblDescriptors6 setAlpha:0.0];
+                                 [lblDescriptors7 setAlpha:0.0];
+                                 [lblDescriptors8 setAlpha:0.0];
+                                 [lblBond setAlpha:0.0];
+                                 [lblDOB setAlpha:0.0];
+                                 [lblDOO setAlpha:0.0];
+                                 [lblGender setAlpha:0.0];
+                                 [lblMarketName setAlpha:0.0];
+                                 [lblName setAlpha:0.0];
+                                 [txtCharges setAlpha:0.0];
+                                 [txtStory setAlpha: 0.0];
+                                 [btnFacebook setAlpha:0.0];
+                                 [btnTwitter setAlpha:0.0];
+
+                                 if(iPad == YES)
+                                 {
+                                     [btnConvict setFrame:CGRectMake(0, 0, 768, 768)]; 
+                                 }
+                                 else 
+                                 {
+                                     [btnConvict setFrame:CGRectMake(0, 0, 320, 320)];
+                                 }
+                             }
+                             completion:nil];
+            
+            
+        });
+    });
+}
+else
+{
+    zoomMode = NO;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            
+            [UIView animateWithDuration:1.0 
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^{
+                                 [btnConvict  setAlpha:1.0];
+                                 [lblDescriptors setAlpha:1.0];
+                                 [lblDescriptors2 setAlpha:1.0];
+                                 [lblDescriptors3 setAlpha:1.0];
+                                 [lblDescriptors4 setAlpha:1.0];
+                                 [lblDescriptors5 setAlpha:1.0];
+                                 [lblDescriptors6 setAlpha:1.0];
+                                 [lblDescriptors7 setAlpha:1.0];
+                                 [lblDescriptors8 setAlpha:1.0];
+                                 [lblBond setAlpha:1.0];
+                                 [lblDOB setAlpha:1.0];
+                                 [lblDOO setAlpha:1.0];
+                                 [lblGender setAlpha:1.0];
+                                 [lblMarketName setAlpha:1.0];
+                                 [lblName setAlpha:1.0];
+                                 [txtCharges setAlpha:1.0];
+                                 [txtStory setAlpha: 1.0];
+                                 [btnFacebook setAlpha:1.0];
+                                 [btnTwitter setAlpha:1.0];
+                                 if(iPad == YES)
+                                 {
+                                     [btnConvict setFrame:CGRectMake(184, 134, 400, 400)]; 
+                                 }
+                                 else 
+                                 {
+                                     [btnConvict setFrame:CGRectMake(73, 9, 175, 175)];
+                                 }
+                             }
+                             completion:nil];
+            
+            
+        });
+    });
+}
+ 
+
 }
 @end

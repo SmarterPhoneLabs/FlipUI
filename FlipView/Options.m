@@ -234,9 +234,7 @@
 }
 -(void)gumballSave
 {
-    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    [[NSUserDefaults standardUserDefaults] setBool:swCaddo.on  forKey:@"CaddoOn"];
-//    [[NSUserDefaults standardUserDefaults] setBool:swBossier.on  forKey:@"BossierOn"]; 
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate]; 
     [[NSUserDefaults standardUserDefaults] setObject:delegate.marketList forKey:@"MarketList"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -406,8 +404,9 @@
         mI = [[MoreInfo alloc] initWithNibName:@"MoreInfo" bundle:nil];              
     }
     [UIView beginAnimations:@"animation" context:nil];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:YES]; 
     [self.navigationController pushViewController:mI animated:NO];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES]; 
+
     [UIView setAnimationDuration:1.5];
     [UIView commitAnimations];
     [mI release];

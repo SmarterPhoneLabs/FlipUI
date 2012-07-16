@@ -24,6 +24,17 @@
     IBOutlet UIImageView *imgConvict;
     UIViewController *parentController;
 }
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors8;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors7;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors6;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors5;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors4;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors3;
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors2;
+
+@property (retain, nonatomic) IBOutlet UILabel *lblDescriptors;
+- (IBAction)btnConvict_Touch:(id)sender;
+@property (retain, nonatomic) IBOutlet UIButton *btnConvict;
 @property (nonatomic, retain) NSObject<BackSideViewDelegate> *delegate;
 @property(nonatomic, assign) UIViewController *parentController;
 @property (retain, nonatomic) IBOutlet UIButton *btnTwitter;

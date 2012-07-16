@@ -21,6 +21,7 @@
 
 @implementation ViewController
 @synthesize lblSelectMarket;
+@synthesize lblPleaseWait;
 
 
 @synthesize tileWidthTemplate;
@@ -136,33 +137,37 @@ bool IsSearching;
 
     searchTimer = [[NSTimer alloc]init];
     
-    
-    for(AsyncImageView *myPOI in itemList)
+    if(sbMain.text.length > 3 || sbMain.text.length == 0)
     {
-        [myPOI blastOff];
-    }
-    [itemList removeAllObjects];
-    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-    service.logging = NO;
-    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSString *markets = [delegate getMarkets];
-    if(markets.length ==0 || [markets isEqualToString:@"0"])
-    {
-        lblSelectMarket.hidden = NO;
-    }
-    else
-    {
-        lblSelectMarket.hidden = YES;
-    }
-    if(sbMain.text.length == 0)
-    {
-        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-    }
-    else 
-    {
-        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
-    }
-    [service release];
+   
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];        
+        [self Gumball:delegate];        
+//    for(AsyncImageView *myPOI in itemList)
+//    {
+//        [myPOI blastOff];
+//    }
+//    [itemList removeAllObjects];
+//    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+//    service.logging = NO;
+//    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    NSString *markets = [delegate getMarkets];
+//    if(markets.length ==0 || [markets isEqualToString:@"0"])
+//    {
+//        lblSelectMarket.hidden = NO;
+//    }
+//    else
+//    {
+//        lblSelectMarket.hidden = YES;
+//    }
+//    if(sbMain.text.length == 0)
+//    {
+//        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+//    }
+//    else 
+//    {
+//        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+//    }
+//    [service release];
     
     [lblLastRefreshDate setAlpha:1.0];
     [lblReleaseToRefresh setAlpha:1.0];
@@ -203,7 +208,7 @@ bool IsSearching;
         CGRect contentRect = CGRectMake(0, 0, 320, 480);
         [(UIScrollView*)self.svMain setContentSize: contentRect.size];
     } 
-    
+    }
 }
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -471,6 +476,26 @@ bool IsSearching;
 
 -(void)handleList:(id)result
 {
+    //lblPleaseWait.hidden = YES;
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            [UIView animateWithDuration:1.25
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^
+             {
+                 
+                 [lblPleaseWait setAlpha:0.0];
+             }
+                             completion:nil];
+            
+        });
+    });
+    
     if([result isKindOfClass:[NSError class]]) 
     {
         NSError *MyError = (NSError*) result;
@@ -624,8 +649,63 @@ bool IsSearching;
 
     
 }
+- (void)Gumball:(AppDelegate *)delegate
+{
+    //lblPleaseWait.hidden = NO;
+    
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            
+            [UIView animateWithDuration:1.25
+                                  delay:0
+                                options:UIViewAnimationOptionAllowUserInteraction
+                             animations:^
+             {
+                 
+                 [lblPleaseWait setAlpha:1.0];
+             }
+                             completion:nil];
+            
+        });
+    });
+    for(AsyncImageView *myPOI in itemList)
+    {
+        [myPOI blastOff];
+        
+    }
+    [itemList removeAllObjects];
+    
+    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+    service.logging = NO;
+    
+    NSString *markets = [delegate getMarkets];
+    if(markets.length ==0 || [markets isEqualToString:@"0"])
+    {
+        lblSelectMarket.hidden = NO;
+    }
+    else
+    {
+        lblSelectMarket.hidden = YES;
+    }
+    if(sbMain.text.length == 0)
+    {
+        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    }
+    else 
+    {
+        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+    }
+    
+    //[service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+    [service release];
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self doLog:self.navigationController.title];
     [super viewDidAppear:animated];
 
     
@@ -661,27 +741,7 @@ bool IsSearching;
     }
 
     
-    for(AsyncImageView *myPOI in itemList)
-    {
-        [myPOI blastOff];
-        
-    }
-    [itemList removeAllObjects];
-    
-    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-    service.logging = NO;
-
-    NSString *markets = [delegate getMarkets];
-    if(markets.length ==0 || [markets isEqualToString:@"0"])
-    {
-        lblSelectMarket.hidden = NO;
-    }
-    else
-    {
-        lblSelectMarket.hidden = YES;
-    }
-    [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-    [service release];
+    [self Gumball:delegate];
 }
 
 -(void) handleURL:(id)result
@@ -908,6 +968,7 @@ bool IsSearching;
     [self setImgScrollArrow:nil];
     [self setScMain:nil];
     [self setLblSelectMarket:nil];
+    [self setLblPleaseWait:nil];
     [super viewDidUnload];
 }
 
@@ -923,6 +984,7 @@ bool IsSearching;
     [scMain release];
 
     [lblSelectMarket release];
+    [lblPleaseWait release];
     [super dealloc];
 }
 
@@ -1030,33 +1092,35 @@ bool IsSearching;
 }
 -(void)scrollRefresh
 {
-    for(AsyncImageView *myPOI in itemList)
-    {
-        [myPOI blastOff];
-    
-    }
-    [itemList removeAllObjects];
-    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
-    service.logging = NO;
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSString *markets = [delegate getMarkets];
-    if(markets.length ==0 || [markets isEqualToString:@"0"])
-    {
-        lblSelectMarket.hidden = NO;
-    }
-    else
-    {
-        lblSelectMarket.hidden = YES;
-    }
-    if(sbMain.text.length == 0)
-    {
-        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
-    }
-    else 
-    {
-        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
-    }
-    [service release];
+    [self Gumball:delegate];
+//    for(AsyncImageView *myPOI in itemList)
+//    {
+//        [myPOI blastOff];
+//    
+//    }
+//    [itemList removeAllObjects];
+//    SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+//    service.logging = NO;
+//    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    NSString *markets = [delegate getMarkets];
+//    if(markets.length ==0 || [markets isEqualToString:@"0"])
+//    {
+//        lblSelectMarket.hidden = NO;
+//    }
+//    else
+//    {
+//        lblSelectMarket.hidden = YES;
+//    }
+//    if(sbMain.text.length == 0)
+//    {
+//        [service List_All_tbl_Booking_Weekly_V2:self action:@selector(handleList:) Markets:markets];
+//    }
+//    else 
+//    {
+//        [service Search_Bookings_V2:self action:@selector(handleList:) Phrase:sbMain.text Markets:markets] ;
+//    }
+//    [service release];
     
     [lblLastRefreshDate setAlpha:1.0];
     [lblReleaseToRefresh setAlpha:1.0];

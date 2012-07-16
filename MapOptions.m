@@ -213,10 +213,11 @@
 
     
     
-    UIImage *imgFoo = [delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@", myGSO.ssImage_Crime_Type_Image] size:CGSizeMake(28, 28)  isWebBased:YES];
-        [self scaleMe:cell.imageView.image toSize:CGSizeMake(28, 28)];
-    [cell.imageView setImage:imgFoo ];            
- 
+//    UIImage *imgFoo = [delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@", myGSO.ssImage_Crime_Type_Image] size:CGSizeMake(28, 28)  isWebBased:YES];
+//        [self scaleMe:cell.imageView.image toSize:CGSizeMake(28, 28)];
+//    [cell.imageView setImage:imgFoo ];            
+
+[cell.imageView setImage:     [delegate scaleMe:[delegate getImage:[NSString stringWithFormat:@"http://www.jail-bookings.com/%@", myGSO.ssImage_Crime_Type_Image] size:CGSizeMake(0, 0) isWebBased:YES] toSize:CGSizeMake(32, 32)  ]];
     
 
 
