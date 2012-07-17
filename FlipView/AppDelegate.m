@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "SQLSTUDIOMyService.h"
+#import "SQLSTUDIOServices.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -42,9 +43,9 @@
         if([[NSUserDefaults standardUserDefaults] integerForKey:@"TileSize"] == 0)
         {
             
-            [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TileSize"];
+            [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"TileSize"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            tileSize = 2;
+            tileSize = 3;
         }
         else
         {
@@ -85,6 +86,11 @@
     
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"CrimeMapList"] == nil)
     {
+        SQLSTUDIOMyService *service = [[SQLSTUDIOMyService alloc] init];
+        service.logging = NO;
+        [service List_All_tbl_Crime_Type:self action:@selector(handleList:)];
+        [service release];
+        
     }
     else
     {
@@ -95,6 +101,32 @@
     
     return YES;
 }
+
+
+-(void)handleList:(id)result
+{
+    //[activityMain stopAnimating];
+    if([result isKindOfClass:[NSError class]]) 
+    {
+        NSError *MyError = (NSError*) result;
+        if(MyError.code == 410)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network" message:@"Your Network Connection is not Present" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil ];
+            [alert show];
+            [alert release];
+        }
+		return;
+	}
+    NSMutableArray *myData = (NSMutableArray*)result;
+    for(SQLSTUDIOArrayOftbl_Crime_Type_Result *myPOI in myData)
+    {
+        SQLSTUDIOtbl_Crime_Type_Result *myCSR = (SQLSTUDIOtbl_Crime_Type_Result*)myPOI;
+        [crimeMapList setValue:@"YES" forKey:[NSString stringWithFormat:@"%i",myCSR.Crime_Type_ID]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:crimeMapList forKey:@"CrimeMapList"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

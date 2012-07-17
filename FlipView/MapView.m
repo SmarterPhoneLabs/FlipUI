@@ -284,7 +284,7 @@ BackSideView *bSV;
         annotation.locationID = myPOI.Booking_ID;
         annotation.locationType = 999;
         annotation.imgURL = myPOI.Crime_Type_Image;
-        //[annotation setImage: [UIImage imageNamed:@"cogs.png"]];
+
         
         [newLocation release];
         
@@ -300,6 +300,8 @@ BackSideView *bSV;
     self = [super initWithCoder:aDecoder];
     if(self)
     {
+        mvMain = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+       [self.view addSubview:mvMain];
         selectedX = 0;
         allowTouch = YES;
         self.title = @"Crime Map";
@@ -319,15 +321,17 @@ BackSideView *bSV;
         
         zoomLocation.latitude = coordinate.latitude;
         zoomLocation.longitude = coordinate.longitude;
-        [locationManager release];
+    
         
-        //      zoomLocation.latitude = 32.513236;
-        //        zoomLocation.longitude = -93.749428;
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 40*METERS_PER_MILE, 40*METERS_PER_MILE);
+
+       [self gumball];
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 90*METERS_PER_MILE, 90*METERS_PER_MILE);
         MKCoordinateRegion adjustedRegion = [mvMain regionThatFits:viewRegion];                
         [mvMain setRegion:adjustedRegion animated:YES]; 
         
-        [self gumball];
+    [locationManager release];
+  
+        
         
         UIImage *image = [UIImage imageNamed:@"cogs.png"];
         UIButton *myCustomButton = [UIButton buttonWithType:UIButtonTypeCustom];

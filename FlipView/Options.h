@@ -23,8 +23,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *btnClearCache;
 @property (retain, nonatomic) IBOutlet UISwitch *swCaddo;
 @property (retain, nonatomic) IBOutlet UISwitch *swBossier;
-- (IBAction)swCaddo_Changed:(id)sender;
-- (IBAction)swBossier_Changed:(id)sender;
+
 - (IBAction)btnClearCache_Touch:(id)sender;
 @property (retain, nonatomic) IBOutlet UITableView *tblMarkets;
 - (IBAction)btnMoreInfo_Touch:(id)sender;

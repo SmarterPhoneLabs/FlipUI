@@ -24,12 +24,6 @@
 @property (nonatomic, retain) Facebook *facebook;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
-//@property (strong, nonatomic) UIWindow *window;
-//@property (strong, nonatomic) ViewController *viewController;
-
-
-
-
 @property (retain, nonatomic) IBOutlet UINavigationController *navHome;
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;

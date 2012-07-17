@@ -47,7 +47,11 @@ int oldHeight;
     {
             UILabel *lblName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         lblName.text = name;
-        [lblName setBackgroundColor:[UIColor clearColor]];
+        
+        UIImage *img = [UIImage imageNamed:@"image-1-1024x960.jpg"];
+        [lblName setBackgroundColor:[UIColor colorWithPatternImage:img]];
+        
+//        [lblName setBackgroundColor:[UIColor grayColor]];
         [lblName setTextColor:[UIColor whiteColor]];
 
         [imageView addSubview:lblName];
@@ -59,31 +63,31 @@ int oldHeight;
         if(self.frame.size.width == 25)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 10, 10);
-            [lblName setFrame:CGRectMake(2,19, 23, 6)];
+            [lblName setFrame:CGRectMake(0,19, 25, 6)];
             [lblName setFont: [UIFont fontWithName:@"Helvetica" size:3]];
         }
         if(self.frame.size.width == 50)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 12, 12);
-            [lblName setFrame:CGRectMake(2,40, 48, 10)];
+            [lblName setFrame:CGRectMake(0,40, 50, 10)];
             [lblName setFont: [UIFont fontWithName:@"Helvetica" size:6]];
 
         }
         if(self.frame.size.width == 100)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 24, 24);
-            [lblName setFrame:CGRectMake(5,80, 95, 20)];
+            [lblName setFrame:CGRectMake(0,80, 100, 20)];
             [lblName setFont: [UIFont fontWithName:@"Helvetica" size:10]];
         } 
         if(self.frame.size.width == 200)
         {
             crimeTypeImage.frame = CGRectMake(0, 0, 48, 48);
-            [lblName setFrame:CGRectMake(5,180, 195, 20)];
+            [lblName setFrame:CGRectMake(0,180, 200, 20)];
             [lblName setFont: [UIFont fontWithName:@"Helvetica" size:15]];
         } 
         
 
-    [crimeTypeImage setAlpha:0.5];
+    [crimeTypeImage setAlpha:1.0];
     [imageView addSubview:crimeTypeImage];
     [lblName release];
     }
@@ -113,6 +117,7 @@ int oldHeight;
 
 - (id)initWithFrame:(CGRect)aRect{
 	[super initWithFrame:aRect];
+    
     oldx = aRect.origin.x;
     oldy = aRect.origin.y;
     oldWidth = aRect.size.width;
@@ -138,74 +143,74 @@ int oldHeight;
 
     if(self.frame.size.width == 25)
     {
-        star1.frame = CGRectMake(0,self.frame.size.height-6,6,6);        
+        star1.frame = CGRectMake(10,0,3.75,3.75);        
     }
     if(self.frame.size.width == 50)
     {
-        star1.frame = CGRectMake(0,self.frame.size.height-12,12,12);        
+        star1.frame = CGRectMake(12,0,9.5,9.5);        
     }
     if(self.frame.size.width == 100)
     {
-        star1.frame = CGRectMake(0,self.frame.size.height-24,24,24);        
+        star1.frame = CGRectMake(24,0,19,19);        
     } 
     if(self.frame.size.width == 200)
     {
-        star1.frame = CGRectMake(0,self.frame.size.height-48,48,48);        
+        star1.frame = CGRectMake(48,0,38,38);        
     }    
     
     star2 = [[UIImageView alloc] initWithImage:testImg];
     if(self.frame.size.width == 25)
     {
-        star2.frame = CGRectMake(6,self.frame.size.height-6,6,6);        
+        star2.frame = CGRectMake(13.75,0,3.75,3.75);        
     }
     if(self.frame.size.width == 50)
     {
-        star2.frame = CGRectMake(12,self.frame.size.height-12,12,12);        
+        star2.frame = CGRectMake(21.5,0,9.5,9.5);        
     }
     if(self.frame.size.width == 100)
     {
-        star2.frame = CGRectMake(24,self.frame.size.height-24,24,24);        
+        star2.frame = CGRectMake(43,0,19,19);        
     } 
     if(self.frame.size.width == 200)
     {
-        star2.frame = CGRectMake(48,self.frame.size.height-48,48,48);        
+        star2.frame = CGRectMake(86,0,38,38);        
     }  
  
     
     star3 = [[UIImageView alloc] initWithImage:testImg];
     if(self.frame.size.width == 25)
     {
-        star3.frame = CGRectMake(12,self.frame.size.height-6,6,6);        
+        star3.frame = CGRectMake(17.5,0,3.75,3.75);        
     }
     if(self.frame.size.width == 50)
     {
-        star3.frame = CGRectMake(24,self.frame.size.height-12,12,12);        
+        star3.frame = CGRectMake(31,0,9.5,9.5);        
     }
     if(self.frame.size.width == 100)
     {
-        star3.frame = CGRectMake(48,self.frame.size.height-24,24,24);        
+        star3.frame = CGRectMake(62,0,19,19);        
     } 
     if(self.frame.size.width == 200)
     {
-        star3.frame = CGRectMake(96,self.frame.size.height-48,48,48);        
+        star3.frame = CGRectMake(124,0,38,38);        
     }  
     
     star4 = [[UIImageView alloc] initWithImage:testImg];
     if(self.frame.size.width == 25)
     {
-        star4.frame = CGRectMake(18,self.frame.size.height-6,6,6);        
+        star4.frame = CGRectMake(21.25,0,3.75,3.75);        
     }
     if(self.frame.size.width == 50)
     {
-        star4.frame = CGRectMake(36,self.frame.size.height-12,12,12);        
+        star4.frame = CGRectMake(40.5,0,9.5,9.5);        
     }
     if(self.frame.size.width == 100)
     {
-        star4.frame = CGRectMake(72,self.frame.size.height-24,24,24);        
+        star4.frame = CGRectMake(81,0,19,19);        
     } 
     if(self.frame.size.width == 200)
     {
-        star4.frame = CGRectMake(144,self.frame.size.height-48,48,48);        
+        star4.frame = CGRectMake(162,0,38,38);        
     }  
 
     

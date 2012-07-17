@@ -502,9 +502,9 @@ bool IsSearching;
             myTile.tileID = myPOI.Booking_ID;
             myTile.useRotation = YES;
             myTile.isAd = myPOI.Is_Ad;
-            myTile.hits = [[NSNumber alloc] initWithInt:myPOI.Views];
+            myTile.hits = [[[NSNumber alloc] initWithInt:myPOI.Views] autorelease];
             myTile.market = myPOI.Market_ID;
-            myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
+            myTile.name = [NSString stringWithFormat:@" %@ %@",myPOI.First_Name, myPOI.Last_Name] ;
             myTile.sex = myPOI.Sex;
             myTile.Booking_Date = myPOI.Date_Of_Offense;
             myTile.crimeTypeImageLink = [NSString stringWithFormat:@"http://jail-bookings.com/%@",myPOI.Crime_Type_Image];
@@ -537,9 +537,9 @@ bool IsSearching;
             myTile.tileID = myPOI.Most_Wanted_ID;
             myTile.useRotation = YES;
             myTile.isAd = NO;
-            myTile.hits = [[NSNumber alloc] initWithInt:0];
+            myTile.hits = [[[NSNumber alloc] initWithInt:0] autorelease];
             myTile.market = myPOI.Market_ID;
-            myTile.name = [NSString stringWithFormat:@"%@ %@",myPOI.First_Name, myPOI.Last_Name] ;
+            myTile.name = [NSString stringWithFormat:@" %@ %@",myPOI.First_Name, myPOI.Last_Name] ;
             myTile.sex = myPOI.Sex;
             myTile.Booking_Date = myPOI.Date_Of_Birth;
             myTile.crimeTypeImageLink = @"http://bookings.smarterphonelabs.com/Images/ba989f4e-3db0-4b70-aff5-48c6e0b89d7d.png";
@@ -670,7 +670,7 @@ bool IsSearching;
         dispatch_sync(dispatch_get_main_queue(), ^{
             
             
-            [UIView animateWithDuration:1.25
+            [UIView animateWithDuration:2.0
                                   delay:0
                                 options:options 
                              animations:^
@@ -1190,13 +1190,6 @@ if([self.navigationController.title isEqualToString:@"BOOKINGS"])
             
         });
     });
-    
-    BOOL iPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-    iPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-    
-    
 }
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {  
